@@ -403,6 +403,15 @@ footer svg:hover {
   gap: 6rem;
 }
 
+.back-button-wrap {
+  width: 100%;
+}
+
+.back-button {
+  margin: 0;
+  padding: 0;
+}
+
 .product-page li {
   color: #7d7d7d;
 }

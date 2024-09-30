@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductPage({
   cart,
@@ -11,6 +12,7 @@ export default function ProductPage({
 }) {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/data.json")
@@ -36,6 +38,7 @@ export default function ProductPage({
 
   return (
     <div className="content-wrap product-page">
+      <div className="back-button-wrap"><button onClick={() => navigate(-1)} className="minimal back-button">Go back</button></div>
       <img src={productData.image.desktop} />
       <div className="product-info">
         {productData.new && <p className="overline orange-text">New product</p>}
