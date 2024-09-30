@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import Shop from "./pages/Shop";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -69,6 +70,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
