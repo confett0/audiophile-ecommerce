@@ -397,26 +397,26 @@ footer svg:hover {
 
 /* Product page */
 
-.product-page {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 6rem;
-}
-
-.back-button-wrap {
-  width: 100%;
-}
-
 .back-button {
+  align-self: flex-start;
+  font-weight: 400;
+  width: unset;
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
 }
 
-.product-page li {
+.product-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+
+.product-wrap li {
   color: #7d7d7d;
 }
 
-.product-page img {
+.product-wrap img {
   width: 30rem;
 }
 
@@ -514,6 +514,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .related-products {
+  margin: 2rem 0;
   text-align: center;
 }
 

@@ -37,42 +37,43 @@ export default function ProductPage({
   ));
 
   return (
-    <div className="content-wrap product-page">
-      <div className="back-button-wrap"><button onClick={() => navigate(-1)} className="minimal back-button">Go back</button></div>
-      <img src={productData.image.desktop} />
-      <div className="product-info">
-        {productData.new && <p className="overline orange-text">New product</p>}
-        <h2>{productData.name}</h2>
-        <p>{productData.description}</p>
-        <h6>$ {productData.price}</h6>
-        <div className="button-wrap">
-          <div className="quantity-wrap">
-            <button className="quantity-button" onClick={decrementQuantity}>
-              -
-            </button>
-            <input
-              type="number"
-              className="item-quantity"
-              name="item-quantity"
-              value={itemQuantity}
-              onChange={(e) => {
-                if (e.target.value === "") {
-                  // avoid displaying 0 when erasing value inside the input
-                  setItemQuantity("");
-                } else {
-                  setItemQuantity(+e.target.value);
-                }
-              }}
-            />
-            <button className="quantity-button" onClick={incrementQuantity}>
-              +
+    <div className="content-wrap">
+      <button onClick={() => navigate(-1)} className="minimal back-button">Go back</button>
+      <div className="product-wrap">
+        <img src={productData.image.desktop} />
+        <div className="product-info">
+          {productData.new && <p className="overline orange-text">New product</p>}
+          <h2>{productData.name}</h2>
+          <p>{productData.description}</p>
+          <h6>$ {productData.price}</h6>
+          <div className="button-wrap">
+            <div className="quantity-wrap">
+              <button className="quantity-button" onClick={decrementQuantity}>
+                -
+              </button>
+              <input
+                type="number"
+                className="item-quantity"
+                name="item-quantity"
+                value={itemQuantity}
+                onChange={(e) => {
+                  if (e.target.value === "") {
+                    // avoid displaying 0 when erasing value inside the input
+                    setItemQuantity("");
+                  } else {
+                    setItemQuantity(+e.target.value);
+                  }
+                }}
+              />
+              <button className="quantity-button" onClick={incrementQuantity}>
+                +
+              </button>
+            </div>
+            <button className="orange" onClick={() => addToCart(productData)}>
+              Add to cart
             </button>
           </div>
-          <button className="orange" onClick={() => addToCart(productData)}>
-            Add to cart
-          </button>
         </div>
-      </div>
       <div className="product-features">
         <h3>Features</h3>
         <p>{productData.features}</p>
@@ -80,6 +81,7 @@ export default function ProductPage({
       <div className="product-included">
         <h3>Included items</h3>
         {includedItemElements}
+      </div>
       </div>
       <section className="product-gallery">
         <img className="first" src={productData.gallery.first.desktop} />
