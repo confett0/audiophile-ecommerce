@@ -42,22 +42,36 @@ export default function App() {
     setItemQuantity(1); // reset itemQuantity state
   };
 
-  const deleteFromCart = (itemToDelete) =>
-    setCart((prevCart) =>
-      prevCart.filter((item) => item.id !== itemToDelete.id)
-    );
-
   const emptyCart = () => setCart([]);
 
-  const increment = (currentItemId) => {
-    setCart(prevCart => prevCart.map(item => {
-      if (currentItemId === item.id) {
-        return {...item, quantity: item.quantity + 1}
+  const incrementQuantityInCart = (currentItemId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) => {
+        if (currentItemId === item.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        } else {
+          return item;
+        }
+      })
+    );
+  };
+
+  const decrementQuantityInCart = (currentItemId) => {
+    setCart((prevCart) => {
+      const currentItem = prevCart.find((item) => item.id === currentItemId);
+      if (currentItem.quantity > 1) {
+        return prevCart.map((item) => {
+          if (currentItemId === item.id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
       } else {
-        return item;
+        return prevCart.filter((item) => item.id !== currentItemId);
       }
-    })
-  )}
+    });
+  };
 
   const incrementItemQuantity = () =>
     setItemQuantity((prevCount) => prevCount + 1);
@@ -79,7 +93,8 @@ export default function App() {
               totalItems={totalItemsInCart}
               cart={cart}
               emptyCart={emptyCart}
-              setItemQuantity={setItemQuantity} incrementQuantity={increment}
+              incrementQuantity={incrementQuantityInCart}
+              decrementQuantity={decrementQuantityInCart}
             />
           }
         >

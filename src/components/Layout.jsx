@@ -2,10 +2,22 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Layout({ totalItems, cart, emptyCart, setItemQuantity, incrementQuantity }) {
+export default function Layout({
+  totalItems,
+  cart,
+  emptyCart,
+  incrementQuantity,
+  decrementQuantity,
+}) {
   return (
     <>
-      <Header totalItems={totalItems} cart={cart} emptyCart={emptyCart} setItemQuantity={setItemQuantity} incrementQuantity={incrementQuantity} />
+      <Header
+        totalItems={totalItems}
+        cart={cart}
+        emptyCart={emptyCart}
+        incrementQuantity={incrementQuantity}
+        decrementQuantity={decrementQuantity}
+      />
       <div className="outlet">
         <Outlet />
       </div>
