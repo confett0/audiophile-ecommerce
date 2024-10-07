@@ -40,7 +40,6 @@ export default function Cart({
         <p>TOTAL</p>
         <p className="cart-total">${orderTotal}</p>
       </div>
-      <button className="orange checkout-button">Checkout</button>
     </>
   );
 }

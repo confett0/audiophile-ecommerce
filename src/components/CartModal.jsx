@@ -1,4 +1,5 @@
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 export default function CartModal({
   setIsModalOpen,
@@ -8,7 +9,7 @@ export default function CartModal({
   decrementQuantity,
 }) {
   return (
-    <div className="modal-wrap" /*onClick={() => setIsModalOpen(false)}*/ >
+    <div className="modal-wrap" onClick={() => setIsModalOpen(false)} >
       <div className="cart-modal">
         <Cart
           cart={cart}
@@ -16,6 +17,7 @@ export default function CartModal({
           decrementQuantity={decrementQuantity}
           emptyCart={emptyCart}
         />
+        <Link to="/checkout"><button className="orange checkout-button">Checkout</button></Link>
       </div>
     </div>
   );
