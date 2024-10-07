@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function CategoryLinks() {
   return (
-    <div className="category-links">
+    <section className="category-links">
       <CategoryLink
         imgUrl="../src/assets/shared/desktop/image-category-thumbnail-headphones.png"
         categoryName="Headphones"
@@ -15,18 +15,18 @@ export default function CategoryLinks() {
         imgUrl="../src/assets/shared/desktop/image-category-thumbnail-earphones.png"
         categoryName="Earphones"
       />
-    </div>
+    </section>
   );
 }
 
 function CategoryLink({ imgUrl, categoryName, link }) {
   return (
-    <section className="category-link">
+    <div className="category-link">
       <img src={imgUrl} />
       <div className="category-name">
         <h6>{categoryName}</h6>
         <button className="minimal">Shop <span>&gt;</span></button>
       </div>
-    </section>
+    </div>
   );
 }

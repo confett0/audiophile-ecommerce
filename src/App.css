@@ -181,6 +181,8 @@ nav {
 
 footer {
   background-color: #131313;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-wrap {
@@ -189,8 +191,8 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem 5rem;
-  padding: 3rem 9rem;
-  max-width: 1440px;
+  padding: 3rem 0;
+  width: 70rem;
   position: relative;
 }
 
@@ -254,7 +256,9 @@ footer svg:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 9rem;
+  padding: 2rem 0;
+  margin: auto;
+  width: 70rem;
 }
 
 /* Home page */
@@ -278,23 +282,25 @@ footer svg:hover {
 }
 
 .category-links {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   gap: 2rem;
   padding: 8rem 0 0;
+  margin-bottom: 4rem;
+  width: 70rem;
 }
 
 .category-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  text-align: center;
-  height: 18rem;
-  width: 22rem;
 }
 
 .category-link img {
   height: 10rem;
   position: absolute;
   top: -4rem;
-  right: 5rem;
 }
 
 .category-name {
@@ -303,9 +309,9 @@ footer svg:hover {
   display: flex;
   flex-direction: column;
   height: 12.75rem;
-  width: 22rem;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
 
 .area {
@@ -352,11 +358,15 @@ footer svg:hover {
 
 .black-area .card-wrap {
   background: #F1F1F1;
-  width: 34rem;
   height: 20rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding-left: 6rem;
+  padding-left: 7%;
+}
+
+.black-area .home-product-card {
+  width: 20rem;
 }
 
 .before-footer {
@@ -613,4 +623,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .checkout-button {
   width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+    .area, .category-links, .footer-wrap {
+      width: 93%;
+    }
 }
