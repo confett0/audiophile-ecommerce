@@ -9,7 +9,8 @@ export default function CartModal({
   decrementQuantity,
 }) {
   return (
-    <div className="modal-wrap" onClick={() => setIsModalOpen(false)} >
+    <>
+      <div className="modal-wrap" onClick={() => setIsModalOpen(false)}></div>
       <div className="cart-modal">
         <Cart
           cart={cart}
@@ -17,8 +18,10 @@ export default function CartModal({
           decrementQuantity={decrementQuantity}
           emptyCart={emptyCart}
         />
-        <Link to="/checkout"><button className="orange checkout-button">Checkout</button></Link>
+        <Link to="/checkout" onClick={() => setIsModalOpen(false)}>
+          <button className="orange checkout-button">Checkout</button>
+        </Link>
       </div>
-    </div>
+    </>
   );
 }
