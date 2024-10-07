@@ -247,6 +247,7 @@ footer svg:hover {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin: auto;
   margin-bottom: 4rem;
   max-width: 1440px;
 }
@@ -392,7 +393,7 @@ footer svg:hover {
 .product-card {
   align-items: center;
   display: flex;
-  gap: 5rem;
+  gap: 7rem;
   width: 100%;
   padding: 2rem 0;
 }
@@ -626,7 +627,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 1150px) {
-    .area, .category-links, .footer-wrap {
+    .content-wrap, .shop-wrap, .footer-wrap {
       width: 93%;
+    }
+
+    .area, .category-links {
+      width: 100%;
     }
 }
