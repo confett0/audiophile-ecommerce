@@ -17,6 +17,7 @@ export default function CartModal({
           incrementQuantity={incrementQuantity}
           decrementQuantity={decrementQuantity}
           emptyCart={emptyCart}
+          isCheckoutPage={false}
         />
         <Link to="/checkout" onClick={() => setIsModalOpen(false)}>
           <button className="orange checkout-button">Checkout</button>
