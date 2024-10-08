@@ -33,12 +33,20 @@ export default function CheckoutForm() {
         <fieldset>
           <legend>Payment details</legend>
           <label htmlFor="">Payment method</label>
-          <div>
-            <input type="radio" />
-            <label>e-Money</label> {/* Htmlfor */}
-            <input type="radio" />
-            <label>Cash on delivery</label>
-          </div>
+          <fieldset className="payment-type-fieldset">
+            <div className="payment-type-input">
+              <input type="radio" name="payment-type" value="e-money" />
+              <label>e-Money</label> {/* Htmlfor */}
+            </div>
+            <div className="payment-type-input">
+              <input
+                type="radio"
+                name="payment-type"
+                value="cash-on-delivery"
+              />
+              <label>Cash on delivery</label>
+            </div>
+          </fieldset>
           <label>
             e-Money Number <input type="phone" placeholder="238521993" />
           </label>
