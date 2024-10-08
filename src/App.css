@@ -556,8 +556,8 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 0.5rem;
   background: #FFF;
   color: #000;
-  padding: 2rem;
   position: absolute;
+  padding: 2rem;
   top: 8rem;
   right: 9rem;
   width: 23.5rem;
@@ -576,8 +576,7 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 1;
 }
 
-.cart-header,
-.cart-total-wrap {
+.cart-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -617,13 +616,41 @@ input[type=number]::-webkit-outer-spin-button {
   text-transform: uppercase;
 }
 
+.cart-total-wrap {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.cart-total-wrap p {
+  margin-bottom: 0.5rem;
+}
+
 .cart-total {
+  justify-self: end;
   color: #000;
   font-weight: 700;
 }
 
 .checkout-button {
   width: 100%;
+}
+
+/* Checkout page */
+
+.checkout-background {
+  background: #F1F1F1;
+}
+
+.checkout-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 5fr 2fr;
+}
+
+.checkout-cart {
+  border-radius: 0.5rem;
+  background: #FFF;
+  padding: 2rem;
 }
 
 @media screen and (max-width: 1150px) {

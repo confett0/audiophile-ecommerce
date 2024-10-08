@@ -37,7 +37,7 @@ export default function Cart({
   }
 
   return (
-    <>
+    <div className={isCheckoutPage ? "checkout-cart" : "cart"}>
       <div className="cart-header">
         {isCheckoutPage ? <h6>Summary</h6> : <h6>Cart ({cart.length})</h6>}
         {!isCheckoutPage && (
@@ -50,19 +50,13 @@ export default function Cart({
       <div className="cart-total-wrap">
         <p>TOTAL</p>
         <p className="cart-total">${orderTotal}</p>
-      </div>
-      <div className="cart-total-wrap">
         <p>SHIPPING</p>
         <p className="cart-total">${shipping}</p>
-      </div>
-      <div className="cart-total-wrap">
         <p>VAT (INCLUDED)</p>
         <p className="cart-total">${vat}</p>
-      </div>
-      <div className="cart-total-wrap">
         <p>GRANDTOTAL</p>
         <p className="cart-total orange-text">${grandTotal}</p>
       </div>
-    </>
+    </div>
   );
 }
