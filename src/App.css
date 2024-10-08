@@ -284,7 +284,7 @@ footer svg:hover {
 
 .category-links {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 8rem 0 0;
   margin-bottom: 4rem;
@@ -643,22 +643,65 @@ input[type=number]::-webkit-outer-spin-button {
 
 .checkout-grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: 5fr 2fr;
 }
 
-.checkout-cart {
+.checkout-cart,
+.form-wrap {
   border-radius: 0.5rem;
   background: #FFF;
   padding: 2rem;
 }
 
-@media screen and (max-width: 1150px) {
-    .content-wrap, .shop-wrap, .footer-wrap {
-      width: 93%;
-    }
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
 
-    .area, .category-links {
-      width: 100%;
-    }
+legend {
+  color: #D87D4A;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5625rem;
+  letter-spacing: 0.05806rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+label {
+  color: #000;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.01338rem;
+}
+
+input {
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid #CFCFCF;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+
+  .content-wrap,
+  .shop-wrap,
+  .footer-wrap {
+    width: 93%;
+  }
+
+  .area,
+  .category-links {
+    width: 100%;
+  }
 }

@@ -9,11 +9,17 @@ export default function Checkout({cart}) {
             <div className="content-wrap">
                 <button onClick={() => navigate(-1)} className="minimal back-button">Go back</button>
                 <div className="checkout-grid">
-                    <form>
-                        <label>Name <input type="text" /></label>
-                        <label>Email <input type="email" /></label>
-                        <label>Phone Number <input type="phone" /></label>
-                    </form>
+                    <div className="form-wrap">
+                    <h3>Checkout</h3>
+                        <form>
+                            <fieldset>
+                                <legend>Billing details</legend>
+                                <label>Name <input type="text" placeholder="Alexei Ward" /></label>
+                                <label>Email <input type="email" placeholder="alexei@mail.com" /></label>
+                                <label>Phone Number <input type="phone" placeholder="+1 202-555-0136" /></label>
+                            </fieldset>
+                        </form>
+                    </div>
                     <Cart cart={cart} isCheckoutPage={true} />
                 </div>
             </div>
