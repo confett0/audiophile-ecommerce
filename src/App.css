@@ -212,7 +212,6 @@ footer a {
   width: 6.3rem;
   height: 0.25rem;
   position: absolute;
-  left: 9rem;
 }
 
 footer p {
@@ -645,13 +644,14 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   gap: 2rem;
   grid-template-columns: 5fr 2fr;
+  width: 100%;
 }
 
 .checkout-cart,
 .form-wrap {
   border-radius: 0.5rem;
   background: #FFF;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 fieldset {
@@ -659,6 +659,7 @@ fieldset {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 legend {
@@ -683,13 +684,17 @@ label {
   letter-spacing: -0.01338rem;
 }
 
-input {
+input:not([type="radio"]) {
   display: block;
   border-radius: 0.5rem;
   border: 1px solid #CFCFCF;
   padding: 0.8rem;
   margin-top: 0.4rem;
   width: 100%;
+}
+
+.address-input {
+  grid-column: 1 / span 2;
 }
 
 @media screen and (max-width: 1150px) {

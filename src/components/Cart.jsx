@@ -33,7 +33,11 @@ export default function Cart({
   ));
 
   if (cart.length === 0) {
-    return <h6>Your cart is empty</h6>;
+    return (
+      <div className={isCheckoutPage ? "checkout-cart" : "cart"}>
+        <h6>Your cart is empty</h6>
+      </div>
+    );
   }
 
   return (
