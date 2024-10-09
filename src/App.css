@@ -697,7 +697,7 @@ input:not([type="radio"]) {
   width: 100%;
 }
 
-.address-input {
+.full-width {
   grid-column: 1 / span 2;
 }
 
@@ -725,6 +725,12 @@ input[type="radio"] {
 
 .payment-type-input:has(input[type="radio"]:checked) {
   border: 1px solid var(--orange);
+}
+
+.cash-on-delivery-text {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 @media screen and (max-width: 1150px) {

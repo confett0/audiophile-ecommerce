@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function CheckoutForm() {
+  const [paymentInputStatus, setPaymentInputStatus] = useState(0); // 0: no input selected - 1: e-money input selected - 2: cash on delivery input selected
+
   return (
     <div className="form-wrap">
       <h3>Checkout</h3>
@@ -17,7 +21,7 @@ export default function CheckoutForm() {
         </fieldset>
         <fieldset>
           <legend>Shipping info</legend>
-          <label className="address-input">
+          <label className="full-width">
             Address <input type="text" placeholder="1137 Williams Avenue" />
           </label>
           <label>
@@ -35,7 +39,13 @@ export default function CheckoutForm() {
           <label htmlFor="">Payment method</label>
           <fieldset className="payment-type-fieldset">
             <div className="payment-type-input">
-              <input type="radio" name="payment-type" value="e-money" />
+              <input
+                type="radio"
+                name="payment-type"
+                value="e-money"
+                checked={paymentInputStatus === 1}
+                onChange={() => setPaymentInputStatus(1)}
+              />
               <label>e-Money</label> {/* Htmlfor */}
             </div>
             <div className="payment-type-input">
@@ -43,16 +53,33 @@ export default function CheckoutForm() {
                 type="radio"
                 name="payment-type"
                 value="cash-on-delivery"
+                checked={paymentInputStatus === 2}
+                onChange={() => setPaymentInputStatus(2)}
               />
               <label>Cash on delivery</label>
             </div>
           </fieldset>
-          <label>
-            e-Money Number <input type="phone" placeholder="238521993" />
-          </label>
-          <label>
-            e-Money PIN <input type="phone" placeholder="6891" />
-          </label>
+          {paymentInputStatus === 1 ? (
+            <>
+              <label>
+                e-Money Number <input type="phone" placeholder="238521993" />
+              </label>
+              <label>
+                e-Money PIN <input type="phone" placeholder="6891" />
+              </label>
+            </>
+          ) : paymentInputStatus === 2 ? (
+            <div className="cash-on-delivery-text full-width">
+            <img src="src/assets/checkout/icon-cash-on-delivery.svg" />
+            <p>
+              The ‘Cash on Delivery’ option enables you to pay in cash when our
+              delivery courier arrives at your residence. Just make sure your
+              address is correct so that your order will not be cancelled.
+            </p>
+            </div>
+          ) : (
+            ""
+          )}
         </fieldset>
       </form>
     </div>
