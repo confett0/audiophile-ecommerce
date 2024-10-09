@@ -694,7 +694,12 @@ input:not([type="radio"]) {
   border: 1px solid #CFCFCF;
   padding: 0.8rem;
   margin-top: 0.4rem;
+  outline: none;
   width: 100%;
+}
+
+input:focus {
+  border: 1px solid var(--orange);
 }
 
 .full-width {
