@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function OrderConfirmation({ cart, grandTotal }) {
+export default function OrderConfirmation({ cart, grandTotal, closeModal }) {
     const firstCartItem = cart[0];
   return (
     <div>

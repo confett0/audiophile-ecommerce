@@ -647,6 +647,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .checkout-background {
   background: #F1F1F1;
+  position: relative;
 }
 
 .checkout-grid {

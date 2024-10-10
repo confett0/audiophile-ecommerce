@@ -1,26 +1,44 @@
-import { useNavigate } from "react-router-dom"
-import Cart from "../components/Cart"
+import { useNavigate } from "react-router-dom";
+import Cart from "../components/Cart";
 import CheckoutForm from "../components/CheckoutForm";
+import Modal from "../components/Modal";
+import OrderConfirmation from "../components/OrderConfirmation";
+import { useState } from "react";
 
-export default function Checkout({cart}) {
-    const navigate = useNavigate();
+export default function Checkout({ cart }) {
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted");
-      }
+  const navigate = useNavigate();
 
-    return (
-        <div className="checkout-background">
-            <div className="content-wrap">
-                <button onClick={() => navigate(-1)} className="minimal back-button">Go back</button>
-                <div className="checkout-grid">
-                    <CheckoutForm />
-                    <div>
-                        <Cart cart={cart} isCheckoutPage={true} handleClick={handleSubmit} />
-                    </div>
-                </div>
-            </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsConfirmationModalOpen(true)
+  };
+
+  const closeOrderConfirmationModal = () => setIsConfirmationModalOpen(false)
+
+  return (
+    <div className="checkout-background">
+      <div className="content-wrap">
+        <button onClick={() => navigate(-1)} className="minimal back-button">
+          Go back
+        </button>
+        <div className="checkout-grid">
+          <CheckoutForm />
+          <div>
+            <Cart
+              cart={cart}
+              isCheckoutPage={true}
+              handleClick={handleSubmit}
+            />
+          </div>
         </div>
-    )
+      </div>
+      {isConfirmationModalOpen && (
+        <Modal>
+          <OrderConfirmation cart={cart} closeModal={closeOrderConfirmationModal} />
+        </Modal>
+      )}
+    </div>
+  );
 }
