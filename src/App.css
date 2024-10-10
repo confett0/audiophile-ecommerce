@@ -1,7 +1,11 @@
+/* Global Variables */
+
 :root {
   --orange: #D87D4A;
   --light-orange: #FBAF85;
 }
+
+/* Global Styles */
 
 * {
   box-sizing: border-box;
@@ -545,22 +549,21 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-/* Cart */
+/* Modal */
 
-.cart-icon {
-  cursor: pointer;
-}
-
-.cart-modal {
+.modal-content {
   border-radius: 0.5rem;
   background: #FFF;
   color: #000;
   position: absolute;
   padding: 2rem;
+  z-index: 2;
+}
+
+.cart-modal {
   top: 8rem;
   right: 9rem;
   width: 23.5rem;
-  z-index: 2;
 }
 
 .modal-wrap::after {
@@ -573,6 +576,12 @@ input[type=number]::-webkit-outer-spin-button {
   content: '';
   height: 100vh;
   z-index: 1;
+}
+
+/* Cart */
+
+.cart-icon {
+  cursor: pointer;
 }
 
 .cart-header {

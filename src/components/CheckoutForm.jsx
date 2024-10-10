@@ -36,27 +36,29 @@ export default function CheckoutForm() {
         </fieldset>
         <fieldset>
           <legend>Payment details</legend>
-          <label htmlFor="">Payment method</label>
+          <label>Payment method</label>
           <fieldset className="payment-type-fieldset">
             <div className="payment-type-input">
               <input
                 type="radio"
                 name="payment-type"
+                id="e-money"
                 value="e-money"
                 checked={paymentInputStatus === 1}
                 onChange={() => setPaymentInputStatus(1)}
               />
-              <label>e-Money</label> {/* Htmlfor */}
+              <label htmlFor="e-money">e-Money</label>
             </div>
             <div className="payment-type-input">
               <input
                 type="radio"
                 name="payment-type"
                 value="cash-on-delivery"
+                id="cash-on-delivery"
                 checked={paymentInputStatus === 2}
                 onChange={() => setPaymentInputStatus(2)}
               />
-              <label>Cash on delivery</label>
+              <label htmlFor="cash-on-delivery">Cash on delivery</label>
             </div>
           </fieldset>
           {paymentInputStatus === 1 ? (

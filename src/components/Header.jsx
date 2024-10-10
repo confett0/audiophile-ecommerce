@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
-import CartModal from "./CartModal";
+import Modal from "./Modal";
+import Cart from "./Cart";
 
 export default function Header({
   totalItems,
@@ -11,8 +12,15 @@ export default function Header({
   emptyCart,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
   const closeModal = () => setIsModalOpen(false);
+  const goToCheckout = () => {
+    closeModal();
+    navigate("/checkout");
+  };
+
   return (
     <header>
       <div className="header-wrap">
@@ -26,13 +34,15 @@ export default function Header({
         </div>
       </div>
       {isModalOpen && (
-        <CartModal
-          closeModal={closeModal}
-          cart={cart}
-          emptyCart={emptyCart}
-          incrementQuantity={incrementQuantity}
-          decrementQuantity={decrementQuantity}
-        />
+        <Modal closeModal={closeModal}>
+          <Cart
+            cart={cart}
+            emptyCart={emptyCart}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+            handleClick={goToCheckout}
+          />
+        </Modal>
       )}
     </header>
   );
