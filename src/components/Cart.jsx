@@ -6,6 +6,7 @@ export default function Cart({
   incrementQuantity,
   decrementQuantity,
   isCheckoutPage,
+  handleClick,
 }) {
   const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
   const shipping = 50;
@@ -61,6 +62,9 @@ export default function Cart({
         <p>GRANDTOTAL</p>
         <p className="cart-total orange-text">${grandTotal}</p>
       </div>
+      <button onClick={handleClick} className="orange cart-button" >
+        {isCheckoutPage ? "Continue & Pay" : "Checkout"}
+      </button>
     </div>
   );
 }

@@ -1,16 +1,23 @@
 import Cart from "./Cart";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CartModal({
-  setIsModalOpen,
+  closeModal,
   cart,
   emptyCart,
   incrementQuantity,
   decrementQuantity,
 }) {
+  const navigate = useNavigate()
+  
+  const goToCheckout = () => {
+    closeModal();
+    navigate("/checkout");
+  }
+
   return (
     <>
-      <div className="modal-wrap" onClick={() => setIsModalOpen(false)}></div>
+      <div className="modal-wrap" onClick={closeModal}></div>
       <div className="cart-modal">
         <Cart
           cart={cart}
@@ -18,10 +25,8 @@ export default function CartModal({
           decrementQuantity={decrementQuantity}
           emptyCart={emptyCart}
           isCheckoutPage={false}
+          handleClick={goToCheckout}
         />
-        <Link to="/checkout" onClick={() => setIsModalOpen(false)}>
-          <button className="orange checkout-button">Checkout</button>
-        </Link>
       </div>
     </>
   );

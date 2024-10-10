@@ -13,7 +13,7 @@ export default function CheckoutForm() {
             Name <input type="text" placeholder="Alexei Ward" />
           </label>
           <label>
-            Email <input type="email" placeholder="alexei@mail.com" />
+            Email <input type="email" placeholder="alexei@mail.com" required />
           </label>
           <label>
             Phone Number <input type="phone" placeholder="+1 202-555-0136" />

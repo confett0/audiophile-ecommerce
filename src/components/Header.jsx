@@ -12,6 +12,7 @@ export default function Header({
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <header>
       <div className="header-wrap">
@@ -26,7 +27,7 @@ export default function Header({
       </div>
       {isModalOpen && (
         <CartModal
-          setIsModalOpen={setIsModalOpen}
+          closeModal={closeModal}
           cart={cart}
           emptyCart={emptyCart}
           incrementQuantity={incrementQuantity}
