@@ -35,7 +35,7 @@ export default function Checkout({ cart }) {
         </div>
       </div>
       {isConfirmationModalOpen && (
-        <Modal>
+        <Modal closeModal={closeOrderConfirmationModal}>
           <OrderConfirmation cart={cart} closeModal={closeOrderConfirmationModal} />
         </Modal>
       )}

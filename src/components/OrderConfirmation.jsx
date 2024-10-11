@@ -3,21 +3,23 @@ import { Link } from "react-router-dom";
 export default function OrderConfirmation({ cart, grandTotal, closeModal }) {
     const firstCartItem = cart[0];
   return (
-    <div>
+    <div className="order-confirmation">
       <img src="src/assets/checkout/icon-order-confirmation.svg" />
-      <h3>Thank you for your order</h3>
+      <h3>Thank you <br />for your order</h3>
       <p>You will receive an email confirmation shortly.</p>
-      <div>
-        <div>
-            <div>
+      <div className="order-summary">
+        <div className="order-summary-items">
+            <div className="ordered-items-wrap">
                 <img src={firstCartItem.image.mobile} />
-                <p>{firstCartItem.name}</p>
-                <p>{firstCartItem.price}</p>
-                <p>{firstCartItem.quantity}</p>
+                <div>
+                  <p>{firstCartItem.name}</p>
+                  <p>${firstCartItem.price}</p>
+                </div>
+                <p>x{firstCartItem.quantity}</p>
             </div>
             {cart.length > 1 && <p>and {cart.length - 1} other item(s)</p>}
         </div>
-        <div>
+        <div className="grand-total">
           <p>Grand Total</p>
           <p>{grandTotal}</p>
         </div>

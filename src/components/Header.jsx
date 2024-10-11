@@ -34,7 +34,7 @@ export default function Header({
         </div>
       </div>
       {isModalOpen && (
-        <Modal closeModal={closeModal}>
+        <Modal closeModal={closeModal} isCart={true}>
           <Cart
             cart={cart}
             emptyCart={emptyCart}

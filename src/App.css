@@ -566,6 +566,14 @@ input[type=number]::-webkit-outer-spin-button {
   width: 23.5rem;
 }
 
+.confirmation-modal {
+  top: 5%;
+  left: 0; 
+  right: 0; 
+  margin-inline: auto; 
+  width: 33.5rem;
+}
+
 .modal-wrap::after {
   position: fixed;
   top: 0;
@@ -746,6 +754,44 @@ input[type="radio"] {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+/* Order confirmation modal */
+
+.order-confirmation {
+  padding: 1rem;
+}
+
+.order-summary {
+  border-radius: 0.5rem;
+  background: #F1F1F1;
+  display: flex;
+}
+
+.order-summary-items {
+  padding: 2rem;
+  width: 60%;
+}
+
+.ordered-items-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.order-summary img {
+  width: 3.125rem;
+}
+
+.grand-total {
+  background: #000;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  padding: 2rem;
+  width: 40%;
+}
+
+.order-confirmation button {
+  width: 100%;
 }
 
 @media screen and (max-width: 1150px) {
