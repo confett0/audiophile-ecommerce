@@ -30,7 +30,7 @@ export default function Header({
         <Nav />
         <div className="cart-icon" onClick={toggleModal}>
           <img src="../src/assets/shared/desktop/icon-cart.svg" />
-          <span className="total-items">{totalItems ? totalItems : ""}</span>
+          {cart.length > 0 && <div className="total-items">{totalItems ? totalItems : ""}</div>}
         </div>
       </div>
       {isModalOpen && (
