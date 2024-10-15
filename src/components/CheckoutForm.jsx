@@ -10,28 +10,70 @@ export default function CheckoutForm() {
         <fieldset>
           <legend>Billing details</legend>
           <label>
-            Name <input type="text" placeholder="Alexei Ward" />
+            Name{" "}
+            <input
+              type="text"
+              placeholder="Alexei Ward"
+              className="checkout-input"
+              required
+            />
           </label>
           <label>
-            Email <input type="email" placeholder="alexei@mail.com" required />
+            Email{" "}
+            <input
+              type="email"
+              placeholder="alexei@mail.com"
+              className="checkout-input"
+              required
+            />
           </label>
           <label>
-            Phone Number <input type="phone" placeholder="+1 202-555-0136" />
+            Phone Number{" "}
+            <input
+              type="phone"
+              placeholder="+1 202-555-0136"
+              className="checkout-input"
+              required
+            />
           </label>
         </fieldset>
         <fieldset>
           <legend>Shipping info</legend>
           <label className="full-width">
-            Address <input type="text" placeholder="1137 Williams Avenue" />
+            Address{" "}
+            <input
+              type="text"
+              placeholder="1137 Williams Avenue"
+              className="checkout-input"
+              required
+            />
           </label>
           <label>
-            Zip code <input type="text" placeholder="10001" />
+            Zip code{" "}
+            <input
+              type="text"
+              placeholder="10001"
+              className="checkout-input"
+              required
+            />
           </label>
           <label>
-            City <input type="text" placeholder="New York" />
+            City{" "}
+            <input
+              type="text"
+              placeholder="New York"
+              className="checkout-input"
+              required
+            />
           </label>
           <label>
-            Country <input type="text" placeholder="United States" />
+            Country{" "}
+            <input
+              type="text"
+              placeholder="United States"
+              className="checkout-input"
+              required
+            />
           </label>
         </fieldset>
         <fieldset>
@@ -64,20 +106,21 @@ export default function CheckoutForm() {
           {paymentInputStatus === 1 ? (
             <>
               <label>
-                e-Money Number <input type="phone" placeholder="238521993" />
+                e-Money Number <input type="phone" placeholder="238521993" className="checkout-input" />
               </label>
               <label>
-                e-Money PIN <input type="phone" placeholder="6891" />
+                e-Money PIN <input type="phone" placeholder="6891" className="checkout-input"/>
               </label>
             </>
           ) : paymentInputStatus === 2 ? (
             <div className="cash-on-delivery-text full-width">
-            <img src="src/assets/checkout/icon-cash-on-delivery.svg" />
-            <p>
-              The ‘Cash on Delivery’ option enables you to pay in cash when our
-              delivery courier arrives at your residence. Just make sure your
-              address is correct so that your order will not be cancelled.
-            </p>
+              <img src="src/assets/checkout/icon-cash-on-delivery.svg" />
+              <p>
+                The ‘Cash on Delivery’ option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
             </div>
           ) : (
             ""

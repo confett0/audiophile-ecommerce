@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "../components/Cart";
 import CheckoutForm from "../components/CheckoutForm";
 import Modal from "../components/Modal";
 import OrderConfirmation from "../components/OrderConfirmation";
-import { useState } from "react";
 
 export default function Checkout({ cart }) {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);

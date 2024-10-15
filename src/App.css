@@ -706,7 +706,7 @@ label {
   letter-spacing: -0.01338rem;
 }
 
-input:not([type="radio"]) {
+.checkout-input {
   display: block;
   border-radius: 0.5rem;
   border: 1px solid #CFCFCF;
