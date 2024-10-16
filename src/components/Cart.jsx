@@ -2,17 +2,13 @@ import CartQuantitySelector from "./CartQuantitySelector";
 
 export default function Cart({
   cart,
+  orderSummary,
   emptyCart,
   incrementQuantity,
   decrementQuantity,
   isCheckoutPage,
   handleClick,
 }) {
-  const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
-  const shipping = 50;
-  const vatRate = 0.2; // 20% VAT
-  const vat = (orderTotal * vatRate).toFixed(0);
-  const grandTotal = orderTotal + shipping;
 
   const itemElements = cart.map((item) => (
     <div key={item.id} className="cart-item">
@@ -54,13 +50,13 @@ export default function Cart({
       {itemElements}
       <div className="cart-total-wrap">
         <p>TOTAL</p>
-        <p className="cart-total">${orderTotal}</p>
+        <p className="cart-total">${orderSummary.orderTotal}</p>
         <p>SHIPPING</p>
-        <p className="cart-total">${shipping}</p>
+        <p className="cart-total">${orderSummary.shipping}</p>
         <p>VAT (INCLUDED)</p>
-        <p className="cart-total">${vat}</p>
+        <p className="cart-total">${orderSummary.vat}</p>
         <p>GRANDTOTAL</p>
-        <p className="cart-total orange-text">${grandTotal}</p>
+        <p className="cart-total orange-text">${orderSummary.grandTotal}</p>
       </div>
       <button onClick={handleClick} className="orange cart-button" >
         {isCheckoutPage ? "Continue & Pay" : "Checkout"}

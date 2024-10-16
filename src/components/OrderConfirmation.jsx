@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function OrderConfirmation({ cart, grandTotal, closeModal }) {
+export default function OrderConfirmation({ cart, orderSummary, closeModal }) {
     const firstCartItem = cart[0];
   return (
     <div className="order-confirmation">
@@ -21,7 +21,7 @@ export default function OrderConfirmation({ cart, grandTotal, closeModal }) {
         </div>
         <div className="grand-total">
           <p>Grand Total</p>
-          <p>{grandTotal}</p>
+          <p>{orderSummary.grandTotal}</p>
         </div>
       </div>
       <Link to="/">

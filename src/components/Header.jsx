@@ -5,8 +5,8 @@ import Modal from "./Modal";
 import Cart from "./Cart";
 
 export default function Header({
-  totalItems,
   cart,
+  orderSummary,
   incrementQuantity,
   decrementQuantity,
   emptyCart,
@@ -30,13 +30,18 @@ export default function Header({
         <Nav />
         <div className="cart-icon" onClick={toggleModal}>
           <img src="../src/assets/shared/desktop/icon-cart.svg" />
-          {cart.length > 0 && <div className="total-items">{totalItems ? totalItems : ""}</div>}
+          {cart.length > 0 && (
+            <div className="total-items">
+              {orderSummary.totalItemsInCart ? orderSummary.totalItemsInCart : ""}
+            </div>
+          )}
         </div>
       </div>
       {isModalOpen && (
         <Modal closeModal={closeModal} isCart={true}>
           <Cart
             cart={cart}
+            orderSummary={orderSummary}
             emptyCart={emptyCart}
             incrementQuantity={incrementQuantity}
             decrementQuantity={decrementQuantity}

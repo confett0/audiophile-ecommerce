@@ -5,7 +5,7 @@ import CheckoutForm from "../components/CheckoutForm";
 import Modal from "../components/Modal";
 import OrderConfirmation from "../components/OrderConfirmation";
 
-export default function Checkout({ cart }) {
+export default function Checkout({ cart, orderSummary }) {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ export default function Checkout({ cart }) {
           <div>
             <Cart
               cart={cart}
+              orderSummary={orderSummary}
               isCheckoutPage={true}
               handleClick={handleSubmit}
             />
@@ -36,7 +37,7 @@ export default function Checkout({ cart }) {
       </div>
       {isConfirmationModalOpen && (
         <Modal closeModal={closeOrderConfirmationModal}>
-          <OrderConfirmation cart={cart} closeModal={closeOrderConfirmationModal} />
+          <OrderConfirmation cart={cart} orderSummary={orderSummary} closeModal={closeOrderConfirmationModal} />
         </Modal>
       )}
     </div>

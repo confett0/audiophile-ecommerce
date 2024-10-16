@@ -3,8 +3,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Layout({
-  totalItems,
   cart,
+  orderSummary,
   emptyCart,
   incrementQuantity,
   decrementQuantity,
@@ -12,7 +12,7 @@ export default function Layout({
   return (
     <>
       <Header
-        totalItems={totalItems}
+        orderSummary={orderSummary}
         cart={cart}
         emptyCart={emptyCart}
         incrementQuantity={incrementQuantity}
