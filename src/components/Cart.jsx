@@ -14,7 +14,7 @@ export default function Cart({
     <div key={item.id} className="cart-item">
       <img src={item.image.mobile} />
       <div>
-        <p className="cart-item-name">{item.name}</p>
+        <p className="cart-item-name">{item.shortName}</p>
         <p>${item.price}</p>
       </div>
       {isCheckoutPage ? (

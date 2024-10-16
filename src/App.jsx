@@ -26,17 +26,17 @@ export default function App() {
   const addToCart = (newItem, itemQuantity) => {
     if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
-      // check if item is already added to cart
+      // check if item is already in cart
       const isAlreadyInCart = prevCart.find((item) => item.id === newItem.id);
       if (isAlreadyInCart) {
-        // if it is update its quantity
+        // if it is, update its quantity
         return prevCart.map((item) =>
           item.id === newItem.id
             ? { ...item, quantity: item.quantity + itemQuantity }
             : item
         );
       } else {
-        // if not add to cart
+        // if not, add to cart
         return [
           ...prevCart,
           {
@@ -132,12 +132,7 @@ export default function App() {
             />
             <Route
               path=":productSlug"
-              element={
-                <ProductPage
-                  cart={cart}
-                  addToCart={addToCart}
-                />
-              }
+              element={<ProductPage cart={cart} addToCart={addToCart} />}
             />
           </Route>
           <Route

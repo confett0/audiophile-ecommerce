@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function OrderConfirmation({ cart, orderSummary, closeModal }) {
     const firstCartItem = cart[0];
+
   return (
     <div className="order-confirmation">
       <img src="src/assets/checkout/icon-order-confirmation.svg" />
@@ -12,7 +13,7 @@ export default function OrderConfirmation({ cart, orderSummary, closeModal }) {
             <div className="ordered-items-wrap">
                 <img src={firstCartItem.image.mobile} />
                 <div>
-                  <p>{firstCartItem.name}</p>
+                  <p>{firstCartItem.shortName}</p>
                   <p>${firstCartItem.price}</p>
                 </div>
                 <p>x{firstCartItem.quantity}</p>
