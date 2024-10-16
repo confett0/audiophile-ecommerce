@@ -1,17 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-export default function ProductPage({
-  cart,
-  addToCart,
-  itemQuantity,
-  setItemQuantity,
-  incrementQuantity,
-  decrementQuantity,
-}) {
+export default function ProductPage({ cart, addToCart }) {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState(null);
+  const [itemQuantity, setItemQuantity] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +17,14 @@ export default function ProductPage({
   }, [productSlug]);
 
   console.log(productData);
+
+  const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
+
+  const decrementQuantity = () =>
+    setItemQuantity((prevCount) => {
+      if (prevCount <= 1) return prevCount;
+      return prevCount - 1;
+    });
 
   if (!productData) {
     return <div>Loading...</div>;
@@ -38,11 +40,15 @@ export default function ProductPage({
 
   return (
     <div className="content-wrap">
-      <button onClick={() => navigate(-1)} className="minimal back-button">Go back</button>
+      <button onClick={() => navigate(-1)} className="minimal back-button">
+        Go back
+      </button>
       <div className="product-wrap">
         <img src={productData.image.desktop} />
         <div className="product-info">
-          {productData.new && <p className="overline orange-text">New product</p>}
+          {productData.new && (
+            <p className="overline orange-text">New product</p>
+          )}
           <h2>{productData.name}</h2>
           <p>{productData.description}</p>
           <h6>$ {productData.price}</h6>
@@ -69,19 +75,25 @@ export default function ProductPage({
                 +
               </button>
             </div>
-            <button className="orange" onClick={() => addToCart(productData)}>
+            <button
+              className="orange"
+              onClick={() => {
+                addToCart(productData, itemQuantity);
+                setItemQuantity(1); // reset itemQuantity state
+              }}
+            >
               Add to cart
             </button>
           </div>
         </div>
-      <div className="product-features">
-        <h3>Features</h3>
-        <p>{productData.features}</p>
-      </div>
-      <div className="product-included">
-        <h3>Included items</h3>
-        {includedItemElements}
-      </div>
+        <div className="product-features">
+          <h3>Features</h3>
+          <p>{productData.features}</p>
+        </div>
+        <div className="product-included">
+          <h3>Included items</h3>
+          {includedItemElements}
+        </div>
       </div>
       <section className="product-gallery">
         <img className="first" src={productData.gallery.first.desktop} />
@@ -95,7 +107,9 @@ export default function ProductPage({
             <div className="related-product-card" key={product.slug}>
               <img src={product.image.desktop} />
               <h5>{product.name}</h5>
-              <Link to={`/shop/${product.slug}`} ><button className="orange">See product</button></Link>
+              <Link to={`/shop/${product.slug}`}>
+                <button className="orange">See product</button>
+              </Link>
             </div>
           ))}
         </div>

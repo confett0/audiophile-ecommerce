@@ -11,7 +11,6 @@ import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const [itemQuantity, setItemQuantity] = useState(1);
 
   const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
 
@@ -24,7 +23,7 @@ export default function App() {
     grandTotal: orderTotal + 50,
   };
 
-  const addToCart = (newItem) => {
+  const addToCart = (newItem, itemQuantity) => {
     if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
       // check if item is already added to cart
@@ -50,7 +49,6 @@ export default function App() {
         ];
       }
     });
-    setItemQuantity(1); // reset itemQuantity state
   };
 
   const emptyCart = () => setCart([]);
@@ -83,15 +81,6 @@ export default function App() {
       }
     });
   };
-
-  const incrementItemQuantity = () =>
-    setItemQuantity((prevCount) => prevCount + 1);
-
-  const decrementItemQuantity = () =>
-    setItemQuantity((prevCount) => {
-      if (prevCount <= 1) return prevCount;
-      return prevCount - 1;
-    });
 
   return (
     <BrowserRouter>
@@ -147,10 +136,6 @@ export default function App() {
                 <ProductPage
                   cart={cart}
                   addToCart={addToCart}
-                  itemQuantity={itemQuantity}
-                  setItemQuantity={setItemQuantity}
-                  incrementQuantity={incrementItemQuantity}
-                  decrementQuantity={decrementItemQuantity}
                 />
               }
             />
