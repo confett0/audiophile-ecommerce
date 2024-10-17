@@ -16,8 +16,6 @@ export default function ProductPage({ cart, addToCart }) {
       );
   }, [productSlug]);
 
-  console.log(productData);
-
   const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
 
   const decrementQuantity = () =>

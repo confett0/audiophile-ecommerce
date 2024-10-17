@@ -485,6 +485,7 @@ footer svg:hover {
 .quantity-button {
   color: #b5b5b5;
   margin: 0;
+  padding: 0 0.8rem;
 }
 
 .quantity-button:hover {
@@ -500,10 +501,6 @@ input[type="number"] {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-}
-
-.quantity-button {
-  padding: 0.8rem;
 }
 
 .product-gallery {
@@ -630,7 +627,7 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   display: flex;
   gap: 1rem;
-  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
 .cart-item img {
@@ -647,6 +644,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cart-item-price {
   margin-bottom: 0;
+}
+
+.cart .cart-quantity-selector,
+.cart .cart-quantity-selector {
+  height: 2rem;
+  width: 2rem;
+}
+
+.cart .quantity-wrap {
+  margin-left: auto;
 }
 
 .cart-total-wrap {
