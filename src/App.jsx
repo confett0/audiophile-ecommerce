@@ -30,6 +30,7 @@ export default function App() {
           ...prevCart,
           {
             name: newItem.name,
+            shortName: newItem.shortName,
             image: newItem.image,
             id: newItem.id,
             price: newItem.price,

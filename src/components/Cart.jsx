@@ -8,7 +8,6 @@ export default function Cart({
   isCheckoutPage,
   handleClick,
 }) {
-
   const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
   const shipping = 50;
   const vatRate = 0.2; // 20% VAT
@@ -20,7 +19,7 @@ export default function Cart({
       <img src={item.image.mobile} />
       <div>
         <p className="cart-item-name">{item.shortName}</p>
-        <p>${item.price}</p>
+        <p className="cart-item-price">${item.price}</p>
       </div>
       {isCheckoutPage ? (
         <p>x{item.quantity}</p>
@@ -56,14 +55,18 @@ export default function Cart({
       <div className="cart-total-wrap">
         <p>TOTAL</p>
         <p className="cart-total">${orderTotal}</p>
-        <p>SHIPPING</p>
-        <p className="cart-total">${shipping}</p>
-        <p>VAT (INCLUDED)</p>
-        <p className="cart-total">${vat}</p>
-        <p>GRANDTOTAL</p>
-        <p className="cart-total orange-text">${grandTotal}</p>
+        {isCheckoutPage && (
+          <>
+            <p>SHIPPING</p>
+            <p className="cart-total">${shipping}</p>
+            <p>VAT (INCLUDED)</p>
+            <p className="cart-total">${vat}</p>
+            <p>GRANDTOTAL</p>
+            <p className="cart-total orange-text">${grandTotal}</p>
+          </>
+        )}
       </div>
-      <button onClick={handleClick} className="orange cart-button" >
+      <button onClick={handleClick} className="orange cart-button">
         {isCheckoutPage ? "Continue & Pay" : "Checkout"}
       </button>
     </div>
