@@ -4,7 +4,6 @@ import Footer from "./Footer";
 
 export default function Layout({
   cart,
-  orderSummary,
   emptyCart,
   incrementQuantity,
   decrementQuantity,
@@ -12,7 +11,6 @@ export default function Layout({
   return (
     <>
       <Header
-        orderSummary={orderSummary}
         cart={cart}
         emptyCart={emptyCart}
         incrementQuantity={incrementQuantity}

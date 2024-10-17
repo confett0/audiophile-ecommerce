@@ -12,17 +12,6 @@ import ScrollToTop from "./components/ScrollToTop";
 export default function App() {
   const [cart, setCart] = useState([]);
 
-  const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
-
-  const orderSummary = {
-    totalItemsInCart: cart.reduce((a, b) => a + b.quantity, 0),
-    orderTotal: orderTotal,
-    shipping: 50,
-    vatRate: 0.2, // 20% VAT
-    vat: (orderTotal * 0.2).toFixed(0),
-    grandTotal: orderTotal + 50,
-  };
-
   const addToCart = (newItem, itemQuantity) => {
     if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
@@ -90,7 +79,6 @@ export default function App() {
           path="/"
           element={
             <Layout
-              orderSummary={orderSummary}
               cart={cart}
               emptyCart={emptyCart}
               incrementQuantity={incrementQuantityInCart}
@@ -137,7 +125,7 @@ export default function App() {
           </Route>
           <Route
             path="checkout"
-            element={<Checkout cart={cart} orderSummary={orderSummary} />}
+            element={<Checkout cart={cart} />}
           ></Route>
         </Route>
       </Routes>

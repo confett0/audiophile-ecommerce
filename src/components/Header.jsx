@@ -6,13 +6,13 @@ import Cart from "./Cart";
 
 export default function Header({
   cart,
-  orderSummary,
   incrementQuantity,
   decrementQuantity,
   emptyCart,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const totalItemsInCart = cart.reduce((a, b) => a + b.quantity, 0);
 
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
   const closeModal = () => setIsModalOpen(false);
@@ -32,7 +32,7 @@ export default function Header({
           <img src="../src/assets/shared/desktop/icon-cart.svg" />
           {cart.length > 0 && (
             <div className="total-items">
-              {orderSummary.totalItemsInCart ? orderSummary.totalItemsInCart : ""}
+              {totalItemsInCart ? totalItemsInCart : ""}
             </div>
           )}
         </div>
@@ -41,7 +41,6 @@ export default function Header({
         <Modal closeModal={closeModal} isCart={true}>
           <Cart
             cart={cart}
-            orderSummary={orderSummary}
             emptyCart={emptyCart}
             incrementQuantity={incrementQuantity}
             decrementQuantity={decrementQuantity}
