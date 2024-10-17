@@ -22,7 +22,7 @@ export default function Cart({
         <p className="cart-item-price">${item.price}</p>
       </div>
       {isCheckoutPage ? (
-        <p>x{item.quantity}</p>
+        <p className="cart-item-quantity">x{item.quantity}</p>
       ) : (
         <CartQuantitySelector
           item={item}
@@ -61,8 +61,8 @@ export default function Cart({
             <p className="cart-total">${shipping}</p>
             <p>VAT (INCLUDED)</p>
             <p className="cart-total">${vat}</p>
-            <p>GRANDTOTAL</p>
-            <p className="cart-total orange-text">${grandTotal}</p>
+            <p className="grandtotal">GRANDTOTAL</p>
+            <p className="cart-total grandtotal">${grandTotal}</p>
           </>
         )}
       </div>

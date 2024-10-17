@@ -652,7 +652,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 2rem;
 }
 
-.cart .quantity-wrap {
+.cart .quantity-wrap, .cart-item-quantity {
   margin-left: auto;
 }
 
@@ -669,6 +669,14 @@ input[type=number]::-webkit-outer-spin-button {
   justify-self: end;
   color: #000;
   font-weight: 700;
+}
+
+.grandtotal {
+  margin-top: 1rem;
+}
+
+.cart-total.grandtotal {
+  color: var(--orange);
 }
 
 .cart-button {
@@ -694,6 +702,13 @@ input[type=number]::-webkit-outer-spin-button {
 .form-wrap {
   border-radius: 0.5rem;
   background: #FFF;
+}
+
+.checkout-cart {
+  padding: 2rem;
+}
+
+.form-wrap {
   padding: 3rem;
 }
 
