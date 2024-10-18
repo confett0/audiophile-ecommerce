@@ -66,9 +66,11 @@ export default function Cart({
           </>
         )}
       </div>
-      <button onClick={handleClick} className="orange cart-button">
-        {isCheckoutPage ? "Continue & Pay" : "Checkout"}
-      </button>
+      {!isCheckoutPage && (
+        <button onClick={handleClick} className="orange cart-button">
+          Checkout
+        </button>
+      )}
     </div>
   );
 }

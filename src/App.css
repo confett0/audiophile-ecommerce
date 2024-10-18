@@ -690,6 +690,10 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
 }
 
+form {
+  align-self: stretch;
+}
+
 .checkout-grid {
   display: grid;
   align-items: start;
@@ -698,14 +702,18 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-.checkout-cart,
+.cart-wrap,
 .form-wrap {
   border-radius: 0.5rem;
   background: #FFF;
 }
 
-.checkout-cart {
+.cart-wrap {
   padding: 2rem;
+}
+
+.checkout-button {
+  width: 100%;
 }
 
 .form-wrap {

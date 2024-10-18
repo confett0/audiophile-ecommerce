@@ -4,9 +4,8 @@ export default function CheckoutForm() {
   const [paymentInputStatus, setPaymentInputStatus] = useState(0); // 0: no input selected - 1: e-money input selected - 2: cash on delivery input selected
 
   return (
-    <div className="form-wrap">
+    <div className="form-wrap" id="checkout-form">
       <h3>Checkout</h3>
-      <form>
         <fieldset>
           <legend>Billing details</legend>
           <label>
@@ -126,7 +125,6 @@ export default function CheckoutForm() {
             ""
           )}
         </fieldset>
-      </form>
     </div>
   );
 }

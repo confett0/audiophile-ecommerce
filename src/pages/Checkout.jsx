@@ -12,10 +12,10 @@ export default function Checkout({ cart, orderSummary }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsConfirmationModalOpen(true)
+    setIsConfirmationModalOpen(true);
   };
 
-  const closeOrderConfirmationModal = () => setIsConfirmationModalOpen(false)
+  const closeOrderConfirmationModal = () => setIsConfirmationModalOpen(false);
 
   return (
     <div className="checkout-background">
@@ -23,21 +23,33 @@ export default function Checkout({ cart, orderSummary }) {
         <button onClick={() => navigate(-1)} className="minimal back-button">
           Go back
         </button>
-        <div className="checkout-grid">
-          <CheckoutForm />
-          <div>
-            <Cart
-              cart={cart}
-              orderSummary={orderSummary}
-              isCheckoutPage={true}
-              handleClick={handleSubmit}
-            />
+        <form onSubmit={handleSubmit}>
+          <div className="checkout-grid">
+            <CheckoutForm />
+            <div className="cart-wrap">
+              <Cart
+                cart={cart}
+                orderSummary={orderSummary}
+                isCheckoutPage={true}
+                handleClick={handleSubmit}
+              />
+              {cart.length > 0 && (
+                <button className="orange checkout-button" type="submit">
+                  Continue & Pay
+                </button>
+              )}
+            </div>
           </div>
-        </div>
+        </form>
       </div>
+
       {isConfirmationModalOpen && (
         <Modal closeModal={closeOrderConfirmationModal}>
-          <OrderConfirmation cart={cart} orderSummary={orderSummary} closeModal={closeOrderConfirmationModal} />
+          <OrderConfirmation
+            cart={cart}
+            orderSummary={orderSummary}
+            closeModal={closeOrderConfirmationModal}
+          />
         </Modal>
       )}
     </div>
