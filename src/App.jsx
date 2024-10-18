@@ -126,7 +126,7 @@ export default function App() {
           </Route>
           <Route
             path="checkout"
-            element={<Checkout cart={cart} />}
+            element={<Checkout cart={cart} emptyCart={emptyCart} />}
           ></Route>
         </Route>
       </Routes>

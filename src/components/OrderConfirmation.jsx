@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function OrderConfirmation({ cart, closeModal }) {
+export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
+  const navigate = useNavigate();
+
   const firstCartItem = cart[0];
   const shipping = 50;
   const grandTotal =
     cart.reduce((a, b) => a + b.price * b.quantity, 0) + shipping;
+
+    const handleClick = () => {
+      emptyCart();
+      navigate("/");
+    }
 
   return (
     <div className="order-confirmation">
