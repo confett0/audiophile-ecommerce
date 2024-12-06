@@ -901,3 +901,14 @@ input[type="radio"] {
     gap: 4rem;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .hero-area {
+    background: radial-gradient(transparent, #0E0E0E 75%), url(/src/assets/home/tablet/image-header.jpg) center / cover;
+    justify-content: center;
+  }
+
+  .home-product-card {
+    text-align: center;
+}
+}
