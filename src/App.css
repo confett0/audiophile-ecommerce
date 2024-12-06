@@ -431,11 +431,11 @@ footer svg:hover {
 }
 
 .product-wrap img {
-  width: 30rem;
+  width: 45%;
 }
 
 .product-info {
-  width: 28rem;
+  width: 45%;
 }
 
 .product-features {
@@ -894,5 +894,9 @@ input[type="radio"] {
   .area,
   .category-links {
     width: 100%;
+  }
+
+  .product-wrap {
+    gap: 4rem;
   }
 }

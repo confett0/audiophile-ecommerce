@@ -41,7 +41,7 @@ export default function ProductPage({ cart, addToCart }) {
       <button onClick={() => navigate(-1)} className="minimal back-button">
         Go back
       </button>
-      <div className="product-wrap">
+      <section className="product-wrap">
         <img src={productData.image.desktop} />
         <div className="product-info">
           {productData.new && (
@@ -92,7 +92,7 @@ export default function ProductPage({ cart, addToCart }) {
           <h3>Included items</h3>
           {includedItemElements}
         </div>
-      </div>
+      </section>
       <section className="product-gallery">
         <img className="first" src={productData.gallery.first.desktop} />
         <img className="second" src={productData.gallery.second.desktop} />
