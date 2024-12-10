@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Nav from "./Nav";
+import ResponsiveNav from "./ResposiveNav";
 import Modal from "./Modal";
 import Cart from "./Cart";
 
@@ -27,7 +27,7 @@ export default function Header({
         <Link to="/">
           <img src="../src/assets/shared/desktop/logo.svg" />
         </Link>
-        <Nav />
+        <ResponsiveNav />
         <div className="cart-icon" onClick={toggleModal}>
           <img src="../src/assets/shared/desktop/icon-cart.svg" />
           {cart.length > 0 && (
