@@ -8,9 +8,7 @@ export default function ResponsiveNav() {
 
   return (
     <nav>
-      <div className="menu-icon" onClick={toggleNav}>
-        ≡
-      </div>
+      <img src="./src/assets/shared/tablet/icon-hamburger.svg" className="menu-icon" onClick={toggleNav} />
       {showMobileNav ? (
         <div className="mobile-nav">
           <CategoryLinks />
