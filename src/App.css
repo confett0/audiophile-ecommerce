@@ -174,9 +174,13 @@ header {
   height: 6rem;
 }
 
-nav {
+nav ul {
   display: flex;
   gap: 2rem;
+}
+
+nav ul li {
+  list-style: none;
 }
 
 .active {
