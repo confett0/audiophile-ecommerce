@@ -978,4 +978,39 @@ input[type="radio"] {
     background: url("./src/assets/home/tablet/image-speaker-zx7.jpg");
   } */
 
+  .before-footer {
+    flex-direction: column-reverse;
+  }
+
+  .before-footer .text {
+    padding: 0 4rem;
+    text-align: center;
+  }
+
+  .footer-wrap img {
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+
+  .footer-wrap nav {
+    grid-area: 2 / 1 / span 1 / span 2;
+    justify-self: start;
+  }
+
+  .footer-wrap .footer-text {
+    grid-area: 3 / 1 / span 1 / span 2;
+  }
+
+  .footer-wrap .social-icons {
+    grid-area: 4 / 2 / span 1 / span 1;
+  }
+
+  .footer-wrap .social-icons {
+    align-self: center;
+    grid-area: 4 / 2 / span 1 / span 1;
+  }
+
+  .footer-wrap .copyright {
+    grid-area: 4 / 1 / span 1 / span 1;
+  }
+
 }

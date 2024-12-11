@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footer-wrap">
         <img src="../src/assets/shared/desktop/logo.svg" />
         <Nav />
-        <p>
+        <p className="footer-text">
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
@@ -35,7 +35,7 @@ export default function Footer() {
             />
           </svg>
         </div>
-        <p>Copyright 2021. All Rights Reserved</p>
+        <p className="copyright">Copyright 2021. All Rights Reserved</p>
       </div>
     </footer>
   );
