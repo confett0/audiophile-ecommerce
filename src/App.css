@@ -394,6 +394,10 @@ footer svg:hover {
   width: 20rem;
 }
 
+.black-area img {
+  border-radius: 0.5rem;
+}
+
 .before-footer {
   gap: 7rem;
   margin: 5rem 0 6rem;
@@ -978,8 +982,16 @@ input[type="radio"] {
     background: url("./src/assets/home/tablet/image-speaker-zx7.jpg");
   } */
 
+  .black-area img {
+    width: 100%;
+  }
+
   .before-footer {
     flex-direction: column-reverse;
+  }
+
+  .before-footer img {
+    width: 100%;
   }
 
   .before-footer .text {

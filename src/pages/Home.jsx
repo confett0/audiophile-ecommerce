@@ -21,7 +21,18 @@ export default function Home() {
       <div className="content-wrap">
         <CategoryLinks />
         <section className="orange-area area">
-          <img src="./src/assets/home/desktop/image-speaker-zx9.png" />
+        <picture>
+            <source
+              media="(max-width: 900px)"
+              srcSet="./src/assets/home/tablet/image-speaker-zx9.png 900w"
+              sizes="900x"
+            />
+            <source
+              srcSet="./src/assets/home/desktop/image-speaker-zx9.png 1280w"
+              sizes="1280px"
+            />
+            <img src="./src/assets/home/desktop/image-speaker-zx9.png" />
+          </picture>
           <div className="home-product-card">
             <h1>ZX9 SPEAKER</h1>
             <p>
@@ -42,7 +53,18 @@ export default function Home() {
           </div>
         </section>
         <section className="black-area area">
-          <img src="./src/assets/home/desktop/image-earphones-yx1.jpg" />
+          <picture>
+            <source
+              media="(max-width: 900px)"
+              srcSet="./src/assets/home/tablet/image-earphones-yx1.jpg 900w"
+              sizes="900x"
+            />
+            <source
+              srcSet="./src/assets/home/desktop/image-earphones-yx1.jpg 1280w"
+              sizes="1280px"
+            />
+            <img src="./src/assets/home/desktop/image-earphones-yx1.jpg" />
+          </picture>
           <div className="card-wrap">
             <div className="home-product-card">
               <h4>YX1 EARPHONES</h4>
