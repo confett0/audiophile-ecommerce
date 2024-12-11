@@ -366,7 +366,7 @@ footer svg:hover {
 }
 
 .grey-area {
-  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg");
+  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg") center/cover;;
   height: 20rem;
   padding: 0 9rem;
 }
@@ -925,8 +925,15 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 900px) {
+
+  header {
+    padding: 0
+  }
+
   .header-wrap {
     justify-content: flex-start;
+    margin: auto;
+    width: 90%;
   }
 
   header nav {
@@ -948,10 +955,27 @@ input[type="radio"] {
   .hero-area {
     background: radial-gradient(transparent, #0E0E0E 75%), url(/src/assets/home/tablet/image-header.jpg) center / cover;
     justify-content: center;
+    height: 45rem;
   }
 
   .home-product-card {
     text-align: center;
   }
+
+  .orange-area {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 50rem;
+  }
+
+  .orange-area img {
+    margin-bottom: 2rem;
+    width: 12rem;
+  }
+
+  /* .grey-area {
+    background: url("./src/assets/home/tablet/image-speaker-zx7.jpg");
+  } */
 
 }
