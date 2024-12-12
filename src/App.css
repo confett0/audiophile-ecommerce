@@ -1056,6 +1056,10 @@ input[type="radio"] {
     width: 100%;
   }
 
+  .cart-modal {
+    right: 5%;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1143,6 +1147,10 @@ input[type="radio"] {
 
   .related-products-wrap {
     flex-wrap: wrap;
+  }
+
+  .cart-modal {
+    width: 90%;
   }
 
 }
