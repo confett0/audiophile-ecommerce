@@ -299,7 +299,7 @@ footer svg:hover {
 }
 
 .home-product-card {
-  width: 25rem;
+  max-width: 25rem;
 }
 
 .hero-area h6 {
@@ -376,26 +376,22 @@ footer svg:hover {
   justify-content: space-between;
 }
 
-.black-area>*,
-.before-footer>* {
+.black-area img, .black-area .card-wrap,
+.before-footer img {
   border-radius: 0.5rem;
 }
 
 .black-area .card-wrap {
   background: #F1F1F1;
-  height: 20rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
+  align-self: stretch;
   padding-left: 7%;
+  width: 100%;
 }
 
 .black-area .home-product-card {
-  width: 20rem;
-}
-
-.black-area img {
-  border-radius: 0.5rem;
+  max-width: 20rem;
 }
 
 .before-footer {
