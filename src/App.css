@@ -1150,4 +1150,8 @@ input[type="radio"] {
     width: 90%;
   }
 
+  .confirmation-modal {
+    width: 95%;
+  }
+
 }
