@@ -17,19 +17,19 @@ export default function BeforeFooterArea() {
       <picture>
       <source
               media="(max-width: 500px)"
-              srcSet="../src/assets/shared/mobile/image-best-gear.jpg 500w"
+              srcSet="/assets/shared/mobile/image-best-gear.jpg 500w"
               sizes="500px"
             />
             <source
               media="(max-width: 900px)"
-              srcSet="../src/assets/shared/tablet/image-best-gear.jpg 900w"
+              srcSet="/assets/shared/tablet/image-best-gear.jpg 900w"
               sizes="900px"
             />
             <source
-              srcSet="../src/assets/shared/desktop/image-best-gear.jpg 1280w"
+              srcSet="/assets/shared/desktop/image-best-gear.jpg 1280w"
               sizes="1280px"
             />
-            <img src="../src/assets/shared/desktop/image-best-gear.jpg" />
+            <img src="/assets/shared/desktop/image-best-gear.jpg" />
           </picture>
     </section>
   );

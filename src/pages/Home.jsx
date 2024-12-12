@@ -24,19 +24,19 @@ export default function Home() {
         <picture>
         <source
               media="(max-width: 500px)"
-              srcSet="./src/assets/home/mobile/image-speaker-zx9.png 500w"
+              srcSet="/assets/home/mobile/image-speaker-zx9.png 500w"
               sizes="500px"
             />
             <source
               media="(max-width: 900px)"
-              srcSet="./src/assets/home/tablet/image-speaker-zx9.png 900w"
+              srcSet="/assets/home/tablet/image-speaker-zx9.png 900w"
               sizes="900px"
             />
             <source
-              srcSet="./src/assets/home/desktop/image-speaker-zx9.png 1280w"
+              srcSet="/assets/home/desktop/image-speaker-zx9.png 1280w"
               sizes="1280px"
             />
-            <img src="./src/assets/home/desktop/image-speaker-zx9.png" />
+            <img src="/assets/home/desktop/image-speaker-zx9.png" />
           </picture>
           <div className="home-product-card">
             <h1>ZX9 SPEAKER</h1>
@@ -61,19 +61,19 @@ export default function Home() {
           <picture>
           <source
               media="(max-width: 500px)"
-              srcSet="./src/assets/home/mobile/image-earphones-yx1.jpg 500w"
+              srcSet="/assets/home/mobile/image-earphones-yx1.jpg 500w"
               sizes="500px"
             />
             <source
               media="(max-width: 900px)"
-              srcSet="./src/assets/home/tablet/image-earphones-yx1.jpg 900w"
+              srcSet="/assets/home/tablet/image-earphones-yx1.jpg 900w"
               sizes="900px"
             />
             <source
-              srcSet="./src/assets/home/desktop/image-earphones-yx1.jpg 1280w"
+              srcSet="/assets/home/desktop/image-earphones-yx1.jpg 1280w"
               sizes="1280px"
             />
-            <img src="./src/assets/home/desktop/image-earphones-yx1.jpg" />
+            <img src="/assets/home/desktop/image-earphones-yx1.jpg" />
           </picture>
           <div className="card-wrap">
             <div className="home-product-card">

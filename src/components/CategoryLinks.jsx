@@ -5,19 +5,19 @@ export default function CategoryLinks({ closeNav }) {
   return (
     <section className="category-links">
       <CategoryLink
-        imgUrl="../src/assets/shared/desktop/image-category-thumbnail-headphones.png"
+        imgUrl="/assets/shared/desktop/image-category-thumbnail-headphones.png"
         categoryName="Headphones"
         link="/shop/headphones"
         closeNav={closeNav}
       />
       <CategoryLink
-        imgUrl="../src/assets/shared/desktop/image-category-thumbnail-speakers.png"
+        imgUrl="/assets/shared/desktop/image-category-thumbnail-speakers.png"
         categoryName="Speakers"
         link="/shop/speakers"
         closeNav={closeNav}
       />
       <CategoryLink
-        imgUrl="../src/assets/shared/desktop/image-category-thumbnail-earphones.png"
+        imgUrl="/assets/shared/desktop/image-category-thumbnail-earphones.png"
         categoryName="Earphones"
         link="/shop/earphones"
         closeNav={closeNav}
