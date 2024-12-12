@@ -25,12 +25,12 @@ export default function Home() {
         <source
               media="(max-width: 500px)"
               srcSet="./src/assets/home/mobile/image-speaker-zx9.png 500w"
-              sizes="500x"
+              sizes="500px"
             />
             <source
               media="(max-width: 900px)"
               srcSet="./src/assets/home/tablet/image-speaker-zx9.png 900w"
-              sizes="900x"
+              sizes="900px"
             />
             <source
               srcSet="./src/assets/home/desktop/image-speaker-zx9.png 1280w"
@@ -62,12 +62,12 @@ export default function Home() {
           <source
               media="(max-width: 500px)"
               srcSet="./src/assets/home/mobile/image-earphones-yx1.jpg 500w"
-              sizes="500x"
+              sizes="500px"
             />
             <source
               media="(max-width: 900px)"
               srcSet="./src/assets/home/tablet/image-earphones-yx1.jpg 900w"
-              sizes="900x"
+              sizes="900px"
             />
             <source
               srcSet="./src/assets/home/desktop/image-earphones-yx1.jpg 1280w"

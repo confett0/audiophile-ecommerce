@@ -18,12 +18,12 @@ export default function BeforeFooterArea() {
       <source
               media="(max-width: 500px)"
               srcSet="../src/assets/shared/mobile/image-best-gear.jpg 500w"
-              sizes="500x"
+              sizes="500px"
             />
             <source
               media="(max-width: 900px)"
               srcSet="../src/assets/shared/tablet/image-best-gear.jpg 900w"
-              sizes="900x"
+              sizes="900px"
             />
             <source
               srcSet="../src/assets/shared/desktop/image-best-gear.jpg 1280w"
