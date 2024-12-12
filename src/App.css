@@ -744,18 +744,11 @@ form {
 .form-wrap {
   border-radius: 0.5rem;
   background: #FFF;
-}
-
-.cart-wrap {
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .checkout-button {
   width: 100%;
-}
-
-.form-wrap {
-  padding: 3rem;
 }
 
 fieldset {
@@ -1058,6 +1051,10 @@ input[type="radio"] {
 
   .cart-modal {
     right: 5%;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
   }
 
 }
