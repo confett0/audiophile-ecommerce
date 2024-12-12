@@ -9,7 +9,7 @@ export default function ResponsiveNav() {
 
   return (
     <nav>
-      <img src="../src/assets/shared/tablet/icon-hamburger.svg" className="menu-icon" onClick={toggleNav} />
+      <img src="/assets/shared/tablet/icon-hamburger.svg" className="menu-icon" onClick={toggleNav} />
       {showMobileNav ? (
         <>
         <div className="modal-wrap" onClick={closeNav}></div>

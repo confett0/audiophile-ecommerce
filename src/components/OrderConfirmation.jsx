@@ -17,7 +17,7 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
 
   return (
     <div className="order-confirmation">
-      <img src="src/assets/checkout/icon-order-confirmation.svg" />
+      <img src="/assets/checkout/icon-order-confirmation.svg" />
       <h3>
         Thank you <br />
         for your order
