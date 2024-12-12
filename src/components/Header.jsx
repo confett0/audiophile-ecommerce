@@ -25,7 +25,7 @@ export default function Header({
     <header>
       <div className="header-wrap">
         <Link to="/">
-          <img src="../src/assets/shared/desktop/logo.svg" />
+          <img className="logo" src="../src/assets/shared/desktop/logo.svg" />
         </Link>
         <ResponsiveNav />
         <div className="cart-icon" onClick={toggleModal}>

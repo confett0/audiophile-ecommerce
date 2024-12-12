@@ -1,31 +1,41 @@
 import { Link } from "react-router-dom";
 
-export default function CategoryLinks() {
+export default function CategoryLinks({ closeNav }) {
   return (
     <section className="category-links">
       <CategoryLink
         imgUrl="../src/assets/shared/desktop/image-category-thumbnail-headphones.png"
         categoryName="Headphones"
+        link="/shop/headphones"
+        closeNav={closeNav}
       />
       <CategoryLink
         imgUrl="../src/assets/shared/desktop/image-category-thumbnail-speakers.png"
         categoryName="Speakers"
+        link="/shop/speakers"
+        closeNav={closeNav}
       />
       <CategoryLink
         imgUrl="../src/assets/shared/desktop/image-category-thumbnail-earphones.png"
         categoryName="Earphones"
+        link="/shop/earphones"
+        closeNav={closeNav}
       />
     </section>
   );
 }
 
-function CategoryLink({ imgUrl, categoryName, link }) {
+function CategoryLink({ imgUrl, categoryName, link, closeNav }) {
   return (
     <div className="category-link">
       <img src={imgUrl} />
       <div className="category-name">
         <h6>{categoryName}</h6>
-        <button className="minimal">Shop <span>&gt;</span></button>
+        <Link to={link}>
+          <button onClick={closeNav} className="minimal">
+            Shop <span>&gt;</span>
+          </button>
+        </Link>
       </div>
     </div>
   );

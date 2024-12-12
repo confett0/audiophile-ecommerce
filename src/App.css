@@ -194,10 +194,16 @@ nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2rem;
   position: absolute;
   top: 6rem;
   left: 0;
   width: 100vw;
+  z-index: 2;
+}
+
+.mobile-nav h6 {
+  color: #000;
 }
 
 .active {
@@ -940,6 +946,11 @@ input[type="radio"] {
 
   header nav {
     order: -1;
+  }
+
+  .menu-icon, .logo, .cart-icon {
+    position: relative;
+    z-index: 2;
   }
 
   .menu-icon {
