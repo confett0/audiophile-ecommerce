@@ -26,11 +26,11 @@ export default function Header({
     <header>
       <div className="header-wrap">
         <Link to="/">
-          <img className="logo" src="src/assets/shared/desktop/logo.svg" />
+          <img className="logo" src="/assets/shared/desktop/logo.svg" />
         </Link>
         <ResponsiveNav />
         <div className="cart-icon" onClick={toggleModal}>
-          <img src="/src/assets/shared/desktop/icon-cart.svg" />
+          <img src="/assets/shared/desktop/icon-cart.svg" />
           {cart.length > 0 && (
             <div className="total-items">
               {totalItemsInCart ? totalItemsInCart : ""}
