@@ -4,6 +4,7 @@ import Cart from "../components/Cart";
 import CheckoutForm from "../components/CheckoutForm";
 import Modal from "../components/Modal";
 import OrderConfirmation from "../components/OrderConfirmation";
+import PropTypes from "prop-types";
 
 export default function Checkout({ cart, emptyCart }) {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
@@ -53,4 +54,9 @@ export default function Checkout({ cart, emptyCart }) {
       )}
     </div>
   );
+}
+
+Checkout.propTypes = {
+  cart: PropTypes.array,
+  emptyCart: PropTypes.func,
 }

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function ProductPage({ cart, addToCart }) {
+export default function ProductPage({ addToCart }) {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState(null);
   const [itemQuantity, setItemQuantity] = useState(1);
@@ -128,4 +129,8 @@ export default function ProductPage({ cart, addToCart }) {
       </section>
     </div>
   );
+}
+
+ProductPage.propTypes = {
+  addToCart: PropTypes.func,
 }

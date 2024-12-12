@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import PropTypes from "prop-types";
 
 export default function Layout({
   cart,
@@ -22,4 +23,11 @@ export default function Layout({
       <Footer />
     </>
   );
+}
+
+Layout.propTypes = {
+  cart: PropTypes.array,
+  incrementQuantity: PropTypes.func,
+  decrementQuantity: PropTypes.func,
+  emptyCart: PropTypes.func,
 }

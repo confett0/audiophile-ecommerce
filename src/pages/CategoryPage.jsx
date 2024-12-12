@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
+import PropTypes from "prop-types";
 
-export default function CategoryPage({ category, cart, addToCart }) {
+export default function CategoryPage({ category, addToCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -28,4 +29,9 @@ export default function CategoryPage({ category, cart, addToCart }) {
       </div>
     </>
   );
+}
+
+CategoryPage.propTypes = {
+  category: PropTypes.string,
+  addToCart: PropTypes.func,
 }

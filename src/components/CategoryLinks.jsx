@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export default function CategoryLinks({ closeNav }) {
   return (
@@ -39,4 +40,15 @@ function CategoryLink({ imgUrl, categoryName, link, closeNav }) {
       </div>
     </div>
   );
+}
+
+CategoryLinks.propTypes = {
+  closeNav: PropTypes.func,
+}
+
+CategoryLink.propTypes = {
+  imgUrl: PropTypes.string,
+  categoryName: PropTypes.string,
+  link: PropTypes.string,
+  closeNav: PropTypes.func,
 }

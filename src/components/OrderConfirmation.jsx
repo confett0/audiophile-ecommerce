@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
   const navigate = useNavigate();
@@ -8,10 +9,11 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
   const grandTotal =
     cart.reduce((a, b) => a + b.price * b.quantity, 0) + shipping;
 
-    const handleClick = () => {
-      emptyCart();
-      navigate("/");
-    }
+  const handleClick = () => {
+    emptyCart();
+    navigate("/");
+    closeModal();
+  };
 
   return (
     <div className="order-confirmation">
@@ -42,9 +44,15 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
           <p className="order-confirmation-grandtotal">${grandTotal}</p>
         </div>
       </div>
-      <Link to="/">
-        <button className="orange">Back to home</button>
-      </Link>
+      <button onClick={handleClick} className="orange">
+        Back to home
+      </button>
     </div>
   );
 }
+
+OrderConfirmation.propTypes = {
+  cart: PropTypes.array,
+  closeModal: PropTypes.func,
+  emptyCart: PropTypes.func,
+};

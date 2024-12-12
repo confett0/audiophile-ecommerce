@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ResponsiveNav from "./ResposiveNav";
 import Modal from "./Modal";
 import Cart from "./Cart";
+import PropTypes from "prop-types";
 
 export default function Header({
   cart,
@@ -50,4 +51,11 @@ export default function Header({
       )}
     </header>
   );
+}
+
+Header.propTypes = {
+  cart: PropTypes.array,
+  incrementQuantity: PropTypes.func,
+  decrementQuantity: PropTypes.func,
+  emptyCart: PropTypes.func,
 }

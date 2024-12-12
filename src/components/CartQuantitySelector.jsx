@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function CartQuantitySelector({
   item,
   incrementQuantity,
@@ -20,4 +22,10 @@ export default function CartQuantitySelector({
       </button>
     </div>
   );
+}
+
+CartQuantitySelector.propTypes = {
+  item: PropTypes.object,
+  incrementQuantity: PropTypes.func,
+  decrementQuantity: PropTypes.func,
 }

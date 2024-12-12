@@ -1,4 +1,5 @@
 import CartQuantitySelector from "./CartQuantitySelector";
+import PropTypes from 'prop-types';
 
 export default function Cart({
   cart,
@@ -73,4 +74,13 @@ export default function Cart({
       )}
     </div>
   );
+}
+
+Cart.propTypes = {
+  cart: PropTypes.array,
+  emptyCart: PropTypes.func,
+  incrementQuantity: PropTypes.func,
+  decrementQuantity: PropTypes.func,
+  isCheckoutPage: PropTypes.bool,
+  handleClick: PropTypes.func,
 }
