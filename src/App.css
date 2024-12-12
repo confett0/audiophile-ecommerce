@@ -372,7 +372,7 @@ footer svg:hover {
 }
 
 .grey-area {
-  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg") center/cover;
+  background: url("../src/assets/home/desktop/image-speaker-zx7.jpg") center/cover;
   ;
   height: 20rem;
   padding: 0 9rem;
@@ -968,7 +968,7 @@ input[type="radio"] {
   }
 
   .hero-area {
-    background: radial-gradient(transparent, #0E0E0E 75%), url(/src/assets/home/tablet/image-header.jpg) center / cover;
+    background: radial-gradient(transparent, #0E0E0E 75%), url("../src/assets/home/tablet/image-header.jpg") center / cover;
     justify-content: center;
     height: 45rem;
   }
@@ -1085,7 +1085,7 @@ input[type="radio"] {
   }
 
   .hero-area {
-    background: radial-gradient(transparent, #0E0E0E 75%), url("./src/assets/home/mobile/image-header.jpg") center bottom / cover;
+    background: radial-gradient(transparent, #0E0E0E 75%), url("../src/assets/home/mobile/image-header.jpg") center bottom / cover;
     height: 39rem;
   }
 
@@ -1104,7 +1104,7 @@ input[type="radio"] {
   }
 
    .grey-area {
-    background: url("./src/assets/home/mobile/image-speaker-zx7.jpg") center/cover;
+    background: url("../src/assets/home/mobile/image-speaker-zx7.jpg") center/cover;
   }
 
   .black-area {
