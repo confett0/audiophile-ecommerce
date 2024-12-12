@@ -29,11 +29,9 @@ export default function ProductPage({ cart, addToCart }) {
   }
 
   const includedItemElements = productData.includes.map((item) => (
-    <ul key={item.item}>
-      <li>
+      <li key={item.item}>
         <span className="orange-text">{item.quantity}x</span> {item.item}
       </li>
-    </ul>
   ));
 
   return (
@@ -42,7 +40,23 @@ export default function ProductPage({ cart, addToCart }) {
         Go back
       </button>
       <section className="product-wrap">
-        <img src={productData.image.desktop} />
+      <picture className="product-page-image">
+          <source
+              media="(max-width: 500px)"
+              srcSet={productData.image.mobile + " 500w"}
+              sizes="500px"
+            />
+            <source
+              media="(max-width: 900px)"
+              srcSet={productData.image.tablet + " 900w"}
+              sizes="900px"
+            />
+            <source
+              srcSet={productData.image.desktop + " 1280w"}
+              sizes="1280px"
+            />
+            <img src={productData.image.desktop} />
+          </picture>
         <div className="product-info">
           {productData.new && (
             <p className="overline orange-text">New product</p>
@@ -89,8 +103,8 @@ export default function ProductPage({ cart, addToCart }) {
           <p>{productData.features}</p>
         </div>
         <div className="product-included">
-          <h3>Included items</h3>
-          {includedItemElements}
+          <h3>In the box</h3>
+          <ul>{includedItemElements}</ul>
         </div>
       </section>
       <section className="product-gallery">
