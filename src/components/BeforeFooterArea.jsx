@@ -15,6 +15,11 @@ export default function BeforeFooterArea() {
         </p>
       </div>
       <picture>
+      <source
+              media="(max-width: 500px)"
+              srcSet="../src/assets/shared/mobile/image-best-gear.jpg 500w"
+              sizes="500x"
+            />
             <source
               media="(max-width: 900px)"
               srcSet="../src/assets/shared/tablet/image-best-gear.jpg 900w"

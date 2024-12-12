@@ -366,7 +366,8 @@ footer svg:hover {
 }
 
 .grey-area {
-  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg") center/cover;;
+  background: url("./src/assets/home/desktop/image-speaker-zx7.jpg") center/cover;
+  ;
   height: 20rem;
   padding: 0 9rem;
 }
@@ -376,7 +377,8 @@ footer svg:hover {
   justify-content: space-between;
 }
 
-.black-area img, .black-area .card-wrap,
+.black-area img,
+.black-area .card-wrap,
 .before-footer img {
   border-radius: 0.5rem;
 }
@@ -974,10 +976,6 @@ input[type="radio"] {
     width: 12rem;
   }
 
-  /* .grey-area {
-    background: url("./src/assets/home/tablet/image-speaker-zx7.jpg");
-  } */
-
   .black-area img {
     width: 100%;
   }
@@ -1009,16 +1007,80 @@ input[type="radio"] {
   }
 
   .footer-wrap .social-icons {
-    grid-area: 4 / 2 / span 1 / span 1;
-  }
-
-  .footer-wrap .social-icons {
     align-self: center;
     grid-area: 4 / 2 / span 1 / span 1;
   }
 
   .footer-wrap .copyright {
     grid-area: 4 / 1 / span 1 / span 1;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .header-wrap {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  .hero-area {
+    background: radial-gradient(transparent, #0E0E0E 75%), url("./src/assets/home/mobile/image-header.jpg") center bottom / cover;
+    height: 39rem;
+  }
+
+  .home-product-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .area, .category-links {
+    width: 95%;
+}
+
+  .category-links {
+    gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+
+   .grey-area {
+    background: url("./src/assets/home/mobile/image-speaker-zx7.jpg") center/cover;
+  }
+
+  .black-area {
+    flex-wrap: wrap;
+  }
+
+  .black-area .card-wrap {
+    height: 16rem;
+  }
+
+  .before-footer .text {
+    padding: 0;
+  }
+
+  .footer-wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-wrap::before {
+    top: 0;
+  }
+
+  footer nav {
+    width: 100%;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+  }
+
+  .footer-wrap .social-icons {
+    order: 1;
   }
 
 }

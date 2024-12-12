@@ -22,6 +22,11 @@ export default function Home() {
         <CategoryLinks />
         <section className="orange-area area">
         <picture>
+        <source
+              media="(max-width: 500px)"
+              srcSet="./src/assets/home/mobile/image-speaker-zx9.png 500w"
+              sizes="500x"
+            />
             <source
               media="(max-width: 900px)"
               srcSet="./src/assets/home/tablet/image-speaker-zx9.png 900w"
@@ -54,6 +59,11 @@ export default function Home() {
         </section>
         <section className="black-area area">
           <picture>
+          <source
+              media="(max-width: 500px)"
+              srcSet="./src/assets/home/mobile/image-earphones-yx1.jpg 500w"
+              sizes="500x"
+            />
             <source
               media="(max-width: 900px)"
               srcSet="./src/assets/home/tablet/image-earphones-yx1.jpg 900w"
