@@ -1,13 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import CategoryPage from "./pages/CategoryPage";
-import ProductPage from "./pages/ProductPage";
-import Shop from "./pages/Shop";
-import Checkout from "./pages/Checkout";
-import ScrollToTop from "./components/ScrollToTop";
+import Layout from "./components/Layout.jsx";
+import Home from "./pages/Home.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
+import Shop from "./pages/Shop.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 export default function App() {
   const [cart, setCart] = useState([]);
