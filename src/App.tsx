@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
+import Layout from "./components/Layout.js";
 import Home from "./pages/Home.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
