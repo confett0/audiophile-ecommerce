@@ -8,11 +8,12 @@ import ProductPage from "./pages/ProductPage.jsx";
 import Shop from "./pages/Shop.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import type { CartItem } from "./types/cart.js";
 
 export default function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (newItem, itemQuantity) => {
+  const addToCart = (newItem : CartItem, itemQuantity : number) => {
     if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
       // check if item is already in cart
@@ -43,7 +44,7 @@ export default function App() {
 
   const emptyCart = () => setCart([]);
 
-  const incrementQuantityInCart = (currentItemId) => {
+  const incrementQuantityInCart = (currentItemId : number) => {
     setCart((prevCart) =>
       prevCart.map((item) => {
         if (currentItemId === item.id) {
@@ -55,7 +56,7 @@ export default function App() {
     );
   };
 
-  const decrementQuantityInCart = (currentItemId) => {
+  const decrementQuantityInCart = (currentItemId : number) => {
     setCart((prevCart) => {
       const currentItem = prevCart.find((item) => item.id === currentItemId);
       if (currentItem.quantity > 1) {
