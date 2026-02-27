@@ -1,6 +1,5 @@
 import CartQuantitySelector from "./CartQuantitySelector.js";
 import type { CartItem } from "../types/cart.js";
-import PropTypes from 'prop-types';
 
 export default function Cart({
   cart,

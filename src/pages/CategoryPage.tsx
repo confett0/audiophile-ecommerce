@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
-import ProductCard from "../components/ProductCard";
-import PropTypes from "prop-types";
+import ProductCard from "../components/ProductCard.js";
+import type { Category } from "../types/product.js";
+import type { Product } from "../types/product.js";
+import type { CartItem } from "../types/cart.js";
 
-export default function CategoryPage({ category, addToCart }) {
-  const [products, setProducts] = useState([]);
+export default function CategoryPage({ category, addToCart } : CategoryPageProps) {
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) =>
         setProducts(
-          data.reverse().filter((product) => product.category === category)
+          data.reverse().filter((product : Product) => product.category === category)
         )
       );
   }, [category]);
@@ -31,7 +33,7 @@ export default function CategoryPage({ category, addToCart }) {
   );
 }
 
-CategoryPage.propTypes = {
-  category: PropTypes.string,
-  addToCart: PropTypes.func,
+type CategoryPageProps = {
+  category: Category
+  addToCart: (a : Product, b : number) => void
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MenuLinks from "./MenuLinks";
-import CategoryLinks from "./CategoryLinks";
+import MenuLinks from "./MenuLinks.js";
+import CategoryLinks from "./CategoryLinks.js";
 
 export default function ResponsiveNav() {
   const [showMobileNav, setShowMobileNav] = useState(false);

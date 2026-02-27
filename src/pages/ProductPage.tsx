@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
+import type { Product } from "../types/product.js";
 
-export default function ProductPage({ addToCart }) {
+export default function ProductPage({ addToCart } : (a : Product, b: number) => void) {
   const { productSlug } = useParams();
-  const [productData, setProductData] = useState(null);
+  const [productData, setProductData] = useState<Product | null>(null);
   const [itemQuantity, setItemQuantity] = useState(1);
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ export default function ProductPage({ addToCart }) {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) =>
-        setProductData(data.find((product) => product.slug === productSlug))
+        setProductData(data.find((product : Product) => product.slug === productSlug))
       );
   }, [productSlug]);
 
@@ -129,8 +129,4 @@ export default function ProductPage({ addToCart }) {
       </section>
     </div>
   );
-}
-
-ProductPage.propTypes = {
-  addToCart: PropTypes.func,
 }

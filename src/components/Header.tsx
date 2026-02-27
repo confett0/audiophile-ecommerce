@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ResponsiveNav from "./ResposiveNav.jsx";
+import ResponsiveNav from "./ResposiveNav.js";
 import Modal from "./Modal.js";
 import Cart from "./Cart.js";
 import type { CartItem } from "../types/cart.js";

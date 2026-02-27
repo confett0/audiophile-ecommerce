@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
+import type { CartItem } from "../types/cart.js";
 
-export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
+export default function OrderConfirmation({ cart, closeModal, emptyCart } : OrderConfirmationProps) {
   const navigate = useNavigate();
 
   const firstCartItem = cart[0];
   const shipping = 50;
   const grandTotal =
-    cart.reduce((a, b) => a + b.price * b.quantity, 0) + shipping;
+    cart.reduce((a : number, b : CartItem) => a + b.price * b.quantity, 0) + shipping;
 
   const handleClick = () => {
     emptyCart();
@@ -51,8 +51,8 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart }) {
   );
 }
 
-OrderConfirmation.propTypes = {
-  cart: PropTypes.array,
-  closeModal: PropTypes.func,
-  emptyCart: PropTypes.func,
-};
+type OrderConfirmationProps = {
+  cart: CartItem[]
+  closeModal: () => void
+  emptyCart: () => void
+}

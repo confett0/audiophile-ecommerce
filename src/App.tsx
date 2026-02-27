@@ -3,17 +3,18 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.js";
 import Home from "./pages/Home.js";
-import CategoryPage from "./pages/CategoryPage.jsx";
-import ProductPage from "./pages/ProductPage.jsx";
-import Shop from "./pages/Shop.jsx";
+import CategoryPage from "./pages/CategoryPage.js";
+import ProductPage from "./pages/ProductPage.js";
+import Shop from "./pages/Shop.js";
 import Checkout from "./pages/Checkout.jsx";
 import ScrollToTop from "./components/ScrollToTop.js";
 import type { CartItem } from "./types/cart.js";
+import type { Product } from "./types/product.js";
 
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (newItem : CartItem, itemQuantity : number) => {
+  const addToCart = (newItem : Product, itemQuantity : number) => {
     if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
       // check if item is already in cart
