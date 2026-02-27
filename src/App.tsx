@@ -2,12 +2,12 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout.js";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/Home.js";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Shop from "./pages/Shop.jsx";
 import Checkout from "./pages/Checkout.jsx";
-import ScrollToTop from "./components/ScrollToTop.jsx";
+import ScrollToTop from "./components/ScrollToTop.js";
 import type { CartItem } from "./types/cart.js";
 
 export default function App() {
