@@ -16,7 +16,7 @@ export default function Modal({ closeModal, children, isCart } : ModalProps) {
 }
 
 type ModalProps = {
-  closeModal: () => void
-  children: React.ReactNode
-  isCart: boolean
+  closeModal: () => void;
+  children: React.ReactNode;
+  isCart: boolean;
 }
