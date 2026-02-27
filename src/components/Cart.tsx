@@ -1,4 +1,5 @@
-import CartQuantitySelector from "./CartQuantitySelector";
+import CartQuantitySelector from "./CartQuantitySelector.jsx";
+import type { CartItem } from "../types/cart.js";
 import PropTypes from 'prop-types';
 
 export default function Cart({
@@ -8,7 +9,7 @@ export default function Cart({
   decrementQuantity,
   isCheckoutPage,
   handleClick,
-}) {
+} : CartProps) {
   const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
   const shipping = 50;
   const vatRate = 0.2; // 20% VAT
@@ -76,11 +77,11 @@ export default function Cart({
   );
 }
 
-Cart.propTypes = {
-  cart: PropTypes.array,
-  emptyCart: PropTypes.func,
-  incrementQuantity: PropTypes.func,
-  decrementQuantity: PropTypes.func,
-  isCheckoutPage: PropTypes.bool,
-  handleClick: PropTypes.func,
+type CartProps = {
+  cart: CartItem[]
+  emptyCart: () => void
+  incrementQuantity: () => void
+  decrementQuantity: () => void
+  isCheckoutPage: boolean
+  handleClick: () => void
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import CategoryLinks from "../components/CategoryLinks.jsx";
-import BeforeFooterArea from "../components/BeforeFooterArea.jsx";
+import CategoryLinks from "../components/CategoryLinks.js";
+import BeforeFooterArea from "../components/BeforeFooterArea.js";
 
 export default function Home() {
   return (

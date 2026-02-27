@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
 
-export default function CategoryLinks({ closeNav }) {
+export default function CategoryLinks({ closeNav } : CategoryLinksProps) {
   return (
     <section className="category-links">
       <CategoryLink
@@ -26,7 +25,7 @@ export default function CategoryLinks({ closeNav }) {
   );
 }
 
-function CategoryLink({ imgUrl, categoryName, link, closeNav }) {
+function CategoryLink({ imgUrl, categoryName, link, closeNav } : CategoryLinkProps) {
   return (
     <div className="category-link">
       <img src={imgUrl} />
@@ -42,13 +41,13 @@ function CategoryLink({ imgUrl, categoryName, link, closeNav }) {
   );
 }
 
-CategoryLinks.propTypes = {
-  closeNav: PropTypes.func,
+type CategoryLinksProps = {
+  closeNav: () => void
 }
 
-CategoryLink.propTypes = {
-  imgUrl: PropTypes.string,
-  categoryName: PropTypes.string,
-  link: PropTypes.string,
-  closeNav: PropTypes.func,
+type CategoryLinkProps = {
+  imgUrl: string
+  categoryName: string
+  link: string
+  closeNav: () => void
 }
