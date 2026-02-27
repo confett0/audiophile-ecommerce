@@ -1,4 +1,4 @@
-import CartQuantitySelector from "./CartQuantitySelector.jsx";
+import CartQuantitySelector from "./CartQuantitySelector.js";
 import type { CartItem } from "../types/cart.js";
 import PropTypes from 'prop-types';
 
@@ -80,8 +80,8 @@ export default function Cart({
 type CartProps = {
   cart: CartItem[]
   emptyCart: () => void
-  incrementQuantity: () => void
-  decrementQuantity: () => void
+  incrementQuantity: (a : number) => void
+  decrementQuantity: (a : number) => void
   isCheckoutPage: boolean
   handleClick: () => void
 }

@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+import type { CartItem } from "../types/cart.js";
 
 export default function CartQuantitySelector({
   item,
   incrementQuantity,
   decrementQuantity,
-}) {
+} : CartQuantitySelectorProps ) {
   return (
     <div className="quantity-wrap">
       <button
@@ -24,8 +24,8 @@ export default function CartQuantitySelector({
   );
 }
 
-CartQuantitySelector.propTypes = {
-  item: PropTypes.object,
-  incrementQuantity: PropTypes.func,
-  decrementQuantity: PropTypes.func,
+type CartQuantitySelectorProps = {
+  item: CartItem
+  incrementQuantity: (a : number) => void
+  decrementQuantity: (a : number) => void
 }

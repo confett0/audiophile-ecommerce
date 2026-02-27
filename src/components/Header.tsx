@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ResponsiveNav from "./ResposiveNav";
-import Modal from "./Modal";
-import Cart from "./Cart";
-import PropTypes from "prop-types";
+import ResponsiveNav from "./ResposiveNav.jsx";
+import Modal from "./Modal.js";
+import Cart from "./Cart.js";
+import type { CartItem } from "../types/cart.js";
 
 export default function Header({
   cart,
   incrementQuantity,
   decrementQuantity,
   emptyCart,
-}) {
+} : HeaderProps ) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const totalItemsInCart = cart.reduce((a, b) => a + b.quantity, 0);
@@ -53,9 +53,9 @@ export default function Header({
   );
 }
 
-Header.propTypes = {
-  cart: PropTypes.array,
-  incrementQuantity: PropTypes.func,
-  decrementQuantity: PropTypes.func,
-  emptyCart: PropTypes.func,
+type HeaderProps = {
+  cart: CartItem[]
+  incrementQuantity: (a : number) => void
+  decrementQuantity: (a : number) => void
+  emptyCart: () => void
 }

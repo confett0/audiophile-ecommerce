@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-
-export default function Modal({ closeModal, children, isCart }) {
+export default function Modal({ closeModal, children, isCart } : ModalProps) {
   return (
     <>
       <div className="modal-wrap" onClick={closeModal}></div>
@@ -17,8 +15,8 @@ export default function Modal({ closeModal, children, isCart }) {
   );
 }
 
-Modal.propTypes = {
-  closeModal: PropTypes.func,
-  children: PropTypes.element,
-  isCart: PropTypes.bool,
-};
+type ModalProps = {
+  closeModal: () => void
+  children: React.ReactNode
+  isCart: boolean
+}

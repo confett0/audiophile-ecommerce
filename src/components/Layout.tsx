@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+import Header from "./Header.js";
+import Footer from "./Footer.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function Layout({

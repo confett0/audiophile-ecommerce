@@ -1,4 +1,4 @@
-import MenuLinks from "./MenuLinks";
+import MenuLinks from "./MenuLinks.js";
 
 export default function Nav() {
 
