@@ -81,6 +81,6 @@ type CartProps = {
   emptyCart: () => void
   incrementQuantity: (a : number) => void
   decrementQuantity: (a : number) => void
-  isCheckoutPage: boolean
+  isCheckoutPage?: boolean
   handleClick: () => void
 }

@@ -42,7 +42,7 @@ function CategoryLink({ imgUrl, categoryName, link, closeNav } : CategoryLinkPro
 }
 
 type CategoryLinksProps = {
-  closeNav: () => void
+  closeNav?: () => void
 }
 
 type CategoryLinkProps = {

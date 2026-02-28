@@ -4,7 +4,7 @@ import type { Category } from "../types/product.js";
 import type { Product } from "../types/product.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function CategoryPage({ category, addToCart } : CategoryPageProps) {
+export default function CategoryPage({ category } : CategoryPageProps) {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function CategoryPage({ category, addToCart } : CategoryPageProps
   console.log(products);
 
   const productElements = products.map((item) => (
-    <ProductCard key={item.id} addToCart={addToCart} item={item} />
+    <ProductCard key={item.id} item={item} />
   ));
 
   return (
@@ -35,5 +35,4 @@ export default function CategoryPage({ category, addToCart } : CategoryPageProps
 
 type CategoryPageProps = {
   category: Category
-  addToCart: (a : Product, b : number) => void
 }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type {Product} from "../types/product.js";
 
-export default function ProductCard({ item } : Product ) {
+export default function ProductCard({ item } : ProductCardProps) {
   return (
     <div className="product-card">
       <picture>
@@ -31,4 +31,8 @@ export default function ProductCard({ item } : Product ) {
       </div>
     </div>
   );
+}
+
+type ProductCardProps = {
+  item: Product
 }

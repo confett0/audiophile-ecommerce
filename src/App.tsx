@@ -15,7 +15,7 @@ export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const addToCart = (newItem : Product, itemQuantity : number) => {
-    if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
+    //if (itemQuantity === "") return; // avoid adding items with undefined quantity to cart
     setCart((prevCart) => {
       // check if item is already in cart
       const isAlreadyInCart = prevCart.find((item) => item.id === newItem.id);
@@ -96,8 +96,6 @@ export default function App() {
               element={
                 <CategoryPage
                   category="headphones"
-                  cart={cart}
-                  addToCart={addToCart}
                 />
               }
             />
@@ -106,8 +104,6 @@ export default function App() {
               element={
                 <CategoryPage
                   category="speakers"
-                  cart={cart}
-                  addToCart={addToCart}
                 />
               }
             />
@@ -116,14 +112,12 @@ export default function App() {
               element={
                 <CategoryPage
                   category="earphones"
-                  cart={cart}
-                  addToCart={addToCart}
                 />
               }
             />
             <Route
               path=":productSlug"
-              element={<ProductPage cart={cart} addToCart={addToCart} />}
+              element={<ProductPage addToCart={addToCart} />}
             />
           </Route>
           <Route

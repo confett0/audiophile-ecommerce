@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import type { Product } from "../types/product.js";
 
-export default function ProductPage({ addToCart } : (a : Product, b: number) => void) {
+export default function ProductPage({ addToCart } : ProductPageProps) {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState<Product | null>(null);
   const [itemQuantity, setItemQuantity] = useState(1);
@@ -129,4 +129,8 @@ export default function ProductPage({ addToCart } : (a : Product, b: number) => 
       </section>
     </div>
   );
+}
+
+type ProductPageProps = {
+  addToCart: (a : Product, b: number) => void
 }
