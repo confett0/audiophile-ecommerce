@@ -60,7 +60,7 @@ export default function App() {
   const decrementQuantityInCart = (currentItemId : number) => {
     setCart((prevCart) => {
       const currentItem = prevCart.find((item) => item.id === currentItemId);
-      if (currentItem.quantity > 1) {
+      if (currentItem && currentItem.quantity > 1) {
         return prevCart.map((item) => {
           if (currentItemId === item.id) {
             return { ...item, quantity: item.quantity - 1 };
