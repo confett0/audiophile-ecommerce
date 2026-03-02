@@ -78,9 +78,9 @@ export default function Cart({
 
 type CartProps = {
   cart: CartItem[]
-  emptyCart: () => void
-  incrementQuantity: (a : number) => void
-  decrementQuantity: (a : number) => void
+  emptyCart?: () => void
+  incrementQuantity?: (a : number) => void
+  decrementQuantity?: (a : number) => void
   isCheckoutPage?: boolean
-  handleClick: () => void
+  handleClick: (a: React.SyntheticEvent<HTMLFormElement>) => void
 }

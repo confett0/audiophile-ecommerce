@@ -11,7 +11,7 @@ export default function Checkout({ cart, emptyCart } : CheckoutProps) {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsConfirmationModalOpen(true);
   };

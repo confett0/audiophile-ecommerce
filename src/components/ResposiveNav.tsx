@@ -14,7 +14,7 @@ export default function ResponsiveNav() {
         <>
         <div className="modal-wrap" onClick={closeNav}></div>
         <div className="mobile-nav">
-          <CategoryLinks closeNav={closeNav} />
+          <CategoryLinks/>
         </div>
         </>
       ) : (
