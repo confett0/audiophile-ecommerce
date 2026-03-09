@@ -55,3 +55,4 @@ type CartAction = {
 };
 
 export default cartReducer;
+export type { CartAction };
