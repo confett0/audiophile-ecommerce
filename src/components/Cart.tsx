@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import CartQuantitySelector from "./CartQuantitySelector.js";
+import QuantitySelector from "./QuantitySelector.js";
 import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function Cart({ isCheckoutPage, handleClick }: CartProps) {
-  const { cart, resetCart } = useContext(CartContext);
+  const { cart, increment, decrement, resetCart } = useContext(CartContext);
   const orderTotal = cart.reduce(
     (a: number, b: CartItem) => a + b.price * b.quantity,
     0,
@@ -24,7 +24,11 @@ export default function Cart({ isCheckoutPage, handleClick }: CartProps) {
       {isCheckoutPage ? (
         <p className="cart-item-quantity">x{item.quantity}</p>
       ) : (
-        <CartQuantitySelector item={item} />
+        <QuantitySelector
+          value={item.quantity}
+          onDecrement={() => decrement(item.id)}
+          onIncrement={() => increment(item.id)}
+        />
       )}
     </div>
   ));
