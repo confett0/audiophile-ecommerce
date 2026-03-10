@@ -48,16 +48,12 @@ const cartReducer = (state: CartItem[], action: CartAction) => {
   }
 };
 
-type CartAction = {
-  type:
-    | "ADDED_ITEM"
-    | "REMOVED_ITEM"
-    | "INCREMENTED_QUANTITY"
-    | "DECREMENTED_QUANTITY"
-    | "EMPTIED_CART";
-  payload: CartItem;
-  quantity: number;
-};
+type CartAction =
+  | { type: "ADDED_ITEM"; payload: CartItem; quantity: number }
+  | { type: "REMOVED_ITEM"; payload: { id: number } }
+  | { type: "INCREMENTED_QUANTITY"; payload: { id: number } }
+  | { type: "DECREMENTED_QUANTITY"; payload: { id: number } }
+  | { type: "EMPTIED_CART" };
 
 export default cartReducer;
 export type { CartAction };

@@ -7,25 +7,19 @@ import type { Product } from "../types/product.js";
 export default function ProductPage() {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState<Product | null>(null);
-  const [itemQuantity, setItemQuantity] = useState(1);
+  const [itemQuantity, setItemQuantity] = useState<number | "">(1);
   const navigate = useNavigate();
-  const { dispatch } = useContext(CartContext)
+  const { addItem } = useContext(CartContext);
 
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) =>
-        setProductData(data.find((product : Product) => product.slug === productSlug))
+        setProductData(
+          data.find((product: Product) => product.slug === productSlug),
+        ),
       );
   }, [productSlug]);
-
-  const handleAddToCart = (product : Product, quantity : number) => {
-    dispatch({
-      type: "ADDED_ITEM",
-      payload: product,
-      quantity: quantity
-    })
-  }
 
   const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
 
@@ -40,9 +34,9 @@ export default function ProductPage() {
   }
 
   const includedItemElements = productData.includes.map((item) => (
-      <li key={item.item}>
-        <span className="orange-text">{item.quantity}x</span> {item.item}
-      </li>
+    <li key={item.item}>
+      <span className="orange-text">{item.quantity}x</span> {item.item}
+    </li>
   ));
 
   return (
@@ -51,23 +45,23 @@ export default function ProductPage() {
         Go back
       </button>
       <section className="product-wrap">
-      <picture className="product-page-image">
+        <picture className="product-page-image">
           <source
-              media="(max-width: 500px)"
-              srcSet={productData.image.mobile + " 500w"}
-              sizes="500px"
-            />
-            <source
-              media="(max-width: 900px)"
-              srcSet={productData.image.tablet + " 900w"}
-              sizes="900px"
-            />
-            <source
-              srcSet={productData.image.desktop + " 1280w"}
-              sizes="1280px"
-            />
-            <img src={productData.image.desktop} />
-          </picture>
+            media="(max-width: 500px)"
+            srcSet={productData.image.mobile + " 500w"}
+            sizes="500px"
+          />
+          <source
+            media="(max-width: 900px)"
+            srcSet={productData.image.tablet + " 900w"}
+            sizes="900px"
+          />
+          <source
+            srcSet={productData.image.desktop + " 1280w"}
+            sizes="1280px"
+          />
+          <img src={productData.image.desktop} />
+        </picture>
         <div className="product-info">
           {productData.new && (
             <p className="overline orange-text">New product</p>
@@ -101,7 +95,7 @@ export default function ProductPage() {
             <button
               className="orange"
               onClick={() => {
-                handleAddToCart(productData, itemQuantity);
+                addItem(productData, itemQuantity);
                 setItemQuantity(1); // reset itemQuantity state
               }}
             >

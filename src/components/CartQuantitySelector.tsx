@@ -3,34 +3,17 @@ import type { CartItem } from "../types/cart.js";
 import CartContext from "../CartContext.js";
 
 export default function CartQuantitySelector({
-  item
-} : CartQuantitySelectorProps ) {
-  const {dispatch} = useContext(CartContext);
-  const incrementQuantity = (item : CartItem) => {
-    dispatch({
-      type: "INCREMENTED_QUANTITY",
-      payload: item
-    })
-  }
-  const decrementQuantity = (item : CartItem) => {
-    dispatch({
-      type: "DECREMENTED_QUANTITY",
-      payload: item
-    })
-  }
+  item,
+}: CartQuantitySelectorProps) {
+  const { increment, decrement } = useContext(CartContext);
+
   return (
     <div className="quantity-wrap">
-      <button
-        className="quantity-button"
-        onClick={() => decrementQuantity(item)}
-      >
+      <button className="quantity-button" onClick={() => decrement(item.id)}>
         -
       </button>
       <div className="item-quantity">{item.quantity}</div>
-      <button
-        className="quantity-button"
-        onClick={() => incrementQuantity(item)}
-      >
+      <button className="quantity-button" onClick={() => increment(item.id)}>
         +
       </button>
     </div>
@@ -38,5 +21,5 @@ export default function CartQuantitySelector({
 }
 
 type CartQuantitySelectorProps = {
-  item: CartItem
-}
+  item: CartItem;
+};

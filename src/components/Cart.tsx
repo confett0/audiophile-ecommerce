@@ -3,24 +3,18 @@ import CartQuantitySelector from "./CartQuantitySelector.js";
 import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function Cart({
-  isCheckoutPage,
-  handleClick,
-} : CartProps) {
-  const {cart, dispatch} = useContext(CartContext);
-  const orderTotal = cart.reduce((a : number, b : CartItem) => a + b.price * b.quantity, 0);
+export default function Cart({ isCheckoutPage, handleClick }: CartProps) {
+  const { cart, resetCart } = useContext(CartContext);
+  const orderTotal = cart.reduce(
+    (a: number, b: CartItem) => a + b.price * b.quantity,
+    0,
+  );
   const shipping = 50;
   const vatRate = 0.2; // 20% VAT
   const vat = (orderTotal * vatRate).toFixed(0);
   const grandTotal = orderTotal + shipping;
 
-  const emptyCart = () => {
-    dispatch({
-      type: "EMPTIED_CART"
-    })
-  }
-
-  const itemElements = cart.map((item : CartItem) => (
+  const itemElements = cart.map((item: CartItem) => (
     <div key={item.id} className="cart-item">
       <img src={item.image.mobile} />
       <div>
@@ -30,9 +24,7 @@ export default function Cart({
       {isCheckoutPage ? (
         <p className="cart-item-quantity">x{item.quantity}</p>
       ) : (
-        <CartQuantitySelector
-          item={item}
-        />
+        <CartQuantitySelector item={item} />
       )}
     </div>
   ));
@@ -50,7 +42,7 @@ export default function Cart({
       <div className="cart-header">
         {isCheckoutPage ? <h6>Summary</h6> : <h6>Cart ({cart.length})</h6>}
         {!isCheckoutPage && (
-          <button className="minimal empty-cart-button" onClick={emptyCart}>
+          <button className="minimal empty-cart-button" onClick={resetCart}>
             Remove all
           </button>
         )}
@@ -80,6 +72,6 @@ export default function Cart({
 }
 
 type CartProps = {
-  isCheckoutPage?: boolean
-  handleClick: (a: React.SyntheticEvent<HTMLFormElement>) => void
-}
+  isCheckoutPage?: boolean;
+  handleClick: (a: React.SyntheticEvent<HTMLFormElement>) => void;
+};
