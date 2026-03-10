@@ -6,13 +6,13 @@ export default function CartQuantitySelector({
   item
 } : CartQuantitySelectorProps ) {
   const {dispatch} = useContext(CartContext);
-  const incrementQuantity = (item) => {
+  const incrementQuantity = (item : CartItem) => {
     dispatch({
       type: "INCREMENTED_QUANTITY",
       payload: item
     })
   }
-  const decrementQuantity = (item) => {
+  const decrementQuantity = (item : CartItem) => {
     dispatch({
       type: "DECREMENTED_QUANTITY",
       payload: item

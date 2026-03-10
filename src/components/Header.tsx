@@ -6,11 +6,7 @@ import Cart from "./Cart.js";
 import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function Header({
-  incrementQuantity,
-  decrementQuantity,
-  emptyCart,
-} : HeaderProps ) {
+export default function Header() {
   const {cart} = useContext(CartContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -41,22 +37,10 @@ export default function Header({
       </div>
       {isModalOpen && (
         <Modal closeModal={closeModal} isCart={true}>
-          <Cart
-            cart={cart}
-            emptyCart={emptyCart}
-            incrementQuantity={incrementQuantity}
-            decrementQuantity={decrementQuantity}
-            handleClick={goToCheckout}
+          <Cart handleClick={goToCheckout}
           />
         </Modal>
       )}
     </header>
   );
-}
-
-type HeaderProps = {
-  cart: CartItem[]
-  incrementQuantity: (a : number) => void
-  decrementQuantity: (a : number) => void
-  emptyCart: () => void
 }

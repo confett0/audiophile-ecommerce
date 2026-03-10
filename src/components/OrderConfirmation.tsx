@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function OrderConfirmation({ cart, closeModal, emptyCart } : OrderConfirmationProps) {
+export default function OrderConfirmation({ closeModal } : OrderConfirmationProps) {
   const navigate = useNavigate();
+  const {cart, dispatch} = useContext(CartContext)
 
   const firstCartItem = cart[0];
   const shipping = 50;
@@ -10,7 +13,7 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart } : Orde
     cart.reduce((a : number, b : CartItem) => a + b.price * b.quantity, 0) + shipping;
 
   const handleClick = () => {
-    emptyCart();
+    //emptyCart();
     navigate("/");
     closeModal();
   };
@@ -52,7 +55,5 @@ export default function OrderConfirmation({ cart, closeModal, emptyCart } : Orde
 }
 
 type OrderConfirmationProps = {
-  cart: CartItem[]
   closeModal: () => void
-  emptyCart: () => void
 }

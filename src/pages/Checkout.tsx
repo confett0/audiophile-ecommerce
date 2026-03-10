@@ -5,7 +5,6 @@ import Cart from "../components/Cart.js";
 import CheckoutForm from "../components/CheckoutForm.js";
 import Modal from "../components/Modal.js";
 import OrderConfirmation from "../components/OrderConfirmation.js";
-import type { CartItem } from "../types/cart.js";
 
 export default function Checkout() {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);

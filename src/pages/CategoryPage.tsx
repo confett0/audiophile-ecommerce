@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard.js";
 import type { Category } from "../types/product.js";
 import type { Product } from "../types/product.js";
-import type { CartItem } from "../types/cart.js";
 
-export default function CategoryPage({ category } : CategoryPageProps) {
+export default function CategoryPage({ category }: CategoryPageProps) {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -12,12 +11,12 @@ export default function CategoryPage({ category } : CategoryPageProps) {
       .then((res) => res.json())
       .then((data) =>
         setProducts(
-          data.reverse().filter((product : Product) => product.category === category)
-        )
+          data
+            .reverse()
+            .filter((product: Product) => product.category === category),
+        ),
       );
   }, [category]);
-
-  console.log(products);
 
   const productElements = products.map((item) => (
     <ProductCard key={item.id} item={item} />
@@ -34,5 +33,5 @@ export default function CategoryPage({ category } : CategoryPageProps) {
 }
 
 type CategoryPageProps = {
-  category: Category
-}
+  category: Category;
+};
