@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./CartContext.js";
 import Layout from "./components/Layout.js";
 import Home from "./pages/Home.js";
 import CategoryPage from "./pages/CategoryPage.js";
@@ -75,6 +76,7 @@ export default function App() {
   };
 
   return (
+    <CartProvider>
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
@@ -127,5 +129,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import CartContext from "../CartContext.js";
 import type { Product } from "../types/product.js";
 
 export default function ProductPage({ addToCart } : ProductPageProps) {
@@ -8,6 +9,7 @@ export default function ProductPage({ addToCart } : ProductPageProps) {
   const [productData, setProductData] = useState<Product | null>(null);
   const [itemQuantity, setItemQuantity] = useState(1);
   const navigate = useNavigate();
+  const { dispatch } = useContext(CartContext)
 
   useEffect(() => {
     fetch("/data.json")
@@ -16,6 +18,14 @@ export default function ProductPage({ addToCart } : ProductPageProps) {
         setProductData(data.find((product : Product) => product.slug === productSlug))
       );
   }, [productSlug]);
+
+  const handleAddToCart = (product : Product, quantity : number) => {
+    dispatch({
+      type: "ADDED_ITEM",
+      payload: product,
+      quantity: quantity
+    })
+  }
 
   const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
 
@@ -91,7 +101,7 @@ export default function ProductPage({ addToCart } : ProductPageProps) {
             <button
               className="orange"
               onClick={() => {
-                addToCart(productData, itemQuantity);
+                handleAddToCart(productData, itemQuantity);
                 setItemQuantity(1); // reset itemQuantity state
               }}
             >

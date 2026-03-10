@@ -4,7 +4,7 @@ import cartReducer, { type CartAction } from "./cartReducer.js";
 import type { CartItem } from "./types/cart.js";
 import type { Dispatch } from "react";
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+const CartContext = createContext<CartContextType | []>([]);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, dispatch] = useReducer(cartReducer, [] as CartItem[]);
