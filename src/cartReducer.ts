@@ -31,11 +31,16 @@ const cartReducer = (state: CartItem[], action: CartAction) => {
           : item,
       );
     case "DECREMENTED_QUANTITY":
+      const currentItem = state.find((item) => item.id === action.payload.id);
+      if (currentItem?.quantity === 1) {
+        return state.filter((item) => item.id !== action.payload.id);
+      }
       return state.map((item) =>
         item.id === action.payload.id
           ? { ...item, quantity: item.quantity - 1 }
           : item,
       );
+
     case "EMPTIED_CART":
       return [];
     default:

@@ -4,8 +4,6 @@ import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function Cart({
-  incrementQuantity,
-  decrementQuantity,
   isCheckoutPage,
   handleClick,
 } : CartProps) {
@@ -34,8 +32,6 @@ export default function Cart({
       ) : (
         <CartQuantitySelector
           item={item}
-          incrementQuantity={incrementQuantity}
-          decrementQuantity={decrementQuantity}
         />
       )}
     </div>
@@ -84,10 +80,6 @@ export default function Cart({
 }
 
 type CartProps = {
-  cart: CartItem[]
-  emptyCart?: () => void
-  incrementQuantity?: (a : number) => void
-  decrementQuantity?: (a : number) => void
   isCheckoutPage?: boolean
   handleClick: (a: React.SyntheticEvent<HTMLFormElement>) => void
 }
