@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import CartContext from "../CartContext.js";
 import Cart from "../components/Cart.js";
 import CheckoutForm from "../components/CheckoutForm.js";
 import Modal from "../components/Modal.js";
 import OrderConfirmation from "../components/OrderConfirmation.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function Checkout({ cart, emptyCart } : CheckoutProps) {
+export default function Checkout() {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const {cart} = useContext(CartContext)
 
   const navigate = useNavigate();
 
@@ -28,9 +30,7 @@ export default function Checkout({ cart, emptyCart } : CheckoutProps) {
           <div className="checkout-grid">
             <CheckoutForm />
             <div className="cart-wrap">
-              <Cart
-                cart={cart}
-                isCheckoutPage={true}
+              <Cart isCheckoutPage={true}
                 handleClick={handleSubmit}
               />
               {cart.length > 0 && (
@@ -46,17 +46,10 @@ export default function Checkout({ cart, emptyCart } : CheckoutProps) {
       {isConfirmationModalOpen && (
         <Modal closeModal={closeOrderConfirmationModal}>
           <OrderConfirmation
-            cart={cart}
             closeModal={closeOrderConfirmationModal}
-            emptyCart={emptyCart}
           />
         </Modal>
       )}
     </div>
   );
-}
-
-type CheckoutProps = {
-  cart: CartItem[]
-  emptyCart: () => void
 }

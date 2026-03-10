@@ -1,21 +1,28 @@
+import { useContext } from "react";
 import CartQuantitySelector from "./CartQuantitySelector.js";
+import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function Cart({
-  cart,
-  emptyCart,
   incrementQuantity,
   decrementQuantity,
   isCheckoutPage,
   handleClick,
 } : CartProps) {
-  const orderTotal = cart.reduce((a, b) => a + b.price * b.quantity, 0);
+  const {cart, dispatch} = useContext(CartContext);
+  const orderTotal = cart.reduce((a : number, b : CartItem) => a + b.price * b.quantity, 0);
   const shipping = 50;
   const vatRate = 0.2; // 20% VAT
   const vat = (orderTotal * vatRate).toFixed(0);
   const grandTotal = orderTotal + shipping;
 
-  const itemElements = cart.map((item) => (
+  const emptyCart = () => {
+    dispatch({
+      type: "EMPTIED_CART"
+    })
+  }
+
+  const itemElements = cart.map((item : CartItem) => (
     <div key={item.id} className="cart-item">
       <img src={item.image.mobile} />
       <div>

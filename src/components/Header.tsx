@@ -14,7 +14,7 @@ export default function Header({
   const {cart} = useContext(CartContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-  const totalItemsInCart = cart.reduce((a, b) => a + b.quantity, 0);
+  const totalItemsInCart = cart.reduce((a : number, b : CartItem) => a + b.quantity, 0);
 
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
   const closeModal = () => setIsModalOpen(false);
