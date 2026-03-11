@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { capitalize } from "../utils.js";
 
 export default function MenuLinks() {
   const menu = {
     home: "/",
-    headphones: "shop/headphones",
-    speakers: "shop/speakers",
-    earphones: "shop/earphones",
+    headphones: "/shop/headphones",
+    speakers: "/shop/speakers",
+    earphones: "/shop/earphones",
   };
   const menuLinks = Object.entries(menu).map(([label, link]) => {
     return (
@@ -14,7 +15,7 @@ export default function MenuLinks() {
           to={link}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          {label}
+          {capitalize(label)}
         </NavLink>
       </li>
     );
