@@ -1,26 +1,23 @@
 import { Link } from "react-router-dom";
-import type {Product} from "../types/product.js";
+import type { Product } from "../types/product.js";
 
-export default function ProductCard({ item } : ProductCardProps) {
+export default function ProductCard({ item }: ProductCardProps) {
   return (
     <div className="product-card">
       <picture>
         <source
-              media="(max-width: 500px)"
-              srcSet={item.categoryImage.mobile + " 500w"}
-              sizes="500px"
-            />
-            <source
-              media="(max-width: 900px)"
-              srcSet={item.categoryImage.tablet + " 900w"}
-              sizes="900px"
-            />
-            <source
-              srcSet={item.categoryImage.desktop + " 1280w"}
-              sizes="1280px"
-            />
-            <img src={item.categoryImage.desktop} />
-          </picture>
+          media="(max-width: 500px)"
+          srcSet={item.categoryImage.mobile + " 500w"}
+          sizes="500px"
+        />
+        <source
+          media="(max-width: 900px)"
+          srcSet={item.categoryImage.tablet + " 900w"}
+          sizes="900px"
+        />
+        <source srcSet={item.categoryImage.desktop + " 1280w"} sizes="1280px" />
+        <img src={item.categoryImage.desktop} />
+      </picture>
       <div className="product-card-details">
         {item.new && <p className="overline orange-text">New product</p>}
         <h2>{item.name}</h2>
@@ -34,5 +31,5 @@ export default function ProductCard({ item } : ProductCardProps) {
 }
 
 type ProductCardProps = {
-  item: Product
-}
+  item: Product;
+};

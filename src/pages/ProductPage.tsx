@@ -2,12 +2,13 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import CartContext from "../CartContext.js";
+import QuantitySelector from "../components/QuantitySelector.js";
 import type { Product } from "../types/product.js";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
   const [productData, setProductData] = useState<Product | null>(null);
-  const [itemQuantity, setItemQuantity] = useState<number | "">(1);
+  const [itemQuantity, setItemQuantity] = useState<number>(1);
   const navigate = useNavigate();
   const { addItem } = useContext(CartContext);
 
@@ -70,28 +71,12 @@ export default function ProductPage() {
           <p>{productData.description}</p>
           <h6>$ {productData.price}</h6>
           <div className="button-wrap">
-            <div className="quantity-wrap">
-              <button className="quantity-button" onClick={decrementQuantity}>
-                -
-              </button>
-              <input
-                type="number"
-                className="item-quantity"
-                name="item-quantity"
-                value={itemQuantity}
-                onChange={(e) => {
-                  if (e.target.value === "") {
-                    // avoid displaying 0 when erasing value inside the input
-                    setItemQuantity("");
-                  } else {
-                    setItemQuantity(+e.target.value);
-                  }
-                }}
-              />
-              <button className="quantity-button" onClick={incrementQuantity}>
-                +
-              </button>
-            </div>
+            <QuantitySelector
+              value={itemQuantity}
+              onIncrement={incrementQuantity}
+              onDecrement={decrementQuantity}
+              onChange={(e) => setItemQuantity(+e.target.value)}
+            />
             <button
               className="orange"
               onClick={() => {

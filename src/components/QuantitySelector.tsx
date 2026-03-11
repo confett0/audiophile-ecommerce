@@ -15,6 +15,7 @@ export default function QuantitySelector({
           className="item-quantity"
           name="item-quantity"
           value={value}
+          min="1"
           onChange={(e) => onChange(e.target.value)}
         />
       ) : (
