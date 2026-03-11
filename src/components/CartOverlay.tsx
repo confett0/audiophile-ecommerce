@@ -40,7 +40,7 @@ export default function CartOverlay({ closeModal }) {
             </button>
           </div>
           {itemElements}
-          <CartTotal showDetails={true} />
+          <CartTotal />
           <button className="orange cart-button" onClick={goToCheckout}>
             Checkout
           </button>

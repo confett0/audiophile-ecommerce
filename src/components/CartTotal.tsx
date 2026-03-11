@@ -5,7 +5,7 @@ import type { CartItem } from "../types/cart.js";
 export default function CartTotal({
   showDetails = false,
 }: {
-  showDetails: boolean;
+  showDetails?: boolean;
 }) {
   const { cart } = useContext(CartContext);
 
