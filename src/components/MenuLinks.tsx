@@ -1,40 +1,23 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-export default function MenuLinks () {
+export default function MenuLinks() {
+  const menu = {
+    home: "/",
+    headphones: "shop/headphones",
+    speakers: "shop/speakers",
+    earphones: "shop/earphones",
+  };
+  const menuLinks = Object.entries(menu).map(([label, link]) => {
     return (
-        <ul>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="shop/headphones"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Headphones
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="shop/speakers"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Speakers
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="shop/earphones"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Earphones
-            </NavLink>
-          </li>
-        </ul>
-    )
+      <li key={label}>
+        <NavLink
+          to={link}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          {label}
+        </NavLink>
+      </li>
+    );
+  });
+  return <ul>{menuLinks}</ul>;
 }
