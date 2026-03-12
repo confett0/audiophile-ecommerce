@@ -992,6 +992,18 @@ input[type="radio"] {
   }
 
   .orange-area {
+    background: radial-gradient(
+      circle at center 30%,
+      var(--orange) 250px,
+      var(--light-orange) 250px,
+      var(--orange) 251px,
+      var(--orange) 300px,
+      var(--light-orange) 300px,
+      var(--orange) 301px,
+      var(--orange) 500px,
+      var(--light-orange) 500px,
+      var(--orange) 501px
+    );
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
