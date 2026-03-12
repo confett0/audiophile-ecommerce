@@ -15,12 +15,23 @@ export default function CartSummary() {
     );
   });
   return (
-    <div className="checkout-cart">
-      <div className="cart-header">
-        <h6>Summary</h6>
+    <div className="cart-wrap">
+      <div className="checkout-cart">
+        <div className="cart-header">
+          <h6>Summary</h6>
+        </div>
+        {itemElements}
+        <CartTotal showDetails={true} />
       </div>
-      {itemElements}
-      <CartTotal showDetails={true} />
+      {cart.length > 0 && (
+        <button
+          className="orange checkout-button"
+          type="submit"
+          disabled={cart.length === 0}
+        >
+          Continue & Pay
+        </button>
+      )}
     </div>
   );
 }

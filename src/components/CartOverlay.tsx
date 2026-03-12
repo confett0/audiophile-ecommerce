@@ -6,7 +6,11 @@ import CartTotal from "./CartTotal.js";
 import CartContext from "../CartContext.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function CartOverlay({ closeModal }) {
+export default function CartOverlay({
+  closeModal,
+}: {
+  closeModal: () => void;
+}) {
   const { cart, resetCart, increment, decrement } = useContext(CartContext);
   const navigate = useNavigate();
 
