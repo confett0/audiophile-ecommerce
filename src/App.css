@@ -186,6 +186,20 @@ nav ul li {
   list-style: none;
 }
 
+nav ul li a {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  color: var(--orange);
+}
+
 .menu-icon {
   cursor: pointer;
   display: none;
@@ -228,20 +242,6 @@ footer {
   padding: 3rem 0;
   width: 70rem;
   position: relative;
-}
-
-nav li a {
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: var(--transition);
-}
-
-nav li a:hover {
-  color: var(--orange);
 }
 
 .footer-wrap::before {
@@ -787,7 +787,7 @@ fieldset:not(.payment-type-fieldset) {
 
 legend {
   color: #d87d4a;
-  font-family: "Manrope Variable", sans-serif;
+  font-family: var(--font);
   font-size: 0.8125rem;
   font-style: normal;
   font-weight: 700;
@@ -799,7 +799,7 @@ legend {
 
 label {
   color: #000;
-  font-family: "Manrope Variable", sans-serif;
+  font-family: var(--font);
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;

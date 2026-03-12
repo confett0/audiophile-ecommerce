@@ -3,8 +3,6 @@ import type { ReactNode } from "react";
 import cartReducer, { type CartAction } from "./cartReducer.js";
 import type { CartItem } from "./types/cart.js";
 
-import type { Dispatch } from "react";
-
 const CartContext = createContext<CartContextType | []>([]);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -45,7 +43,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
 type CartContextType = {
   cart: CartItem[];
-  dispatch: Dispatch<CartAction>;
+  addItem: (item: CartItem, quantity: number) => void;
+  increment: (id: number) => void;
+  decrement: (id: number) => void;
+  resetCart: () => void;
 };
 
 export default CartContext;
