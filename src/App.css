@@ -230,14 +230,18 @@ footer {
   position: relative;
 }
 
-header a,
-footer a {
+nav li a {
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
+  transition: var(--transition);
+}
+
+nav li a:hover {
+  color: var(--orange);
 }
 
 .footer-wrap::before {
@@ -249,6 +253,7 @@ footer a {
 }
 
 footer p {
+  color: #fff;
   line-height: 1.5rem;
   opacity: 0.5;
 }
@@ -263,12 +268,12 @@ footer nav {
   display: flex;
   gap: 1rem;
   align-items: center;
-  transition: var(--transition);
 }
 
 footer svg {
   color: #fff;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 footer svg:hover {
@@ -538,6 +543,7 @@ footer svg:hover {
   color: #b5b5b5;
   margin: 0;
   padding: 0 0.8rem;
+  transition: var(--transition);
 }
 
 .quantity-button:hover {
