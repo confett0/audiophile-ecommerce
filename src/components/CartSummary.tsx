@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import CartItemRow from "./CartItemRow.js";
 import CartTotal from "./CartTotal.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function CartSummary() {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
   const itemElements = cart.map((item: CartItem) => {
     return (
       <div className="cart-item">

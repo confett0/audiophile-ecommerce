@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import QuantitySelector from "../components/QuantitySelector.js";
 import type { Product } from "../types/product.js";
 
@@ -10,7 +10,7 @@ export default function ProductPage() {
   const [productData, setProductData] = useState<Product | null>(null);
   const [itemQuantity, setItemQuantity] = useState<number>(1);
   const navigate = useNavigate();
-  const { addItem } = useContext(CartContext);
+  const { addItem } = useCart();
 
   useEffect(() => {
     fetch("/data.json")

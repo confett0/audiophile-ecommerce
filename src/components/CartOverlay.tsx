@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import QuantitySelector from "./QuantitySelector.js";
 import CartItemRow from "./CartItemRow.js";
 import CartTotal from "./CartTotal.js";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function CartOverlay({
@@ -11,7 +10,7 @@ export default function CartOverlay({
 }: {
   closeModal: () => void;
 }) {
-  const { cart, resetCart, increment, decrement } = useContext(CartContext);
+  const { cart, resetCart, increment, decrement } = useCart();
   const navigate = useNavigate();
 
   const goToCheckout = () => {

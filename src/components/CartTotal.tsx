@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function CartTotal({
@@ -7,7 +6,7 @@ export default function CartTotal({
 }: {
   showDetails?: boolean;
 }) {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
 
   const orderTotal = cart.reduce(
     (a: number, b: CartItem) => a + b.price * b.quantity,

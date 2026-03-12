@@ -1,13 +1,13 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNav from "./ResposiveNav.js";
 import Modal from "./Modal.js";
 import CartOverlay from "./CartOverlay.js";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import type { CartItem } from "../types/cart.js";
 
 export default function Header() {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const totalItemsInCart = cart.reduce(
     (a: number, b: CartItem) => a + b.quantity,
