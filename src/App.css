@@ -3,6 +3,8 @@
 :root {
   --orange: #d87d4a;
   --light-orange: #fbaf85;
+  --font: "Manrope Variable", sans-serif;
+  --transition: 300ms ease-in-out;
 }
 
 /* Global Styles */
@@ -14,7 +16,7 @@
 }
 
 body {
-  font-family: "Manrope Variable", sans-serif;
+  font-family: var(--font);
 }
 
 #root {
@@ -93,7 +95,7 @@ p {
 
 button {
   cursor: pointer;
-  font-family: "Manrope Variable", sans-serif;
+  font-family: inherit;
   font-size: 0.8125rem;
   font-style: normal;
   font-weight: 700;
@@ -103,6 +105,7 @@ button {
   width: 10rem;
   height: 3rem;
   margin: 1rem 0;
+  transition: var(--transition);
 }
 
 button.orange {
@@ -260,6 +263,7 @@ footer nav {
   display: flex;
   gap: 1rem;
   align-items: center;
+  transition: var(--transition);
 }
 
 footer svg {
