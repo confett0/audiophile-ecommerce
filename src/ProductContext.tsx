@@ -2,7 +2,7 @@ import { useState, useEffect, createContext } from "react";
 import type { ReactNode } from "react";
 import type { Product } from "./types/product.js";
 
-const ProductContext = createContext<Product[] | null>(null);
+export const ProductContext = createContext<Product[] | null>(null);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[] | null>(null);

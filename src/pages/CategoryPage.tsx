@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ProductContext } from "../ProductContext.js";
 import ProductCard from "../components/ProductCard.js";
 import type { Category } from "../types/product.js";
 import type { Product } from "../types/product.js";

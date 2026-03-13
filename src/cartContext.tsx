@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import cartReducer from "./cartReducer.js";
 import type { CartItem } from "./types/cart.js";
 
-const CartContext = createContext<CartContextType | null>(null);
+export const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, dispatch] = useReducer(cartReducer, []);
@@ -48,5 +48,3 @@ type CartContextType = {
   decrement: (id: number) => void;
   resetCart: () => void;
 };
-
-export default CartContext;
