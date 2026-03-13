@@ -1,16 +1,20 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import CartContext from "../CartContext.js";
+import { useCart } from "../useCart.js";
 import type { CartItem } from "../types/cart.js";
 
-export default function OrderConfirmation({ closeModal } : OrderConfirmationProps) {
+// see if you can use CartTotal component
+
+export default function OrderConfirmation({
+  closeModal,
+}: OrderConfirmationProps) {
   const navigate = useNavigate();
-  const {cart, dispatch} = useContext(CartContext)
+  const { cart } = useCart();
 
   const firstCartItem = cart[0];
   const shipping = 50;
   const grandTotal =
-    cart.reduce((a : number, b : CartItem) => a + b.price * b.quantity, 0) + shipping;
+    cart.reduce((a: number, b: CartItem) => a + b.price * b.quantity, 0) +
+    shipping;
 
   const handleClick = () => {
     //emptyCart();
@@ -55,5 +59,5 @@ export default function OrderConfirmation({ closeModal } : OrderConfirmationProp
 }
 
 type OrderConfirmationProps = {
-  closeModal: () => void
-}
+  closeModal: () => void;
+};
