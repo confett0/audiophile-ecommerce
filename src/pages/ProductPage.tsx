@@ -1,26 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "../useProducts.js";
 import { useCart } from "../useCart.js";
 import QuantitySelector from "../components/QuantitySelector.js";
-import type { Product } from "../types/product.js";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
-  const [productData, setProductData] = useState<Product | null>(null);
   const [itemQuantity, setItemQuantity] = useState<number>(1);
   const navigate = useNavigate();
   const { addItem } = useCart();
-
-  useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) =>
-        setProductData(
-          data.find((product: Product) => product.slug === productSlug),
-        ),
-      );
-  }, [productSlug]);
+  const products = useProducts();
+  const productData = products.find((product) => product.slug === productSlug);
 
   const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
 
