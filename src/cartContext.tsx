@@ -2,15 +2,22 @@ import { useReducer, createContext } from "react";
 import type { ReactNode } from "react";
 import cartReducer from "./cartReducer.js";
 import type { CartItem } from "./types/cart.js";
+import type { Product } from "./types/product.js";
 
 export const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, dispatch] = useReducer(cartReducer, []);
-  const addItem = (item: CartItem, quantity: number) => {
+  const addItem = (item: Product, quantity: number) => {
     dispatch({
       type: "ADDED_ITEM",
-      payload: item,
+      payload: {
+        id: item.id,
+        name: item.name,
+        shortName: item.shortName,
+        image: item.image,
+        price: item.price,
+      },
       quantity: quantity,
     });
   };
