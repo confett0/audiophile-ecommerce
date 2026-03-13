@@ -1,6 +1,6 @@
 import { useReducer, createContext } from "react";
 import type { ReactNode } from "react";
-import cartReducer, { type CartAction } from "./cartReducer.js";
+import cartReducer from "./cartReducer.js";
 import type { CartItem } from "./types/cart.js";
 
 const CartContext = createContext<CartContextType | null>(null);
