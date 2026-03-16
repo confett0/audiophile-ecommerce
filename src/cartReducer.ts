@@ -1,4 +1,4 @@
-import type { CartItem } from "./types/cart.js";
+import type { CartItem, BaseCartItem } from "./types/cart.js";
 
 const cartReducer = (state: CartItem[], action: CartAction) => {
   switch (action.type) {
@@ -45,7 +45,7 @@ const cartReducer = (state: CartItem[], action: CartAction) => {
 };
 
 type CartAction =
-  | { type: "ADDED_ITEM"; payload: CartItem; quantity: number }
+  | { type: "ADDED_ITEM"; payload: BaseCartItem; quantity: number }
   | { type: "REMOVED_ITEM"; payload: { id: number } }
   | { type: "INCREMENTED_QUANTITY"; payload: { id: number } }
   | { type: "DECREMENTED_QUANTITY"; payload: { id: number } }

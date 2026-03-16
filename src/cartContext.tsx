@@ -18,7 +18,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         image: item.image,
         price: item.price,
       },
-      quantity: quantity,
+      quantity,
     });
   };
   const increment = (id: number) => {
