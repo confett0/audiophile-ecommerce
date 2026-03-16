@@ -7,8 +7,8 @@ export default function CartSummary() {
   const { cart } = useCart();
   const itemElements = cart.map((item: CartItem) => {
     return (
-      <div className="cart-item">
-        <CartItemRow key={item.id} item={item} />
+      <div key={item.id} className="cart-item">
+        <CartItemRow item={item} />
         <p className="cart-item-quantity">x{item.quantity}</p>
       </div>
     );

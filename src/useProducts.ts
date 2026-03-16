@@ -4,7 +4,7 @@ import { ProductContext } from "./ProductContext.js";
 export function useProducts() {
   const context = useContext(ProductContext);
 
-  if (!context) {
+  if (context === null) {
     throw new Error("useProducts must be used within ProductProvider");
   }
 

@@ -4,7 +4,7 @@ import { CartContext } from "./CartContext.js";
 export function useCart() {
   const context = useContext(CartContext);
 
-  if (!context) {
+  if (context === null) {
     throw new Error("useCart must be used within CartProvider");
   }
 
