@@ -20,8 +20,8 @@ export default function CartOverlay({
 
   const itemElements = cart.map((item: CartItem) => {
     return (
-      <div className="cart-item">
-        <CartItemRow key={item.id} item={item} />
+      <div className="cart-item" key={item.id}>
+        <CartItemRow item={item} />
         <QuantitySelector
           value={item.quantity}
           onDecrement={() => decrement(item.id)}

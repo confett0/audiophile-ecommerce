@@ -34,7 +34,7 @@ export default function Header() {
         </div>
       </div>
       {isModalOpen && (
-        <Modal closeModal={closeModal} isCart={true}>
+        <Modal closeModal={closeModal} isCart={true} isOpen={isModalOpen}>
           <CartOverlay closeModal={closeModal} />
         </Modal>
       )}
