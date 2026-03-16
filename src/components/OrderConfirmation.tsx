@@ -27,12 +27,12 @@ export default function OrderConfirmation({
       <div className="order-summary">
         <div className="order-summary-items">
           <div className="ordered-items-wrap">
-            <img src={firstCartItem.image.mobile} />
+            <img src={firstCartItem?.image.mobile} />
             <div>
-              <p className="ordered-items-name">{firstCartItem.shortName}</p>
-              <p className="ordered-items-price">${firstCartItem.price}</p>
+              <p className="ordered-items-name">{firstCartItem?.shortName}</p>
+              <p className="ordered-items-price">${firstCartItem?.price}</p>
             </div>
-            <p className="ordered-items-quantity">x{firstCartItem.quantity}</p>
+            <p className="ordered-items-quantity">x{firstCartItem?.quantity}</p>
           </div>
           {cart.length > 1 && (
             <div className="order-summary-other-items">
