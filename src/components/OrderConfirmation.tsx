@@ -1,20 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../useCart.js";
-import type { CartItem } from "../types/cart.js";
-
-// see if you can use CartTotal component
+import { getCartTotal } from "../cartUtils.js";
 
 export default function OrderConfirmation({
   closeModal,
 }: OrderConfirmationProps) {
   const navigate = useNavigate();
   const { cart } = useCart();
-
   const firstCartItem = cart[0];
-  const shipping = 50;
-  const grandTotal =
-    cart.reduce((a: number, b: CartItem) => a + b.price * b.quantity, 0) +
-    shipping;
+  const { grandTotal } = getCartTotal(cart);
 
   const handleClick = () => {
     //emptyCart();

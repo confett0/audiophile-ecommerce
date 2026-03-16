@@ -50,7 +50,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
 type CartContextType = {
   cart: CartItem[];
-  addItem: (item: CartItem, quantity: number) => void;
+  addItem: (item: Product, quantity: number) => void;
   increment: (id: number) => void;
   decrement: (id: number) => void;
   resetCart: () => void;
