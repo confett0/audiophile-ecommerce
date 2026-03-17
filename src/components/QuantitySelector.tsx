@@ -2,21 +2,21 @@ export default function QuantitySelector({
   value,
   onIncrement,
   onDecrement,
-  onChange,
+  handleChange,
 }: QuantitySelectorProps) {
   return (
     <div className="quantity-wrap">
       <button className="quantity-button" onClick={onDecrement}>
         -
       </button>
-      {onChange ? (
+      {handleChange ? (
         <input
           type="number"
           className="item-quantity"
           name="item-quantity"
           value={value}
           min="1"
-          onChange={(e) => onChange(e.target.value)}
+          onChange={handleChange}
         />
       ) : (
         <div className="item-quantity">{value}</div>
@@ -32,5 +32,5 @@ type QuantitySelectorProps = {
   value: number | string;
   onIncrement: () => void;
   onDecrement: () => void;
-  onChange?: (a: string) => void;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };

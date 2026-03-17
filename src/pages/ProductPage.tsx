@@ -8,24 +8,39 @@ import QuantitySelector from "../components/QuantitySelector";
 export default function ProductPage() {
   const { productSlug } = useParams();
   const [itemQuantity, setItemQuantity] = useState<number>(1);
+  const [localValue, setLocalValue] = useState<string>("1");
   const navigate = useNavigate();
   const { addItem } = useCart();
   const products = useProducts();
   const productData = products.find((product) => product.slug === productSlug);
 
-  const incrementQuantity = () => setItemQuantity((prevCount) => prevCount + 1);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+    setLocalValue(input);
+    if (input === "") return;
+    setItemQuantity(Number(input));
+  };
+
+  const incrementQuantity = () => {
+    setLocalValue((prev) => String(Number(prev) + 1));
+    setItemQuantity((prev) => prev + 1);
+  };
 
   const decrementQuantity = () =>
-    setItemQuantity((prevCount) => {
-      if (prevCount <= 1) return prevCount;
-      return prevCount - 1;
+    setLocalValue((prev) => {
+      if (Number(prev) <= 1) return prev;
+      return String(Number(prev) - 1);
     });
+  setItemQuantity((prev) => {
+    if (prev <= 1) return prev;
+    return prev - 1;
+  });
 
   if (!productData) {
     return <div>Loading...</div>;
   }
 
-  const includedItemElements = productData.includes.map((item) => (
+  const includedItemElements = productData?.includes.map((item) => (
     <li key={item.item}>
       <span className="orange-text">{item.quantity}x</span> {item.item}
     </li>
@@ -63,10 +78,10 @@ export default function ProductPage() {
           <h6>$ {productData.price}</h6>
           <div className="button-wrap">
             <QuantitySelector
-              value={itemQuantity}
+              value={localValue}
               onIncrement={incrementQuantity}
               onDecrement={decrementQuantity}
-              onChange={(e) => setItemQuantity(+e.target.value)}
+              handleChange={handleChange}
             />
             <button
               className="orange"
