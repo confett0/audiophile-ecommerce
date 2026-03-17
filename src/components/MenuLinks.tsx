@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { capitalize } from "../utils.js";
+import { capitalize } from "../utils";
 
 export default function MenuLinks() {
   const menu = {

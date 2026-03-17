@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../useProducts.js";
-import { useCart } from "../useCart.js";
-import QuantitySelector from "../components/QuantitySelector.js";
+import { useProducts } from "../useProducts";
+import { useCart } from "../useCart";
+import QuantitySelector from "../components/QuantitySelector";
 
 export default function ProductPage() {
   const { productSlug } = useParams();

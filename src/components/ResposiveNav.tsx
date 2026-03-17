@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MenuLinks from "./MenuLinks.js";
-import CategoryLinks from "./CategoryLinks.js";
+import MenuLinks from "./MenuLinks";
+import CategoryLinks from "./CategoryLinks";
 
 export default function ResponsiveNav() {
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -9,13 +9,17 @@ export default function ResponsiveNav() {
 
   return (
     <nav>
-      <img src="/assets/shared/tablet/icon-hamburger.svg" className="menu-icon" onClick={toggleNav} />
+      <img
+        src="/assets/shared/tablet/icon-hamburger.svg"
+        className="menu-icon"
+        onClick={toggleNav}
+      />
       {showMobileNav ? (
         <>
-        <div className="modal-wrap" onClick={closeNav}></div>
-        <div className="mobile-nav">
-          <CategoryLinks/>
-        </div>
+          <div className="modal-wrap" onClick={closeNav}></div>
+          <div className="mobile-nav">
+            <CategoryLinks />
+          </div>
         </>
       ) : (
         <MenuLinks />

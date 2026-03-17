@@ -7,8 +7,10 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "ESnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -23,6 +25,8 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
+    // Bundler-specific 
+    "noEmit": true, 
 
     // Style Options
     // "noImplicitReturns": true,
@@ -35,7 +39,7 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    //"verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "esModuleInterop": true,

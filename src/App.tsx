@@ -1,14 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./CartContext.js";
-import { ProductProvider } from "./ProductContext.js";
-import Layout from "./components/Layout.js";
-import Home from "./pages/Home.js";
-import CategoryPage from "./pages/CategoryPage.js";
-import ProductPage from "./pages/ProductPage.js";
-import Shop from "./pages/Shop.js";
-import Checkout from "./pages/Checkout.js";
-import ScrollToTop from "./components/ScrollToTop.js";
+import { CartProvider } from "./CartContext";
+import { ProductProvider } from "./ProductContext";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import CategoryPage from "./pages/CategoryPage";
+import ProductPage from "./pages/ProductPage";
+import Shop from "./pages/Shop";
+import Checkout from "./pages/Checkout";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (

@@ -1,10 +1,9 @@
-import MenuLinks from "./MenuLinks.js";
+import MenuLinks from "./MenuLinks";
 
 export default function Nav() {
-
   return (
     <nav>
-        <MenuLinks />
+      <MenuLinks />
     </nav>
   );
 }

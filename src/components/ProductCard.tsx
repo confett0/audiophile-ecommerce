@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Product } from "../types/product.js";
+import type { Product } from "../types/product";
 
 export default function ProductCard({ item }: ProductCardProps) {
   return (

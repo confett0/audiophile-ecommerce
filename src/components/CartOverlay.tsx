@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import QuantitySelector from "./QuantitySelector.js";
-import CartItemRow from "./CartItemRow.js";
-import CartTotal from "./CartTotal.js";
-import { useCart } from "../useCart.js";
-import type { CartItem } from "../types/cart.js";
+import QuantitySelector from "./QuantitySelector";
+import CartItemRow from "./CartItemRow";
+import CartTotal from "./CartTotal";
+import { useCart } from "../useCart";
+import type { CartItem } from "../types/cart";
 
 export default function CartOverlay({
   closeModal,

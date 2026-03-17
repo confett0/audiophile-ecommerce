@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import CategoryLinks from "../components/CategoryLinks.js";
-import BeforeFooterArea from "../components/BeforeFooterArea.js";
+import CategoryLinks from "../components/CategoryLinks";
+import BeforeFooterArea from "../components/BeforeFooterArea";
 
 export default function Home() {
   return (
@@ -21,8 +21,8 @@ export default function Home() {
       <div className="content-wrap">
         <CategoryLinks />
         <section className="orange-area area">
-        <picture>
-        <source
+          <picture>
+            <source
               media="(max-width: 500px)"
               srcSet="/assets/home/mobile/image-speaker-zx9.png 500w"
               sizes="500px"
@@ -59,7 +59,7 @@ export default function Home() {
         </section>
         <section className="black-area area">
           <picture>
-          <source
+            <source
               media="(max-width: 500px)"
               srcSet="/assets/home/mobile/image-earphones-yx1.jpg 500w"
               sizes="500px"

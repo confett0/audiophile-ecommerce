@@ -1,7 +1,7 @@
-import { useCart } from "../useCart.js";
-import CartItemRow from "./CartItemRow.js";
-import CartTotal from "./CartTotal.js";
-import type { CartItem } from "../types/cart.js";
+import { useCart } from "../useCart";
+import CartItemRow from "./CartItemRow";
+import CartTotal from "./CartTotal";
+import type { CartItem } from "../types/cart";
 
 export default function CartSummary() {
   const { cart } = useCart();

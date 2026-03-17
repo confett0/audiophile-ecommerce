@@ -1,4 +1,4 @@
-import type { CartItem } from "./types/cart.js";
+import type { CartItem } from "./types/cart";
 
 const SHIPPING = 50;
 const VAT_RATE = 0.2; // 20% VAT

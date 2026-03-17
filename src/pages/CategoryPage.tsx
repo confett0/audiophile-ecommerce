@@ -1,6 +1,6 @@
-import { useProducts } from "../useProducts.js";
-import ProductCard from "../components/ProductCard.js";
-import type { Category } from "../types/product.js";
+import { useProducts } from "../useProducts";
+import ProductCard from "../components/ProductCard";
+import type { Category } from "../types/product";
 
 export default function CategoryPage({ category }: CategoryPageProps) {
   const products = useProducts();

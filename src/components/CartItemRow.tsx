@@ -1,4 +1,4 @@
-import type { CartItem } from "../types/cart.js";
+import type { CartItem } from "../types/cart";
 
 export default function CartItemRow({ item }: { item: CartItem }) {
   return (
