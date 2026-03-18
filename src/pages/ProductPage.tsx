@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../useProducts";
@@ -7,34 +7,24 @@ import QuantitySelector from "../components/QuantitySelector";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
-  const [itemQuantity, setItemQuantity] = useState<number>(1);
-  const [localValue, setLocalValue] = useState<string>("1");
   const navigate = useNavigate();
   const { addItem } = useCart();
   const products = useProducts();
   const productData = products.find((product) => product.slug === productSlug);
+  const [value, setValue] = useState("1");
+  const numericValue = useMemo(() => {
+    const num = Number(value);
+    return isNaN(num) || num < 1 ? 1 : num;
+  }, [value]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
-    setLocalValue(input);
-    if (input === "") return;
-    setItemQuantity(Number(input));
+    setValue(input);
   };
 
-  const incrementQuantity = () => {
-    setLocalValue((prev) => String(Number(prev) + 1));
-    setItemQuantity((prev) => prev + 1);
-  };
-
-  const decrementQuantity = () =>
-    setLocalValue((prev) => {
-      if (Number(prev) <= 1) return prev;
-      return String(Number(prev) - 1);
-    });
-  setItemQuantity((prev) => {
-    if (prev <= 1) return prev;
-    return prev - 1;
-  });
+  const increment = () => setValue(String(numericValue + 1));
+  const decrement = () =>
+    setValue(numericValue <= 1 ? "1" : String(numericValue - 1));
 
   if (!productData) {
     return <div>Loading...</div>;
@@ -78,16 +68,16 @@ export default function ProductPage() {
           <h6>$ {productData.price}</h6>
           <div className="button-wrap">
             <QuantitySelector
-              value={localValue}
-              onIncrement={incrementQuantity}
-              onDecrement={decrementQuantity}
-              handleChange={handleChange}
+              value={value}
+              onIncrement={increment}
+              onDecrement={decrement}
+              onChange={handleChange}
             />
             <button
               className="orange"
               onClick={() => {
-                addItem(productData, itemQuantity);
-                setItemQuantity(1); // reset itemQuantity state
+                addItem(productData, numericValue);
+                setValue("1");
               }}
             >
               Add to cart
