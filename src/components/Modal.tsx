@@ -10,7 +10,7 @@ export default function Modal({
     if (!isOpen) {
       return;
     }
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         closeModal();
       }
