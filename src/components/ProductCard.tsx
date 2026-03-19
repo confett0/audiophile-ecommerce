@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import styles from "./ProductCard.module.css";
 import type { Product } from "../types/product";
 
 export default function ProductCard({ item }: ProductCardProps) {
   return (
-    <div className="product-card">
+    <div className={styles.card}>
       <picture>
         <source
           media="(max-width: 500px)"
@@ -18,7 +19,7 @@ export default function ProductCard({ item }: ProductCardProps) {
         <source srcSet={item.categoryImage.desktop + " 1280w"} sizes="1280px" />
         <img src={item.categoryImage.desktop} />
       </picture>
-      <div className="product-card-details">
+      <div>
         {item.new && <p className="overline orange-text">New product</p>}
         <h2>{item.name}</h2>
         <p>{item.description}</p>
