@@ -1,3 +1,4 @@
+import styles from "./Modal.module.css";
 import { useEffect } from "react";
 
 export default function Modal({
@@ -20,14 +21,14 @@ export default function Modal({
   }, [isOpen, closeModal]);
   return (
     <div
-      className={`modal-overlay ${isOpen ? "open" : ""}`}
+      className={`${styles.overlay} ${isOpen && styles.modalOpen}`}
       onClick={closeModal}
     >
       <div
         className={
           isCart
-            ? "modal-content cart-modal"
-            : "modal-content confirmation-modal"
+            ? `${styles.modal} cart-modal`
+            : `${styles.modal} confirmation-modal`
         }
         onClick={(e) => e.stopPropagation()}
       >

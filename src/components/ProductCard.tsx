@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import type { Product } from "../types/product";
 
-export default function ProductCard({ item }: ProductCardProps) {
+export default function ProductCard({ item }: { item: Product }) {
   return (
     <div className={styles.card}>
       <picture>
@@ -30,7 +30,3 @@ export default function ProductCard({ item }: ProductCardProps) {
     </div>
   );
 }
-
-type ProductCardProps = {
-  item: Product;
-};
