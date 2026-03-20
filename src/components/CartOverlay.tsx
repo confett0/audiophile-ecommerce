@@ -33,11 +33,11 @@ export default function CartOverlay({
   return (
     <div className="cart">
       {cart.length === 0 ? (
-        <h6>Your cart is empty</h6>
+        <h6 aria-labelledby="modal-title">Your cart is empty</h6>
       ) : (
         <>
           <div className="cart-header">
-            <h6>Cart ({cart.length})</h6>
+            <h6 aria-labelledby="modal-title">Cart ({cart.length})</h6>
             <button className="minimal empty-cart-button" onClick={resetCart}>
               Remove all
             </button>

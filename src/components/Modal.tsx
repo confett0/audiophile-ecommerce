@@ -27,6 +27,8 @@ export default function Modal({
       onClick={closeModal}
     >
       <div
+        role="dialog"
+        aria-modal="true"
         className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
         onClick={(e) => e.stopPropagation()}
       >
