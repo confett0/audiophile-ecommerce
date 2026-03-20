@@ -17,18 +17,20 @@ export default function Modal({
       }
     };
     window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden"; // block page scroll when modal is open
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
   }, [isOpen, closeModal]);
 
   if (!isOpen) return null;
   return (
-    <div
-      className={`${styles.overlay} ${isOpen && styles.open}`}
-      onClick={closeModal}
-    >
+    <div className={`${styles.overlay} ${styles.open}`} onClick={closeModal}>
       <div
         role="dialog"
         aria-modal="true"
+        aria-labelledby="modal-title"
         className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
         onClick={(e) => e.stopPropagation()}
       >

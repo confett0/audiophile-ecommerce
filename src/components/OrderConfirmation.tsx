@@ -19,7 +19,7 @@ export default function OrderConfirmation({
   return (
     <div className="order-confirmation">
       <img src="/assets/checkout/icon-order-confirmation.svg" />
-      <h3>
+      <h3 id="modal-title">
         Thank you <br />
         for your order
       </h3>
