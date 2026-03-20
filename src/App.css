@@ -589,22 +589,6 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100%;
 }
 
-/* Modal */
-
-.cart-modal {
-  top: 8rem;
-  right: 9rem;
-  width: 23.5rem;
-}
-
-.confirmation-modal {
-  top: 5%;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
-  width: 33.5rem;
-}
-
 /* Cart */
 
 .cart-icon {

@@ -19,17 +19,15 @@ export default function Modal({
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
   }, [isOpen, closeModal]);
+
+  if (!isOpen) return null;
   return (
     <div
-      className={`${styles.overlay} ${isOpen && styles.modalOpen}`}
+      className={`${styles.overlay} ${isOpen && styles.open}`}
       onClick={closeModal}
     >
       <div
-        className={
-          isCart
-            ? `${styles.modal} cart-modal`
-            : `${styles.modal} confirmation-modal`
-        }
+        className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
