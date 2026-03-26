@@ -1,0 +1,41 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.itemQuantity,
+.button {
+  background: #f1f1f1;
+  border: none;
+  height: 3rem;
+  width: 2.5rem;
+}
+
+.itemQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button {
+  color: #b5b5b5;
+  margin: 0;
+  padding: 0 0.8rem;
+  transition: var(--transition);
+}
+
+.button:hover {
+  color: var(--orange);
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

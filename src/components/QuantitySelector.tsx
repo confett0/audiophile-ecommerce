@@ -1,3 +1,5 @@
+import styles from "./QuantitySelector.module.css";
+
 export default function QuantitySelector({
   value,
   onIncrement,
@@ -5,23 +7,23 @@ export default function QuantitySelector({
   onChange,
 }: QuantitySelectorProps) {
   return (
-    <div className="quantity-wrap">
-      <button className="quantity-button" onClick={onDecrement}>
+    <div className={styles.wrap}>
+      <button className={styles.button} onClick={onDecrement}>
         -
       </button>
       {onChange ? (
         <input
           type="number"
-          className="item-quantity"
+          className={styles.itemQuantity}
           name="item-quantity"
           value={value}
           min="1"
           onChange={onChange}
         />
       ) : (
-        <div className="item-quantity">{value}</div>
+        <div className={styles.itemQuantity}>{value}</div>
       )}
-      <button className="quantity-button" onClick={onIncrement}>
+      <button className={styles.button} onClick={onIncrement}>
         +
       </button>
     </div>
