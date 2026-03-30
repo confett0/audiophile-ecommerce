@@ -11,17 +11,17 @@ export default function CartTotal({
   const { orderTotal, SHIPPING, vat, grandTotal } = getCartTotal(cart);
 
   return (
-    <div className="cart-total-wrap">
+    <div className={styles.cartTotalWrap}>
       <p>TOTAL</p>
-      <p className="cart-total">${orderTotal}</p>
+      <p className={styles.cartAmount}>${orderTotal}</p>
       {showDetails && (
         <>
           <p>SHIPPING</p>
-          <p className="cart-total">${SHIPPING}</p>
+          <p className={styles.cartAmount}>${SHIPPING}</p>
           <p>VAT (INCLUDED)</p>
-          <p className="cart-total">${vat}</p>
-          <p className="grandtotal">GRANDTOTAL</p>
-          <p className="cart-total grandtotal">${grandTotal}</p>
+          <p className={styles.cartAmount}>${vat}</p>
+          <p className={styles.grandtotal}>GRANDTOTAL</p>
+          <p className={styles.cartAmount + styles.grandtotal}>${grandTotal}</p>
         </>
       )}
     </div>
