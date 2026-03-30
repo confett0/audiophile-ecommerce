@@ -21,7 +21,7 @@ export default function CartOverlay({
 
   const itemElements = cart.map((item: CartItem) => {
     return (
-      <div className="cart-item" key={item.id}>
+      <div className={styles.cartItem} key={item.id}>
         <CartItemRow item={item} />
         <QuantitySelector
           value={item.quantity}
@@ -37,7 +37,7 @@ export default function CartOverlay({
         <h6 id="modal-title">Your cart is empty</h6>
       ) : (
         <>
-          <div className={styles.header}>
+          <div className={styles.cartHeader}>
             <h6 id="modal-title">Cart ({cart.length})</h6>
             <button
               className={`minimal ${styles.emptyCartButton}`}

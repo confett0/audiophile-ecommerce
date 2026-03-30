@@ -1,3 +1,4 @@
+import styles from "./Cart.module.css";
 import type { CartItem } from "../types/cart";
 
 export default function CartItemRow({ item }: { item: CartItem }) {
@@ -5,8 +6,8 @@ export default function CartItemRow({ item }: { item: CartItem }) {
     <>
       <img src={item.image.mobile} />
       <div>
-        <p className="cart-item-name">{item.shortName}</p>
-        <p className="cart-item-price">${item.price}</p>
+        <p className={styles.cartItemName}>{item.shortName}</p>
+        <p className={styles.cartItemPrice}>${item.price}</p>
       </div>
     </>
   );

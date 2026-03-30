@@ -1,5 +1,6 @@
 import { useCart } from "../useCart";
 import CartItemRow from "./CartItemRow";
+import styles from "./Cart.module.css";
 import CartTotal from "./CartTotal";
 import type { CartItem } from "../types/cart";
 

@@ -1,5 +1,6 @@
 import { useCart } from "../useCart";
 import { getCartTotal } from "../cartUtils";
+import styles from "./Cart.module.css";
 
 export default function CartTotal({
   showDetails = false,

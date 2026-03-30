@@ -557,7 +557,7 @@ footer svg:hover {
   align-items: flex-end;
 }
 
-/*.total-items {
+.total-items {
   font-size: 0.6rem;
   background: var(--orange);
   width: 0.9rem;
@@ -568,7 +568,7 @@ footer svg:hover {
   justify-content: center;
 }
 
-.cart-header {
+/*.cart-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
