@@ -8,16 +8,18 @@ export default function CartSummary() {
   const { cart } = useCart();
   const itemElements = cart.map((item: CartItem) => {
     return (
-      <div key={item.id} className="cart-item">
+      <div key={item.id} className={styles.cartItem}>
         <CartItemRow item={item} />
-        <p className="cart-item-quantity">x{item.quantity}</p>
+        <div>
+          <p>x{item.quantity}</p>
+        </div>
       </div>
     );
   });
   return (
-    <div className="cart-wrap">
-      <div className="checkout-cart">
-        <div className="cart-header">
+    <div className={styles.cartWrap}>
+      <div>
+        <div className={styles.cartHeader}>
           <h6>Summary</h6>
         </div>
         {itemElements}
@@ -25,7 +27,7 @@ export default function CartSummary() {
       </div>
       {cart.length > 0 && (
         <button
-          className="orange checkout-button"
+          className={`orange ${styles.checkoutButton}`}
           type="submit"
           disabled={cart.length === 0}
         >

@@ -568,81 +568,6 @@ footer svg:hover {
   justify-content: center;
 }
 
-/*.cart-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cart-header {
-  margin-bottom: 2rem;
-}
-
-.cart-header h6 {
-  margin-bottom: 0;
-}
-
-.empty-cart-button {
-  height: unset;
-  margin: 0;
-  text-transform: none;
-  width: unset;
-}
-
-.cart-item {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.cart-item img {
-  border-radius: 0.5rem;
-  width: 4rem;
-}
-
-.cart-item-name {
-  color: #000;
-  font-weight: 700;
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-
-.cart-item-price {
-  margin-bottom: 0;
-}
-
-.cart-item > div:last-child {
-  margin-left: auto;
-}
-
-.cart-total-wrap {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-}
-
-.cart-total-wrap p {
-  margin-bottom: 0.5rem;
-}
-
-.cart-total {
-  justify-self: end;
-  color: #000;
-  font-weight: 700;
-}
-
-.grandtotal {
-  margin-top: 1rem;
-}
-
-.cart-total.grandtotal {
-  color: var(--orange);
-}
-
-.cart-button {
-  width: 100%;
-} */
-
 /* Checkout page */
 
 .checkout-background {
@@ -662,7 +587,6 @@ form {
   width: 100%;
 }
 
-.cart-wrap,
 .form-wrap {
   border-radius: 0.5rem;
   background: #fff;

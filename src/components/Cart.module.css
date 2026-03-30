@@ -43,16 +43,16 @@
   margin-left: auto;
 }
 
-.cart-total-wrap {
+.cartTotalWrap {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
 
-.cart-total-wrap p {
+.cartTotalWrap p {
   margin-bottom: 0.5rem;
 }
 
-.cart-total {
+.cartAmount {
   justify-self: end;
   color: #000;
   font-weight: 700;
@@ -62,10 +62,16 @@
   margin-top: 1rem;
 }
 
-.cart-total.grandtotal {
+.cartAmount.grandtotal {
   color: var(--orange);
 }
 
 .checkoutButton {
   width: 100%;
+}
+
+.cartWrap {
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 3rem;
 }
