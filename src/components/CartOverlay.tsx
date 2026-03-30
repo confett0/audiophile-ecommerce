@@ -3,6 +3,7 @@ import QuantitySelector from "./QuantitySelector";
 import CartItemRow from "./CartItemRow";
 import CartTotal from "./CartTotal";
 import { useCart } from "../useCart";
+import styles from "./Cart.module.css";
 import type { CartItem } from "../types/cart";
 
 export default function CartOverlay({
@@ -31,20 +32,26 @@ export default function CartOverlay({
     );
   });
   return (
-    <div className="cart">
+    <div className={styles.cart}>
       {cart.length === 0 ? (
         <h6 id="modal-title">Your cart is empty</h6>
       ) : (
         <>
-          <div className="cart-header">
+          <div className={styles.header}>
             <h6 id="modal-title">Cart ({cart.length})</h6>
-            <button className="minimal empty-cart-button" onClick={resetCart}>
+            <button
+              className={`minimal ${styles.emptyCartButton}`}
+              onClick={resetCart}
+            >
               Remove all
             </button>
           </div>
           {itemElements}
           <CartTotal />
-          <button className="orange cart-button" onClick={goToCheckout}>
+          <button
+            className={`orange ${styles.checkoutButton}`}
+            onClick={goToCheckout}
+          >
             Checkout
           </button>
         </>

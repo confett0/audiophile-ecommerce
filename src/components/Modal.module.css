@@ -50,3 +50,15 @@
   margin-inline: auto;
   width: 33.5rem;
 }
+
+@media screen and (max-width: 900px) {
+  .cartModal {
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cartModal {
+    width: 90%;
+  }
+}
