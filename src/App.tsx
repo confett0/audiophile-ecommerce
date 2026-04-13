@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./CartContext";
-import { ProductProvider } from "./ProductContext";
+import { CartProvider } from "./context/CartContext";
+import { ProductProvider } from "./context/ProductContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";

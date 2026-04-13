@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 import type { ReactNode } from "react";
-import type { Product } from "./types/product";
+import type { Product } from "../types/product";
 
 export const ProductContext = createContext<Product[] | []>([]);
 

@@ -1,4 +1,4 @@
-import { useCart } from "../useCart";
+import { useCart } from "../hooks/useCart";
 import { getCartTotal } from "../cartUtils";
 import styles from "./Cart.module.css";
 

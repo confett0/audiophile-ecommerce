@@ -4,7 +4,7 @@ import ResponsiveNav from "./ResposiveNav";
 import Modal from "./Modal";
 import CartOverlay from "./CartOverlay";
 import { getCartTotal } from "../cartUtils";
-import { useCart } from "../useCart";
+import { useCart } from "../hooks/useCart";
 
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);

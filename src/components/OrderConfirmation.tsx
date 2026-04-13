@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../useCart";
+import { useCart } from "../hooks/useCart";
 import { getCartTotal } from "../cartUtils";
 
 export default function OrderConfirmation({

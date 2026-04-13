@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../useProducts";
-import { useCart } from "../useCart";
+import { useProducts } from "../hooks/useProducts";
+import { useCart } from "../hooks/useCart";
 import QuantitySelector from "../components/QuantitySelector";
 
 export default function ProductPage() {

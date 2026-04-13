@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import QuantitySelector from "./QuantitySelector";
 import CartItemRow from "./CartItemRow";
 import CartTotal from "./CartTotal";
-import { useCart } from "../useCart";
+import { useCart } from "../hooks/useCart";
 import styles from "./Cart.module.css";
 import type { CartItem } from "../types/cart";
 
