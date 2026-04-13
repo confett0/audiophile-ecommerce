@@ -1,5 +1,5 @@
-import { useCart } from "../hooks/useCart";
-import { getCartTotal } from "../cartUtils";
+import { useCart } from "../../hooks/useCart";
+import { getCartTotal } from "../../cartUtils";
 import styles from "./Cart.module.css";
 
 export default function CartTotal({

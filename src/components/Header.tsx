@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ResponsiveNav from "./ResposiveNav";
 import Modal from "./Modal";
-import CartOverlay from "./CartOverlay";
+import CartOverlay from "./cart/CartOverlay";
 import { getCartTotal } from "../cartUtils";
 import { useCart } from "../hooks/useCart";
 

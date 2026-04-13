@@ -1,5 +1,5 @@
 import styles from "./Cart.module.css";
-import type { CartItem } from "../types/cart";
+import type { CartItem } from "../../types/cart";
 
 export default function CartItemRow({ item }: { item: CartItem }) {
   return (
