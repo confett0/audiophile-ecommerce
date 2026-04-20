@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LinkButton from "../components/LinkButton";
 import CategoryLinks from "../components/CategoryLinks";
 import BeforeFooterArea from "../components/BeforeFooterArea";
 
@@ -13,9 +13,9 @@ export default function Home() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to="/shop/xx99-mark-two-headphones">
-            <button className="orange">See product</button>
-          </Link>
+          <LinkButton to="/shop/xx99-mark-two-headphones">
+            See product
+          </LinkButton>
         </div>
       </section>
       <div className="content-wrap">
@@ -44,17 +44,17 @@ export default function Home() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link to="/shop/zx9-speaker">
-              <button className="black">See product</button>
-            </Link>
+            <LinkButton to="/shop/zx9-speaker" variant="black">
+              See product
+            </LinkButton>
           </div>
         </section>
         <section className="grey-area area">
           <div className="home-product-card">
             <h4>ZX7 SPEAKER</h4>
-            <Link to="/shop/zx7-speaker">
-              <button className="clear">See product</button>
-            </Link>
+            <LinkButton to="/shop/zx7-speaker" variant="clear">
+              See product
+            </LinkButton>
           </div>
         </section>
         <section className="black-area area">
@@ -78,9 +78,9 @@ export default function Home() {
           <div className="card-wrap">
             <div className="home-product-card">
               <h4>YX1 EARPHONES</h4>
-              <Link to="/shop/yx1-earphones">
-                <button className="clear">See product</button>
-              </Link>
+              <LinkButton to="/shop/yx1-earphones" variant="clear">
+                See product
+              </LinkButton>
             </div>
           </div>
         </section>
