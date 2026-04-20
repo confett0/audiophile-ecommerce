@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-wrap">
-        <img src="/assets/shared/desktop/logo.svg" />
+        <img src="/assets/shared/desktop/logo.svg" alt="Audiophile Logo" />
         <Nav />
         <p className="footer-text">
           Audiophile is an all in one stop to fulfill your audio needs. We're a

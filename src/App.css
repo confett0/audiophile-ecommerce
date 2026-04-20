@@ -203,8 +203,13 @@ nav ul li a:hover {
 }
 
 .menu-icon {
+  background: transparent;
+  border: none;
+  color: #fff;
   cursor: pointer;
   display: none;
+  width: unset;
+  height: unset;
 }
 
 .mobile-nav {

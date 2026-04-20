@@ -22,10 +22,10 @@ export default function CategoryLinks() {
   );
 }
 
-function CategoryLink({ imgUrl, categoryName, link } : CategoryLinkProps) {
+function CategoryLink({ imgUrl, categoryName, link }: CategoryLinkProps) {
   return (
     <div className="category-link">
-      <img src={imgUrl} />
+      <img src={imgUrl} alt={categoryName} />
       <div className="category-name">
         <h6>{categoryName}</h6>
         <Link to={link}>
@@ -39,7 +39,7 @@ function CategoryLink({ imgUrl, categoryName, link } : CategoryLinkProps) {
 }
 
 type CategoryLinkProps = {
-  imgUrl: string
-  categoryName: string
-  link: string
-}
+  imgUrl: string;
+  categoryName: string;
+  link: string;
+};

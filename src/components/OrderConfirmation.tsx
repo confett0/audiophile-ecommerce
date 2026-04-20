@@ -27,7 +27,7 @@ export default function OrderConfirmation({
       <div className="order-summary">
         <div className="order-summary-items">
           <div className="ordered-items-wrap">
-            <img src={firstCartItem?.image.mobile} />
+            <img src={firstCartItem?.image.mobile} alt={firstCartItem?.name} />
             <div>
               <p className="ordered-items-name">{firstCartItem?.shortName}</p>
               <p className="ordered-items-price">${firstCartItem?.price}</p>

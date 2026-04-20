@@ -17,7 +17,7 @@ export default function ProductCard({ item }: { item: Product }) {
           sizes="900px"
         />
         <source srcSet={item.categoryImage.desktop + " 1280w"} sizes="1280px" />
-        <img src={item.categoryImage.desktop} />
+        <img src={item.categoryImage.desktop} alt={item.name} />
       </picture>
       <div>
         {item.new && <p className="overline orange-text">New product</p>}

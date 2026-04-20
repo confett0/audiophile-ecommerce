@@ -15,22 +15,22 @@ export default function BeforeFooterArea() {
         </p>
       </div>
       <picture>
-      <source
-              media="(max-width: 500px)"
-              srcSet="/assets/shared/mobile/image-best-gear.jpg 500w"
-              sizes="500px"
-            />
-            <source
-              media="(max-width: 900px)"
-              srcSet="/assets/shared/tablet/image-best-gear.jpg 900w"
-              sizes="900px"
-            />
-            <source
-              srcSet="/assets/shared/desktop/image-best-gear.jpg 1280w"
-              sizes="1280px"
-            />
-            <img src="/assets/shared/desktop/image-best-gear.jpg" />
-          </picture>
+        <source
+          media="(max-width: 500px)"
+          srcSet="/assets/shared/mobile/image-best-gear.jpg 500w"
+          sizes="500px"
+        />
+        <source
+          media="(max-width: 900px)"
+          srcSet="/assets/shared/tablet/image-best-gear.jpg 900w"
+          sizes="900px"
+        />
+        <source
+          srcSet="/assets/shared/desktop/image-best-gear.jpg 1280w"
+          sizes="1280px"
+        />
+        <img src="/assets/shared/desktop/image-best-gear.jpg" alt="" />
+      </picture>
     </section>
   );
 }

@@ -9,11 +9,15 @@ export default function ResponsiveNav() {
 
   return (
     <nav>
-      <img
-        src="/assets/shared/tablet/icon-hamburger.svg"
+      <button
         className="menu-icon"
         onClick={toggleNav}
-      />
+        aria-label="Toggle navigation menu"
+        aria-expanded={showMobileNav}
+        aria-controls="mobile-nav"
+      >
+        <img src="/assets/shared/tablet/icon-hamburger.svg" />
+      </button>
       {showMobileNav ? (
         <>
           <div className="modal-wrap" onClick={closeNav}></div>

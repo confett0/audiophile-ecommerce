@@ -4,7 +4,7 @@ import type { CartItem } from "../../types/cart";
 export default function CartItemRow({ item }: { item: CartItem }) {
   return (
     <>
-      <img src={item.image.mobile} />
+      <img src={item.image.mobile} alt={item.name} />
       <div>
         <p className={styles.cartItemName}>{item.shortName}</p>
         <p className={styles.cartItemPrice}>${item.price}</p>
