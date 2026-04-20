@@ -18,7 +18,11 @@ export default function Header() {
     <header>
       <div className="header-wrap">
         <Link to="/">
-          <img className="logo" src="/assets/shared/desktop/logo.svg" />
+          <img
+            className="logo"
+            src="/assets/shared/desktop/logo.svg"
+            alt="Audiophile home"
+          />
         </Link>
         <ResponsiveNav />
         <div className="cart-icon" onClick={toggleModal}>
