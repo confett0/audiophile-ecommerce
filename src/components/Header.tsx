@@ -25,14 +25,24 @@ export default function Header() {
           />
         </Link>
         <ResponsiveNav />
-        <div className="cart-icon" onClick={toggleModal}>
-          <img src="/assets/shared/desktop/icon-cart.svg" />
+        <button
+          className="cart-icon"
+          onClick={toggleModal}
+          aria-label={`Shopping cart with ${totalItemsInCart} items`}
+          aria-expanded={isModalOpen}
+          aria-controls="cart-overlay"
+        >
+          <img
+            src="/assets/shared/desktop/icon-cart.svg"
+            alt=""
+            aria-hidden="true"
+          />
           {cart.length > 0 && (
-            <div className="total-items">
+            <div className="total-items" aria-live="polite">
               {totalItemsInCart ? totalItemsInCart : ""}
             </div>
           )}
-        </div>
+        </button>
       </div>
       {isModalOpen && (
         <Modal closeModal={closeModal} isCart={true} isOpen={isModalOpen}>

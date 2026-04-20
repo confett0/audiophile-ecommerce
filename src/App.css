@@ -552,16 +552,21 @@ footer svg:hover {
 /* Cart icon */
 
 .cart-icon {
+  background: transparent;
+  border: none;
+  color: #fff;
   cursor: pointer;
   display: flex;
   align-items: flex-end;
+  width: 2.5rem;
+  height: unset;
 }
 
 .total-items {
   font-size: 0.6rem;
   background: var(--orange);
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
