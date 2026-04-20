@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
 import QuantitySelector from "../components/QuantitySelector";
+import LinkButton from "../components/LinkButton";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
@@ -105,9 +106,7 @@ export default function ProductPage() {
             <div className="related-product-card" key={product.slug}>
               <img src={product.image.desktop} />
               <h5>{product.name}</h5>
-              <Link to={`/shop/${product.slug}`}>
-                <button className="orange">See product</button>
-              </Link>
+              <LinkButton to={`/shop/${product.slug}`}>See product</LinkButton>
             </div>
           ))}
         </div>
