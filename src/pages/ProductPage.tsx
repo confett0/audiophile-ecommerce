@@ -58,7 +58,7 @@ export default function ProductPage() {
             srcSet={productData.image.desktop + " 1280w"}
             sizes="1280px"
           />
-          <img src={productData.image.desktop} />
+          <img src={productData.image.desktop} alt={productData.name} />
         </picture>
         <div className="product-info">
           {productData.new && (
@@ -95,16 +95,28 @@ export default function ProductPage() {
         </div>
       </section>
       <section className="product-gallery">
-        <img className="first" src={productData.gallery.first.desktop} />
-        <img className="second" src={productData.gallery.second.desktop} />
-        <img className="third" src={productData.gallery.third.desktop} />
+        <img
+          className="first"
+          src={productData.gallery.first.desktop}
+          alt={productData.name}
+        />
+        <img
+          className="second"
+          src={productData.gallery.second.desktop}
+          alt={productData.name}
+        />
+        <img
+          className="third"
+          src={productData.gallery.third.desktop}
+          alt={productData.name}
+        />
       </section>
       <section className="related-products">
         <h3>You may also like</h3>
         <div className="related-products-wrap">
           {productData.others.map((product) => (
             <div className="related-product-card" key={product.slug}>
-              <img src={product.image.desktop} />
+              <img src={product.image.desktop} alt={product.name} />
               <h5>{product.name}</h5>
               <LinkButton to={`/shop/${product.slug}`}>See product</LinkButton>
             </div>

@@ -73,7 +73,10 @@ export default function Home() {
               srcSet="/assets/home/desktop/image-earphones-yx1.jpg 1280w"
               sizes="1280px"
             />
-            <img src="/assets/home/desktop/image-earphones-yx1.jpg" />
+            <img
+              src="/assets/home/desktop/image-earphones-yx1.jpg"
+              alt="YX1 Earphones"
+            />
           </picture>
           <div className="card-wrap">
             <div className="home-product-card">
