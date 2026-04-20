@@ -16,5 +16,5 @@ export default function LinkButton({
 type LinkButtonProps = {
   to: string;
   children: React.ReactNode;
-  variant: "orange" | "black" | "minimal";
+  variant?: "orange" | "black" | "minimal";
 };
