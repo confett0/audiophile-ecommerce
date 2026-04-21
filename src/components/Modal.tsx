@@ -1,5 +1,5 @@
 import styles from "./Modal.module.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Modal({
   closeModal,
@@ -7,6 +7,9 @@ export default function Modal({
   isCart,
   isOpen,
 }: ModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  // add focus trap
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -28,6 +31,7 @@ export default function Modal({
     <div className={`${styles.overlay} ${styles.open}`} onClick={closeModal}>
       <div
         role="dialog"
+        ref={modalRef}
         aria-modal="true"
         aria-labelledby="modal-title"
         className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
