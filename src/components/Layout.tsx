@@ -3,14 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 
-export default function Layout() {
+export default function Layout({ children }: { children?: React.ReactNode }) {
   return (
     <>
       <ScrollToTop />
       <Header />
-      <div className="outlet">
-        <Outlet />
-      </div>
+      <div className="outlet">{children ?? <Outlet />}</div>
       <Footer />
     </>
   );
