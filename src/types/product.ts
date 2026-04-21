@@ -1,3 +1,5 @@
+import type { Category } from "./category";
+
 export type Product = {
   id: number;
   slug: string;
@@ -21,8 +23,6 @@ export type Product = {
   };
   others: RelatedProduct[];
 };
-
-export type Category = "earphones" | "headphones" | "speakers";
 
 type ResponsiveImage = {
   mobile: string;

@@ -1,10 +1,13 @@
 import { useProducts } from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard";
-import type { Category } from "../types/product";
+import { useParams } from "react-router-dom";
 
-export default function CategoryPage({ category }: CategoryPageProps) {
+export default function CategoryPage() {
+  const { category } = useParams<{ category: string }>();
   const products = useProducts();
+
   const categoryProducts = products.filter(
+    // useMemo ?
     (product) => product.category === category,
   );
 
@@ -21,7 +24,3 @@ export default function CategoryPage({ category }: CategoryPageProps) {
     </>
   );
 }
-
-type CategoryPageProps = {
-  category: Category;
-};

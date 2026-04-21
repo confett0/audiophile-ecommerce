@@ -23,7 +23,9 @@ export default function ProductCard({ item }: { item: Product }) {
         {item.new && <p className="overline orange-text">New product</p>}
         <h2>{item.name}</h2>
         <p>{item.description}</p>
-        <LinkButton to={`/shop/${item.slug}`}>See product</LinkButton>
+        <LinkButton to={`/shop/${item.category}/${item.slug}`}>
+          See product
+        </LinkButton>
       </div>
     </div>
   );

@@ -118,7 +118,9 @@ export default function ProductPage() {
             <div className="related-product-card" key={product.slug}>
               <img src={product.image.desktop} alt={product.name} />
               <h5>{product.name}</h5>
-              <LinkButton to={`/shop/${product.slug}`}>See product</LinkButton>
+              <LinkButton to={`/shop/${productData.category}/${product.slug}`}>
+                See product
+              </LinkButton>
             </div>
           ))}
         </div>

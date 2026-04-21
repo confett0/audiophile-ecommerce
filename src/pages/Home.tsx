@@ -13,7 +13,7 @@ export default function Home() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <LinkButton to="/shop/xx99-mark-two-headphones">
+          <LinkButton to="/shop/headphones/xx99-mark-two-headphones">
             See product
           </LinkButton>
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <LinkButton to="/shop/zx9-speaker" variant="black">
+            <LinkButton to="/shop/speakers/zx9-speaker" variant="black">
               See product
             </LinkButton>
           </div>
@@ -52,7 +52,7 @@ export default function Home() {
         <section className="grey-area area">
           <div className="home-product-card">
             <h4>ZX7 SPEAKER</h4>
-            <LinkButton to="/shop/zx7-speaker" variant="clear">
+            <LinkButton to="/shop/speakers/zx7-speaker" variant="clear">
               See product
             </LinkButton>
           </div>
@@ -81,7 +81,7 @@ export default function Home() {
           <div className="card-wrap">
             <div className="home-product-card">
               <h4>YX1 EARPHONES</h4>
-              <LinkButton to="/shop/yx1-earphones" variant="clear">
+              <LinkButton to="/shop/earphones/yx1-earphones" variant="clear">
                 See product
               </LinkButton>
             </div>
