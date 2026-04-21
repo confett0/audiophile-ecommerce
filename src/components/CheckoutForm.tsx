@@ -14,6 +14,7 @@ export default function CheckoutForm() {
             type="text"
             placeholder="Alexei Ward"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -23,6 +24,7 @@ export default function CheckoutForm() {
             type="email"
             placeholder="alexei@mail.com"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -32,6 +34,7 @@ export default function CheckoutForm() {
             type="phone"
             placeholder="+1 202-555-0136"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -44,6 +47,7 @@ export default function CheckoutForm() {
             type="text"
             placeholder="1137 Williams Avenue"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -53,6 +57,7 @@ export default function CheckoutForm() {
             type="text"
             placeholder="10001"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -62,6 +67,7 @@ export default function CheckoutForm() {
             type="text"
             placeholder="New York"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
@@ -71,6 +77,7 @@ export default function CheckoutForm() {
             type="text"
             placeholder="United States"
             className="checkout-input"
+            aria-required="true"
             required
           />
         </label>
