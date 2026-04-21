@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
             element: <CategoryPage />,
             loader: ({ params }) => {
               const validCategories = ["speakers", "earphones", "headphones"];
-              if (!validCategories.includes(params.category)) {
+              if (!validCategories.includes(params.category!)) {
                 throw new Response("Not Found", { status: 404 });
               }
               return { category: params.category };
