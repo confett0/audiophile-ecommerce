@@ -163,6 +163,17 @@ button.minimal:hover {
   color: var(--orange);
 }
 
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
 /* Layout */
 
 header {

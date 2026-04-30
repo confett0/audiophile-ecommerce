@@ -8,7 +8,11 @@ export default function QuantitySelector({
 }: QuantitySelectorProps) {
   return (
     <div className={styles.wrap}>
-      <button className={styles.button} onClick={onDecrement}>
+      <button
+        className={styles.button}
+        onClick={onDecrement}
+        aria-label="Decrease quantity"
+      >
         -
       </button>
       {onChange ? (
@@ -23,7 +27,11 @@ export default function QuantitySelector({
       ) : (
         <div className={styles.itemQuantity}>{value}</div>
       )}
-      <button className={styles.button} onClick={onIncrement}>
+      <button
+        className={styles.button}
+        onClick={onIncrement}
+        aria-label="Increase quantity"
+      >
         +
       </button>
     </div>
