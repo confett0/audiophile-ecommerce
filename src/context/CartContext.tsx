@@ -1,4 +1,4 @@
-import { useReducer, createContext } from "react";
+import { useReducer, createContext, useEffect } from "react";
 import type { ReactNode } from "react";
 import cartReducer from "../cartReducer";
 import type { CartItem } from "../types/cart";
@@ -7,7 +7,23 @@ import type { Product } from "../types/product";
 export const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, dispatch] = useReducer(cartReducer, []);
+  // initialize cart from localStorage
+  const [cart, dispatch] = useReducer(cartReducer, [], () => {
+    try {
+      const savedCart = localStorage.getItem("savedCart");
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch {
+      return [];
+    }
+  });
+  // save cart to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem("savedCart", JSON.stringify(cart));
+    } catch (error) {
+      console.error("Failed to save cart to localStorage: ", error);
+    }
+  }, [cart]);
   const addItem = (item: Product, quantity: number) => {
     dispatch({
       type: "ADDED_ITEM",
