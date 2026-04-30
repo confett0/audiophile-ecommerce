@@ -1,6 +1,8 @@
 import Nav from "./Nav";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="footer-wrap">
@@ -35,7 +37,7 @@ export default function Footer() {
             />
           </svg>
         </div>
-        <p className="copyright">Copyright 2021. All Rights Reserved</p>
+        <p className="copyright">{`Copyright ${year}. All Rights Reserved`}</p>
       </div>
     </footer>
   );
