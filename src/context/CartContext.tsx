@@ -1,4 +1,11 @@
-import { useState, useReducer, createContext, useEffect } from "react";
+import {
+  useState,
+  useReducer,
+  createContext,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import type { ReactNode } from "react";
 import cartReducer from "../cartReducer";
 import type { CartItem } from "../types/cart";
@@ -80,4 +87,6 @@ type CartContextType = {
   increment: (id: number) => void;
   decrement: (id: number) => void;
   resetCart: () => void;
+  justAdded: boolean;
+  setJustAdded: Dispatch<SetStateAction<boolean>>;
 };
