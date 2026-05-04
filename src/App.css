@@ -304,6 +304,10 @@ footer svg:hover {
 
 /* Content area */
 
+.outlet {
+  width: 100vw;
+}
+
 .shop-wrap {
   align-items: center;
   display: flex;
@@ -984,6 +988,13 @@ input[type="radio"] {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .category-links {
+    gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .header-wrap {
     padding: 0 1.5rem;
@@ -1005,11 +1016,6 @@ input[type="radio"] {
   .area,
   .category-links {
     width: 95%;
-  }
-
-  .category-links {
-    gap: 6rem;
-    grid-template-columns: 1fr;
   }
 
   .grey-area {
