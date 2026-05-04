@@ -228,7 +228,8 @@ nav ul li a:hover {
 
 .mobile-nav {
   background-color: #fff;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
