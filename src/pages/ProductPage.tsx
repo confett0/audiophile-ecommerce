@@ -93,11 +93,11 @@ export default function ProductPage() {
               onChange={handleQuantityChange}
             />
             <button
-              className={`orange add-to-cart ${isAdding ? "loading" : ""}`}
+              className={`orange add-to-cart-btn ${isAdding ? "loading" : ""}`}
               disabled={isAdding}
               onClick={() => handleAddToCart(productData)}
             >
-              {isAdding ? "" : justAdded ? "Added!" : "Add to cart"}
+              {isAdding ? "" : justAdded ? "✓ Added!" : "Add to cart"}
             </button>
           </div>
         </div>
