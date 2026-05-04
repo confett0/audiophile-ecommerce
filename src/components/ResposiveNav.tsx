@@ -14,6 +14,23 @@ export default function ResponsiveNav() {
     closeNav();
   }, [location]);
 
+  useEffect(() => {
+    // block scroll and close menu with ESC
+    if (!showMobileNav) return;
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeNav();
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
+  }, [showMobileNav, closeNav]);
+
   return (
     <nav>
       <button
@@ -29,7 +46,13 @@ export default function ResponsiveNav() {
       {showMobileNav && (
         <>
           <div className="overlay" onClick={closeNav}></div>
-          <div className="mobile-nav" onClick={(e) => e.stopPropagation()}>
+          <div
+            id="mobile-nav"
+            className="mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
             <CategoryLinks />
           </div>
         </>
