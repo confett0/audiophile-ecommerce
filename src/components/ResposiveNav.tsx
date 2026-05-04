@@ -25,15 +25,14 @@ export default function ResponsiveNav() {
       >
         <img src="/assets/shared/tablet/icon-hamburger.svg" />
       </button>
-      {showMobileNav ? (
+      <MenuLinks />
+      {showMobileNav && (
         <>
-          <div className="modal-wrap" onClick={closeNav}></div>
-          <div className="mobile-nav">
+          <div className="overlay" onClick={closeNav}></div>
+          <div className="mobile-nav" onClick={(e) => e.stopPropagation()}>
             <CategoryLinks />
           </div>
         </>
-      ) : (
-        <MenuLinks />
       )}
     </nav>
   );
