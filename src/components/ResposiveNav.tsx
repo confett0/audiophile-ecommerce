@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import MenuLinks from "./MenuLinks";
 import CategoryLinks from "./CategoryLinks";
 
@@ -6,6 +7,12 @@ export default function ResponsiveNav() {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const toggleNav = () => setShowMobileNav((prev) => !prev);
   const closeNav = () => setShowMobileNav(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // close menu on page change
+    closeNav();
+  }, [location]);
 
   return (
     <nav>
