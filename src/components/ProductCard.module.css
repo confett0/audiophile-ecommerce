@@ -1,0 +1,37 @@
+.card {
+  align-items: center;
+  display: flex;
+  gap: 7rem;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.card img {
+  border-radius: 0.5rem;
+  width: 33.75rem;
+}
+
+.card:nth-child(even) picture {
+  order: 2;
+}
+
+@media screen and (max-width: 1150px) {
+  .card {
+    gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card:nth-child(even) picture {
+    order: unset;
+  }
+}

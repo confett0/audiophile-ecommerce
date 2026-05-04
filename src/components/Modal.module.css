@@ -1,0 +1,64 @@
+.modal {
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  z-index: 2;
+  position: absolute;
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.open .modal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.cartModal {
+  top: 8rem;
+  right: 9rem;
+  width: 23.5rem;
+}
+
+.confirmationModal {
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 33.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .cartModal {
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cartModal {
+    width: 90%;
+  }
+}
