@@ -10,11 +10,10 @@ import type { Product } from "../types/product";
 export default function ProductPage() {
   const { productSlug } = useParams();
   const navigate = useNavigate();
-  const { addItem } = useCart();
+  const { addItem, justAdded, setJustAdded } = useCart();
   const products = useProducts();
   const productData = products.find((product) => product.slug === productSlug);
   const [isAdding, setIsAdding] = useState(false);
-  const [justAdded, setJustAdded] = useState(false);
   const [value, setValue] = useState("1");
   const numericValue = useMemo(() => {
     const num = Number(value);
@@ -37,7 +36,7 @@ export default function ProductPage() {
     setIsAdding(false);
     setJustAdded(true);
 
-    // reset
+    // reset visual feedback
     setTimeout(() => setJustAdded(false), 1000);
   };
 

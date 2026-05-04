@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect } from "react";
+import { useState, useReducer, createContext, useEffect } from "react";
 import type { ReactNode } from "react";
 import cartReducer from "../cartReducer";
 import type { CartItem } from "../types/cart";
@@ -24,6 +24,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       console.error("Failed to save cart to localStorage: ", error);
     }
   }, [cart]);
+  const [justAdded, setJustAdded] = useState(false);
   const addItem = (item: Product, quantity: number) => {
     dispatch({
       type: "ADDED_ITEM",
@@ -58,7 +59,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, increment, decrement, resetCart }}
+      value={{
+        cart,
+        addItem,
+        increment,
+        decrement,
+        resetCart,
+        justAdded,
+        setJustAdded,
+      }}
     >
       {children}
     </CartContext.Provider>

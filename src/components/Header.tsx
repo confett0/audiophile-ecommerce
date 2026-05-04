@@ -8,7 +8,7 @@ import { useCart } from "../hooks/useCart";
 
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { cart } = useCart();
+  const { cart, justAdded } = useCart();
   const { totalItemsInCart } = getCartTotal(cart);
 
   const toggleModal = () => setIsModalOpen((prevState) => !prevState);
@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
         <ResponsiveNav />
         <button
-          className="cart-icon"
+          className={`cart-icon ${justAdded ? "added" : ""}`}
           onClick={toggleModal}
           aria-label={`Shopping cart with ${totalItemsInCart} items`}
           aria-expanded={isModalOpen}
