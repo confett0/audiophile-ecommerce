@@ -5,6 +5,7 @@ import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
 import QuantitySelector from "../components/QuantitySelector";
 import LinkButton from "../components/LinkButton";
+import type { Product } from "../types/product";
 
 export default function ProductPage() {
   const { productSlug } = useParams();
@@ -12,15 +13,32 @@ export default function ProductPage() {
   const { addItem } = useCart();
   const products = useProducts();
   const productData = products.find((product) => product.slug === productSlug);
+  const [isAdding, setIsAdding] = useState(false);
+  const [justAdded, setJustAdded] = useState(false);
   const [value, setValue] = useState("1");
   const numericValue = useMemo(() => {
     const num = Number(value);
     return isNaN(num) || num < 1 ? 1 : num;
   }, [value]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
     setValue(input);
+  };
+
+  const handleAddToCart = async (product: Product) => {
+    setIsAdding(true);
+
+    // simulate add to cart
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    addItem(product, numericValue);
+    setValue("1");
+    setIsAdding(false);
+    setJustAdded(true);
+
+    // reset
+    setTimeout(() => setJustAdded(false), 1000);
   };
 
   const increment = () => setValue(String(numericValue + 1));
@@ -72,16 +90,14 @@ export default function ProductPage() {
               value={value}
               onIncrement={increment}
               onDecrement={decrement}
-              onChange={handleChange}
+              onChange={handleQuantityChange}
             />
             <button
-              className="orange"
-              onClick={() => {
-                addItem(productData, numericValue);
-                setValue("1");
-              }}
+              className={`orange add-to-cart ${isAdding ? "loading" : ""}`}
+              disabled={isAdding}
+              onClick={() => handleAddToCart(productData)}
             >
-              Add to cart
+              {isAdding ? "" : justAdded ? "Added!" : "Add to cart"}
             </button>
           </div>
         </div>
