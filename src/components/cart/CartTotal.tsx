@@ -21,7 +21,9 @@ export default function CartTotal({
           <p>VAT (INCLUDED)</p>
           <p className={styles.cartAmount}>${vat}</p>
           <p className={styles.grandtotal}>GRANDTOTAL</p>
-          <p className={styles.cartAmount + styles.grandtotal}>${grandTotal}</p>
+          <p className={`${styles.cartAmount} ${styles.grandtotal}`}>
+            ${grandTotal}
+          </p>
         </>
       )}
     </div>
