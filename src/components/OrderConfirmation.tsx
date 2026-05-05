@@ -6,12 +6,12 @@ export default function OrderConfirmation({
   closeModal,
 }: OrderConfirmationProps) {
   const navigate = useNavigate();
-  const { cart } = useCart();
+  const { cart, resetCart } = useCart();
   const firstCartItem = cart[0];
   const { grandTotal } = getCartTotal(cart);
 
   const handleClick = () => {
-    //emptyCart();
+    resetCart();
     navigate("/");
     closeModal();
   };
