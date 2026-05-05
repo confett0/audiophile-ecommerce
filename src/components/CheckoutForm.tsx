@@ -131,7 +131,7 @@ export default function CheckoutForm() {
         ) : paymentInputStatus === 2 ? (
           <div className="cash-on-delivery-text full-width">
             <img
-              src="src/assets/checkout/icon-cash-on-delivery.svg"
+              src="/assets/checkout/icon-cash-on-delivery.svg"
               alt="Cash on delivery"
             />
             <p>
