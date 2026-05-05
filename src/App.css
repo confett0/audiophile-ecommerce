@@ -317,6 +317,8 @@ footer svg:hover {
 /* Content area */
 
 .outlet {
+  display: flex;
+  justify-content: center;
   width: 100vw;
 }
 
