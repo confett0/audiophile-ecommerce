@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export default function CheckoutForm() {
-  const [paymentInputStatus, setPaymentInputStatus] = useState(0);
-  // 0: no input - 1: e-money - 2: cash on delivery
+  const [paymentInputStatus, setPaymentInputStatus] = useState(1);
+  // 1: e-money - 2: cash on delivery
 
   return (
     <div className="form-wrap" id="checkout-form">
@@ -60,6 +60,7 @@ export default function CheckoutForm() {
             className="checkout-input"
             required
             autoComplete="postal-code"
+            inputMode="numeric"
           />
         </label>
         <label>
@@ -115,17 +116,21 @@ export default function CheckoutForm() {
             <label>
               e-Money Number{" "}
               <input
-                type="phone"
+                type="tel"
                 placeholder="238521993"
                 className="checkout-input"
+                required={paymentInputStatus === 1}
+                inputMode="numeric"
               />
             </label>
             <label>
               e-Money PIN{" "}
               <input
-                type="phone"
+                type="tel"
                 placeholder="6891"
                 className="checkout-input"
+                required={paymentInputStatus === 1}
+                inputMode="numeric"
               />
             </label>
           </>
@@ -141,9 +146,7 @@ export default function CheckoutForm() {
               address is correct so that your order will not be cancelled.
             </p>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
       </fieldset>
     </div>
   );
