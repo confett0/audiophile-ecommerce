@@ -85,7 +85,7 @@ export default function CheckoutForm() {
       </fieldset>
       <fieldset>
         <legend>Payment details</legend>
-        <p>Payment method</p>
+        <p className="payment-method-title">Payment method</p>
         <fieldset className="payment-type-fieldset">
           <div className="payment-type-input">
             <input

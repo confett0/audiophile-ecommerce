@@ -707,7 +707,8 @@ legend {
   text-transform: uppercase;
 }
 
-label {
+label,
+.payment-method-title {
   color: #000;
   font-family: var(--font);
   font-size: 0.75rem;
