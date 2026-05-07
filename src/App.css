@@ -110,7 +110,14 @@ button {
   width: 10rem;
   height: 3rem;
   margin: 1rem 0;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button.orange:hover,
+button.black:hover,
+button.clear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 button.orange {
@@ -161,6 +168,7 @@ button.minimal span {
 
 button.minimal:hover {
   color: var(--orange);
+  transform: translateY(-2px);
 }
 
 button:active {
