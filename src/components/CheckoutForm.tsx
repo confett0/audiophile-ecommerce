@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 export default function CheckoutForm() {
-  const [paymentInputStatus, setPaymentInputStatus] = useState(0); // 0: no input selected - 1: e-money input selected - 2: cash on delivery input selected
+  const [paymentInputStatus, setPaymentInputStatus] = useState(0);
+  // 0: no input - 1: e-money - 2: cash on delivery
 
   return (
     <div className="form-wrap" id="checkout-form">
@@ -14,8 +15,8 @@ export default function CheckoutForm() {
             type="text"
             placeholder="Alexei Ward"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="name"
           />
         </label>
         <label>
@@ -24,18 +25,18 @@ export default function CheckoutForm() {
             type="email"
             placeholder="alexei@mail.com"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="email"
           />
         </label>
         <label>
           Phone Number{" "}
           <input
-            type="phone"
+            type="tel"
             placeholder="+1 202-555-0136"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="tel"
           />
         </label>
       </fieldset>
@@ -47,8 +48,8 @@ export default function CheckoutForm() {
             type="text"
             placeholder="1137 Williams Avenue"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="street-address"
           />
         </label>
         <label>
@@ -57,8 +58,8 @@ export default function CheckoutForm() {
             type="text"
             placeholder="10001"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="postal-code"
           />
         </label>
         <label>
@@ -67,8 +68,8 @@ export default function CheckoutForm() {
             type="text"
             placeholder="New York"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="address-level2"
           />
         </label>
         <label>
@@ -77,8 +78,8 @@ export default function CheckoutForm() {
             type="text"
             placeholder="United States"
             className="checkout-input"
-            aria-required="true"
             required
+            autoComplete="country-name"
           />
         </label>
       </fieldset>
