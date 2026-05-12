@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import LinkButton from "./LinkButton";
 
 export default function CategoryLinks() {
   return (
@@ -28,11 +28,9 @@ function CategoryLink({ imgUrl, categoryName, link }: CategoryLinkProps) {
       <img src={imgUrl} alt={categoryName} />
       <div className="category-name">
         <h6>{categoryName}</h6>
-        <Link to={link}>
-          <button className="minimal">
-            Shop <span>&gt;</span>
-          </button>
-        </Link>
+        <LinkButton to={link} variant="minimal">
+          Shop <span>&gt;</span>
+        </LinkButton>
       </div>
     </div>
   );
