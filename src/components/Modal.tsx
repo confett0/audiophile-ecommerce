@@ -8,6 +8,7 @@ export default function Modal({
   isOpen,
 }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  const prevActiveElement = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -17,13 +18,15 @@ export default function Modal({
     };
 
     window.addEventListener("keydown", handleEscape);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden"; // block page scroll
 
+    prevActiveElement.current = document.activeElement as HTMLElement; // save previous active element
     modalRef.current?.focus();
 
     return () => {
       window.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "";
+      prevActiveElement.current?.focus(); // move focus to previous active element when closing modal
     };
   }, [isOpen, closeModal]);
 
@@ -35,6 +38,7 @@ export default function Modal({
         aria-modal="true"
         aria-labelledby="modal-title"
         ref={modalRef}
+        tabIndex={-1}
         className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
         onClick={(e) => e.stopPropagation()}
       >
