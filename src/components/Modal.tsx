@@ -1,5 +1,5 @@
 import styles from "./Modal.module.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Modal({
   closeModal,
@@ -7,6 +7,8 @@ export default function Modal({
   isCart,
   isOpen,
 }: ModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -16,6 +18,8 @@ export default function Modal({
 
     window.addEventListener("keydown", handleEscape);
     document.body.style.overflow = "hidden";
+
+    modalRef.current?.focus();
 
     return () => {
       window.removeEventListener("keydown", handleEscape);
@@ -30,6 +34,7 @@ export default function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
+        ref={modalRef}
         className={`${styles.modal} ${isCart ? styles.cartModal : styles.confirmationModal}`}
         onClick={(e) => e.stopPropagation()}
       >
