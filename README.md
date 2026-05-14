@@ -37,8 +37,8 @@ A modern e-commerce web app for browsing and purchasing audio products, built wi
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/confett0/audiophile-ecommerce
+cd audiophile-ecommerce
 ```
 
 Install dependencies:
